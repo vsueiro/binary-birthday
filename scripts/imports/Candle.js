@@ -1,7 +1,5 @@
-class Candle {
+export default class Candle {
   constructor() {
     console.log("Creating Candle…");
   }
 }
-
-export default Candle;

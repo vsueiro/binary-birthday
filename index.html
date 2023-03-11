@@ -8,6 +8,32 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <h1>Binary Birthday 🎂</h1>
+    <h1>Binary Birthday</h1>
+
+    <p>
+      Why spend money on fancy numbered candles if you can use simple ones to
+      represent your age?
+    </p>
+    <p>
+      Calculate how many candles you’ll need – and which ones you actually need
+      to light up! 🎂
+    </p>
+
+    <form>
+      <label>
+        <span>What age will you celebrate?</span>
+        <input
+          type="number"
+          min="1"
+          max="255"
+          placeholder="21"
+          value="21"
+          name="age"
+        />
+      </label>
+      <button>Calculate binary candles</button>
+    </form>
+
+    <section id="result"></section>
   </body>
 </html>
