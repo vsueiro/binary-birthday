@@ -1,7 +1,12 @@
+import Candle from "./Candle.js";
+
 export default class Candles {
-  constructor(decimal) {
+  constructor(decimal, selector) {
     // Set user’s age in decimal (7, 21, 60, etc)
     this.decimal = Number(decimal);
+
+    // Set container element
+    this.element = document.querySelector(selector);
   }
   get binary() {
     // Convert to binary string
@@ -26,32 +31,54 @@ export default class Candles {
     return lit;
   }
 
-  show(container) {
+  show() {
+    // Clear candles
+    this.element.replaceChildren();
+
+    // For each binary digit
+    for (let bit of this.binary) {
+      // Create a candle (either on or off)
+      const candle = new Candle(bit);
+
+      // Add candle image to page
+      this.element.append(candle.image);
+    }
+  }
+
+  explain(selector) {
+    // Get explanation container element
+    const explanation = document.querySelector(selector);
+
+    // Clear explanation
+    explanation.replaceChildren();
+
     // Get relevant numbers
     const total = this.total;
     const lit = this.lit;
 
     // Create result text
     const p = document.createElement("p");
+
+    // Build explanation content
     p.innerHTML = `
-
-      ${this.binary}
-
-      <br><br>
-
       You will need
-      ${total}
-      candles.
 
+      <strong>
+      ${total}
+      </strong>
+
+      candles.
+      <br>
       ${total === lit ? "All" : "But only"}
+
+      <strong>
       ${lit}
+      </strong>
+
       of them need to be lit.
     `;
 
-    // Clear container
-    container.replaceChildren();
-
-    // Add text to page
-    container.append(p);
+    // Add explanation to page
+    explanation.append(p);
   }
 }

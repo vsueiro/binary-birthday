@@ -1,1 +1,4 @@
 @import "./imports/reset.css";
+@import "./imports/general.css";
+@import "./imports/form.css";
+@import "./imports/candles.css";

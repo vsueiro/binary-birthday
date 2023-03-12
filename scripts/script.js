@@ -1,5 +1,4 @@
 import Candles from "./imports/Candles.js";
-import Candle from "./imports/Candle.js";
 import Form from "./imports/Form.js";
 
 const form = new Form("form");
@@ -13,11 +12,11 @@ form.callback((form) => {
   const age = data.age;
 
   // Convert age from decimal to binary
-  const candles = new Candles(age);
+  const candles = new Candles(age, ".candles");
 
-  // TEMP: display results
-  const result = document.querySelector("#result");
-  candles.show(result);
+  // Show candles
+  candles.show();
+
+  // Show explanation
+  candles.explain(".explanation");
 });
-
-// new Candle();
