@@ -45,12 +45,12 @@ export default class Candles {
     }
   }
 
-  explain(selector) {
-    // Get explanation container element
-    const explanation = document.querySelector(selector);
+  describe(selector) {
+    // Get description container element
+    const description = document.querySelector(selector);
 
     // Clear explanation
-    explanation.replaceChildren();
+    description.replaceChildren();
 
     // Get relevant numbers
     const total = this.total;
@@ -59,7 +59,27 @@ export default class Candles {
     // Create result text
     const p = document.createElement("p");
 
-    // Build explanation content
+    // Choose funny closing phrase
+    let closing = "";
+
+    // All candles are lit
+    if (total === lit) {
+      closing = "It’s your special day! Blow those candles & make a wish!";
+    }
+    // Only 1 candle is lit
+    else if (total > 2 && lit === 1) {
+      closing = "I guess one is better than none… right? Happy Birthday!";
+    }
+    // Only 1 candle is off
+    else if (total === lit + 1) {
+      closing = "Save the remaining one for next year!";
+    }
+    // A few candles are off
+    else {
+      closing = "Save the rest for next year’s celebration!";
+    }
+
+    // Build description content
     p.innerHTML = `
       You will need
 
@@ -76,9 +96,11 @@ export default class Candles {
       </strong>
 
       of them need to be lit.
+
+      <em>${closing}</em>
     `;
 
-    // Add explanation to page
-    explanation.append(p);
+    // Add description to page
+    description.append(p);
   }
 }

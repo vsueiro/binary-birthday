@@ -8,3 +8,9 @@ form {
   max-width: 480px;
   margin: 0 auto;
 }
+
+.outline {
+  color: Turquoise;
+  text-shadow: -1px -1px 0 #1a9e91, 1px -1px 0 #1a9e91, -1px 1px 0 #1a9e91,
+    1px 1px 0 #1a9e91;
+}

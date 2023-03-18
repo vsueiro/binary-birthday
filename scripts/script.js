@@ -17,6 +17,6 @@ form.callback((form) => {
   // Show candles
   candles.show();
 
-  // Show explanation
-  candles.explain(".explanation");
+  // Show result descriptioon
+  candles.describe(".description");
 });

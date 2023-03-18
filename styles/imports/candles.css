@@ -7,6 +7,7 @@
 .candles {
   display: flex;
   justify-content: center;
+
   /* width: fit-content; */
   padding: 16px;
   background: rgba(0, 0, 0, 0.05);
@@ -16,12 +17,27 @@
   padding: 0;
 }
 
+.candles:empty ~ button {
+  display: none;
+}
+
+.results button {
+  align-self: center;
+  margin-top: 32px;
+}
+
 .candles img {
   width: 48px;
 }
 
-.explanation {
+.description {
   background: rgba(0, 0, 0, 0.1);
   padding: 0 16px;
   text-align: center;
+}
+
+.description em {
+  display: block;
+  font-size: 16px;
+  margin-top: 1em;
 }
