@@ -7,10 +7,8 @@
 .candles {
   display: flex;
   justify-content: center;
-
-  /* width: fit-content; */
   padding: 16px;
-  background: rgba(0, 0, 0, 0.05);
+  background: Lavender;
 }
 
 .candles:empty {
@@ -31,7 +29,7 @@
 }
 
 .description {
-  background: rgba(0, 0, 0, 0.1);
+  background: Lavender;
   padding: 0 16px;
   text-align: center;
 }

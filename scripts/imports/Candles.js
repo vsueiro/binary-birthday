@@ -76,7 +76,7 @@ export default class Candles {
     }
     // A few candles are off
     else {
-      closing = "Save the rest for next year’s celebration!";
+      closing = "Save the rest for next year!";
     }
 
     // Build description content
