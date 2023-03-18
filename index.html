@@ -22,17 +22,27 @@
     </section>
 
     <form>
-      <label>
+      <label for="age">
         <span>What age will you celebrate?</span>
-        <input
-          type="number"
-          min="1"
-          max="127"
-          placeholder="21"
-          value="21"
-          name="age"
-        />
       </label>
+
+      <div class="age-container">
+        <button type="button" class="minus">&minus;</button>
+        <div class="age-input">
+          <input
+            type="number"
+            min="1"
+            max="127"
+            placeholder="21"
+            value="21"
+            id="age"
+            name="age"
+          />
+          <div class="age-display"></div>
+        </div>
+        <button type="button" class="minus">&plus;</button>
+      </div>
+
       <button>Calculate binary candles</button>
     </form>
 
