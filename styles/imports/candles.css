@@ -1,15 +1,90 @@
-.results {
-  display: flex;
-  flex-direction: column;
-  margin-top: 32px;
-}
-
 .candles {
   display: flex;
   justify-content: center;
   padding: 16px;
   background: Lavender;
 }
+
+/* Stick */
+.candle {
+  position: relative;
+  width: 48px;
+  aspect-ratio: 1/2;
+  background-image: url(../../media/stick-1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.candle[data-bit="1"] {
+  background-image: url(../../media/stick-1.png);
+}
+
+/* Wick */
+.candle::before {
+  content: "";
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../../media/wick-0.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.candle[data-bit="1"]::before {
+  background-image: url(../../media/wick-1.png);
+}
+
+/* Numbers */
+
+.candle[data-number="0"] {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.candle[data-number="0"] {
+  background-image: url(../../media/candle-number-0.png);
+}
+
+.candle[data-number="1"] {
+  background-image: url(../../media/candle-number-1.png);
+}
+
+.candle[data-number="2"] {
+  background-image: url(../../media/candle-number-2.png);
+}
+
+.candle[data-number="3"] {
+  background-image: url(../../media/candle-number-3.png);
+}
+
+.candle[data-number="4"] {
+  background-image: url(../../media/candle-number-4.png);
+}
+
+.candle[data-number="5"] {
+  background-image: url(../../media/candle-number-5.png);
+}
+
+.candle[data-number="6"] {
+  background-image: url(../../media/candle-number-6.png);
+}
+
+.candle[data-number="7"] {
+  background-image: url(../../media/candle-number-7.png);
+}
+
+.candle[data-number="8"] {
+  background-image: url(../../media/candle-number-8.png);
+}
+
+.candle[data-number="9"] {
+  background-image: url(../../media/candle-number-9.png);
+}
+
+/* Form results */
 
 .candles:empty {
   padding: 0;
@@ -19,13 +94,15 @@
   display: none;
 }
 
-.results button {
-  align-self: center;
+.results {
+  display: flex;
+  flex-direction: column;
   margin-top: 32px;
 }
 
-.candles img {
-  width: 48px;
+.results button {
+  align-self: center;
+  margin-top: 32px;
 }
 
 .description {

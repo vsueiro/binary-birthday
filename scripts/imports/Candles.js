@@ -41,7 +41,7 @@ export default class Candles {
       const candle = new Candle(bit);
 
       // Add candle image to page
-      this.element.append(candle.image);
+      this.element.append(candle.element);
     }
   }
 
