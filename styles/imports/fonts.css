@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "SH Pinscher";
+  src: url(../../fonts/SHPinscher-Regular.woff2);
+  font-display: block;
+}
+
+body,
+input,
+button {
+  font-size: 24px !important;
+  line-height: 1.5;
+  font-family: "SH Pinscher", sans-serif;
+}
