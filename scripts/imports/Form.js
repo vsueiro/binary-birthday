@@ -2,6 +2,10 @@ export default class Form {
   constructor(selector) {
     // Store refence to <form> element
     this.element = document.querySelector(selector);
+
+    this.minus = this.element.querySelector("button.minus");
+    this.plus = this.element.querySelector("button.plus");
+    this.age = this.element.querySelector("input#age");
   }
 
   get data() {

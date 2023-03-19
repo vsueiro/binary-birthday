@@ -1,9 +1,12 @@
 import Candle from "./Candle.js";
 
 export default class Candles {
-  constructor(decimal, selector) {
+  constructor(decimal, selector, numbered = false) {
     // Set user’s age in decimal (7, 21, 60, etc)
     this.decimal = Number(decimal);
+
+    // Check if candles should be simple or numbered
+    this.numbered = numbered === false ? false : true;
 
     // Set container element
     this.element = document.querySelector(selector);
@@ -35,13 +38,28 @@ export default class Candles {
     // Clear candles
     this.element.replaceChildren();
 
-    // For each binary digit
-    for (let bit of this.binary) {
-      // Create a candle (either on or off)
-      const candle = new Candle(bit);
+    // Check if candles should be numbered (1, 2, 3…)
+    if (this.numbered) {
+      // For each binary digit
+      for (let digit of String(this.decimal)) {
+        // Create a candle (either on or off)
+        const candle = new Candle(1, digit);
 
-      // Add candle image to page
-      this.element.append(candle.element);
+        // Add candle image to page
+        this.element.append(candle.element);
+      }
+    }
+
+    // Otherwise, candles (either on or off)
+    else {
+      // For each binary digit
+      for (let bit of this.binary) {
+        // Create a candle (either on or off)
+        const candle = new Candle(bit);
+
+        // Add candle image to page
+        this.element.append(candle.element);
+      }
     }
   }
 

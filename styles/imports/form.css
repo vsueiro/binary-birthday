@@ -18,3 +18,17 @@ form input,
 form button {
   /* font-size: 18px; */
 }
+
+.age-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.age-input {
+}
+
+.age-display {
+  display: flex;
+}
