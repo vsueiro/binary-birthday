@@ -43,6 +43,21 @@ export default class Form {
     return data;
   }
 
+  constrain(field, value) {
+    const min = Number(this[field].min);
+    const max = Number(this[field].max);
+
+    this[field].value = value;
+
+    if (value < min) {
+      this[field].value = min;
+    }
+
+    if (value > max) {
+      this[field].value = max;
+    }
+  }
+
   callback(customFunction) {
     this.element.addEventListener("submit", (event) => {
       // Handle form submission using custom callback function

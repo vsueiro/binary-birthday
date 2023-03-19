@@ -13,6 +13,11 @@ form label {
   gap: 8px;
 }
 
+button {
+  user-select: none;
+  cursor: pointer;
+}
+
 form label,
 form input,
 form button {
@@ -27,8 +32,29 @@ form button {
 }
 
 .age-input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.age-input input {
+  all: unset;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -0.48em;
+  left: 0;
+  text-align: center;
+  font-size: 75px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.28em;
+  padding-left: 0.28em;
+  caret-color: DeepPink;
+  color: transparent;
 }
 
 .age-display {
   display: flex;
+  pointer-events: none;
 }

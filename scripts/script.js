@@ -22,38 +22,38 @@ form.callback((form) => {
 });
 
 // Show age as numbered candles
-function updateDisplay() {
+function updateDisplay(value) {
   const age = form.age.value;
+  const min = Number(form.age.min);
+  const max = Number(form.age.max);
+
+  if (age < min || age > max) {
+    console.log("Age is out of bounds");
+  }
+
   const selector = ".age-display";
   const candles = new Candles(age, selector, "numbered");
-
   candles.show();
 }
 
 // When age is changed by clicking - button
 form.minus.addEventListener("click", () => {
   const value = Number(form.age.value) - 1;
-  const min = Number(form.age.min);
-
-  if (value >= min) {
-    form.age.value = value;
-    updateDisplay();
-  }
+  form.constrain("age", value);
+  updateDisplay();
 });
 
 // When age is changed by clicking + button
 form.plus.addEventListener("click", () => {
   const value = Number(form.age.value) + 1;
-  const max = Number(form.age.max);
-
-  if (value <= max) {
-    form.age.value = value;
-    updateDisplay();
-  }
+  form.constrain("age", value);
+  updateDisplay();
 });
 
 // When age is manually changed
 form.age.addEventListener("input", () => {
+  const value = Number(form.age.value);
+  form.constrain("age", value);
   updateDisplay();
 });
 
