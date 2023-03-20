@@ -1,5 +1,8 @@
+import Confetti from "./imports/Confetti.js";
 import Candles from "./imports/Candles.js";
 import Form from "./imports/Form.js";
+
+new Confetti(".confetti");
 
 const form = new Form("form");
 

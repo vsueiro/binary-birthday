@@ -45,6 +45,7 @@ form button {
   right: 0;
   bottom: -0.48em;
   left: 0;
+  width: 100%;
   text-align: center;
   font-size: 50px;
   font-variant-numeric: tabular-nums;
@@ -52,7 +53,6 @@ form button {
   padding-left: 0.28em;
   caret-color: DeepPink;
   color: transparent;
-  color: black;
 }
 
 .age-display {

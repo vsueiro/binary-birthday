@@ -98,6 +98,10 @@
   background-size: 100%;
 }
 
+.cake.outline {
+  background-image: url(../../media/cake-outline.png);
+}
+
 /* Form results */
 
 .candles:empty {
