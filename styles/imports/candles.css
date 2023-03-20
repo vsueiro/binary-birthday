@@ -116,6 +116,14 @@
   display: none;
 }
 
+.candles:empty ~ .cake {
+  display: none;
+}
+
+.description:empty ~ button {
+  display: none;
+}
+
 .results {
   display: flex;
   flex-direction: column;
