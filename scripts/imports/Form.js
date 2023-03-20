@@ -1,3 +1,5 @@
+import AgeDisplay from "./AgeDisplay.js";
+
 export default class Form {
   constructor(selector) {
     // Store refence to <form> element
@@ -7,15 +9,7 @@ export default class Form {
     this.plus = this.element.querySelector("button.plus");
     this.age = this.element.querySelector("input#age");
 
-    this.enableActiveState();
-  }
-
-  enableActiveState() {
-    // Show :active state on iOS Safari
-    const buttons = document.querySelectorAll("button");
-    for (let button of buttons) {
-      button.ontouchstart = "";
-    }
+    this.ageDisplay = new AgeDisplay(".age-display", this);
   }
 
   get data() {
@@ -53,9 +47,11 @@ export default class Form {
     return data;
   }
 
-  constrain(field, value) {
+  constrain(field, value, increment = 0) {
     const min = Number(this[field].min);
     const max = Number(this[field].max);
+
+    value = value || Number(this[field].value) + increment;
 
     this[field].value = value;
 
@@ -66,6 +62,8 @@ export default class Form {
     if (value > max) {
       this[field].value = max;
     }
+
+    this.ageDisplay.update();
   }
 
   callback(customFunction) {

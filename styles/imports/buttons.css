@@ -1,0 +1,25 @@
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  background: DeepPink;
+  margin: 0 auto;
+  border: 4px solid rgba(76, 0, 130, 0.5);
+  box-shadow: 4px 4px 0 0 Indigo;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  button:hover:not(focus) {
+    border: 4px solid rgba(76, 0, 130, 0.25);
+  }
+
+  button:focus:not(:hover) {
+    border: 4px solid rgba(76, 0, 130, 0.25);
+  }
+}
+
+button:active,
+button.active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 Indigo;
+}
