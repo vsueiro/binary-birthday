@@ -16,4 +16,5 @@ input[type="number"] {
 
 button {
   all: unset;
+  touch-action: none;
 }

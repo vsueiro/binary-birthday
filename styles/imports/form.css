@@ -23,6 +23,16 @@ button {
   box-shadow: 4px 4px 0 0px Indigo;
 }
 
+button:hover,
+button:focus {
+  border: 4px solid rgba(76, 0, 130, 0.25);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0px Indigo;
+}
+
 form label,
 form input,
 form button {
