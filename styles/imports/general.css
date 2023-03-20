@@ -26,3 +26,7 @@ form {
   white-space: nowrap;
   width: 1px;
 }
+
+h1 {
+  text-align: center;
+}
