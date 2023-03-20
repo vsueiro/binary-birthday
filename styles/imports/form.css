@@ -23,9 +23,17 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (min-width: 640px) {
+/* Try to show :active state on iOS Safari */
+@media (min-width: 641px) {
   button:hover {
     border: 4px solid rgba(76, 0, 130, 0.25);
+  }
+}
+
+@media (max-width: 640px) {
+  button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 Indigo;
   }
 }
 
