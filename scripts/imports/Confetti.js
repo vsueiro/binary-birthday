@@ -23,11 +23,11 @@ export default class Confetti {
 
       const markup = `
         <div
-          class="square-track"
+          class="symbol-track"
           style="animation-delay: ${delay}s;"
         >
           <div
-            class="square"
+            class="symbol"
             style="animation-delay: ${delay}s;"
           >
               ${symbol}

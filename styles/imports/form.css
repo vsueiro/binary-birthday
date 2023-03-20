@@ -20,7 +20,7 @@ button {
   background: DeepPink;
   margin: 0 auto;
   border: 4px solid rgba(76, 0, 130, 0.5);
-  box-shadow: 4px 4px 0 0px Indigo;
+  box-shadow: 4px 4px 0 0 Indigo;
 }
 
 button:hover,
@@ -30,13 +30,13 @@ button:focus {
 
 button:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0px Indigo;
+  box-shadow: 2px 2px 0 0 Indigo;
 }
 
-form label,
-form input,
-form button {
-  /* font-size: 18px; */
+form label {
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .age-container {
@@ -68,6 +68,7 @@ form button {
   padding-left: 0.28em;
   caret-color: DeepPink;
   color: transparent;
+  text-shadow: none;
 }
 
 .age-display {

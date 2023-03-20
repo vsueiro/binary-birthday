@@ -2,6 +2,7 @@ body {
   margin: 16px;
   background: RebeccaPurple;
   color: Lavender;
+  text-shadow: 2px 2px Indigo;
 }
 
 section,

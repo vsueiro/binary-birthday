@@ -11,6 +11,8 @@
   background-image: url(../../media/stick-1.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  -webkit-filter: drop-shadow(4px 4px 0 Indigo);
+  filter: drop-shadow(4px 4px 0 Indigo);
 }
 
 .candle[data-bit="1"] {
@@ -96,6 +98,8 @@
   background-image: url(../../media/cake.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  -webkit-filter: drop-shadow(4px 4px 0 Indigo);
+  filter: drop-shadow(4px 4px 0 Indigo);
 }
 
 .cake.outline {

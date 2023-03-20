@@ -40,7 +40,7 @@
   z-index: -1;
 }
 
-.square-track {
+.symbol-track {
   display: flex;
   justify-content: center;
   align-items: end;
@@ -51,7 +51,7 @@
   background: pink; */
 }
 
-.square {
+.symbol {
   width: 25px;
   aspect-ratio: 1;
   font-size: 25px;
@@ -59,6 +59,7 @@
   justify-content: center;
   align-items: center;
   color: Indigo;
+  text-shadow: none;
   opacity: 0;
   flex-shrink: 1;
   animation: rotate-and-fade var(--duration) infinite linear;
