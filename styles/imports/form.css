@@ -20,6 +20,7 @@ button {
   margin: 0 auto;
   border: 4px solid rgba(76, 0, 130, 0.5);
   box-shadow: 4px 4px 0 0 Indigo;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover,

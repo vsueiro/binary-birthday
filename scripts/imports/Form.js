@@ -6,6 +6,16 @@ export default class Form {
     this.minus = this.element.querySelector("button.minus");
     this.plus = this.element.querySelector("button.plus");
     this.age = this.element.querySelector("input#age");
+
+    this.enableActiveState();
+  }
+
+  enableActiveState() {
+    // Show :active state on iOS Safari
+    const buttons = document.querySelectorAll("button");
+    for (let button of buttons) {
+      button.ontouchstart = "";
+    }
   }
 
   get data() {
