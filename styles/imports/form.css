@@ -23,7 +23,12 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-button:hover,
+@media (min-width: 640px) {
+  button:hover {
+    border: 4px solid rgba(76, 0, 130, 0.25);
+  }
+}
+
 button:focus {
   border: 4px solid rgba(76, 0, 130, 0.25);
 }
