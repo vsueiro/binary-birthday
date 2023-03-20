@@ -59,6 +59,8 @@
   align-items: center;
   color: Indigo;
   text-shadow: none;
+  user-select: none;
+  pointer-events: none;
   opacity: 0;
   flex-shrink: 1;
   animation: rotate-and-fade var(--duration) infinite linear;

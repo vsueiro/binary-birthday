@@ -60,4 +60,15 @@ form.age.addEventListener("input", () => {
   updateDisplay();
 });
 
+// Clear age input the first time it is focused
+form.age.addEventListener(
+  "focus",
+  () => {
+    form.age.value = "0";
+    updateDisplay();
+    return;
+  },
+  { once: true }
+);
+
 updateDisplay();
