@@ -69,7 +69,7 @@ form label {
   color: transparent;
   text-shadow: none;
   background-color: Transparent;
-  width: fit-content;
+  width: calc(32px * 3);
   margin: 0 auto;
   padding: 0 16px;
   z-index: 1;
