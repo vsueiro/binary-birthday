@@ -68,6 +68,27 @@ form label {
   caret-color: DeepPink;
   color: transparent;
   text-shadow: none;
+  background-color: Transparent;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 16px;
+  z-index: 1;
+  border: 4px dashed rgba(255, 20, 145, 0.2);
+}
+
+.age-input input:hover,
+.age-input input:focus {
+  animation: pulsate 0.5s steps(6) infinite alternate;
+}
+
+@keyframes pulsate {
+  0% {
+    /* border-color: Transparent; */
+    border-color: rgba(255, 20, 145, 0.2);
+  }
+  100% {
+    border-color: DeepPink;
+  }
 }
 
 .age-display {
