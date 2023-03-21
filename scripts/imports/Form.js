@@ -68,7 +68,7 @@ export default class Form {
     }
 
     this.ageDisplay.update();
-    this.sounds.play("beep.mp3");
+    this.sounds.play("hit.mp3");
   }
 
   callback(customFunction) {
