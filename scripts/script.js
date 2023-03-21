@@ -20,11 +20,11 @@ form.callback((form) => {
   // Convert age from decimal to binary
   const candles = new Candles(age, ".candles");
 
-  // Show candles
-  candles.show();
-
   // Show result descriptioon
   candles.describe(".description");
+
+  // Show candles
+  candles.show();
 });
 
 // When age is manually changed

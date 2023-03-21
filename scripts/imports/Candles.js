@@ -8,14 +8,24 @@ export default class Candles {
     // Check if candles should be simple or numbered
     this.numbered = numbered === false ? false : true;
 
-    // Set container element
-    this.element = document.querySelector(selector);
+    // Store selector for future use
+    this.selector = selector;
   }
   get binary() {
     // Convert to binary string
     const binary = this.decimal.toString(2);
 
     return binary;
+  }
+
+  get binaryDigits() {
+    let string = ``;
+
+    for (let bit of this.binary) {
+      string += `<span data-bit="${bit}">${bit}</span>`;
+    }
+
+    return string;
   }
 
   get total() {
@@ -35,6 +45,9 @@ export default class Candles {
   }
 
   show() {
+    // Set container element
+    this.element = document.querySelector(this.selector);
+
     // Clear candles
     this.element.replaceChildren();
 
@@ -74,19 +87,16 @@ export default class Candles {
     const total = this.total;
     const lit = this.lit;
 
-    // Create result text
-    const p = document.createElement("p");
-
     // Choose funny closing phrase
     let closing = "";
 
     // All candles are lit
     if (total === lit) {
-      closing = "It’s your special day! Blow those candles & make a wish!";
+      closing = "It’s your special day! <br>Blow those candles & make a wish!";
     }
     // Only 1 candle is lit
     else if (total > 2 && lit === 1) {
-      closing = "I guess one is better than none… right? Happy Birthday!";
+      closing = "I guess one is better than none… right?";
     }
     // Only 1 candle is off
     else if (total === lit + 1) {
@@ -98,27 +108,46 @@ export default class Candles {
     }
 
     // Build description content
-    p.innerHTML = `
-      You will need
+    const content = `
+      <p>
+        <em>
+          Your age in binary is:
+          <br>
+          <code class="binary">
+            ${this.binaryDigits}
+          </code>
+        </em>
+      </p>
 
-      <strong>
-      ${total}
-      </strong>
+      <div class="birthday-cake">
+        <div class="candles"></div>
+        <div class="cake"></div>
+      </div>
 
-      candles.
-      <br>
-      ${total === lit ? "All" : "But only"}
+      <p>
+  
+        So, you will need
 
-      <strong>
-      ${lit}
-      </strong>
+        <strong>
+        ${total}
+        </strong>
 
-      of them need to be lit.
+        candles.
+        <br>
+        ${total === lit ? "All" : "But only"}
 
-      <em>${closing}</em>
+        <strong>
+        ${lit}
+        </strong>
+
+        of them need to be lit.
+
+        <em>${closing}</em>
+
+      </p>
     `;
 
     // Add description to page
-    description.append(p);
+    description.insertAdjacentHTML("beforeend", content);
   }
 }

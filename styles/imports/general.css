@@ -53,3 +53,40 @@ strong {
   /* max-width: 20ch; */
   margin: 0 auto 64px;
 }
+
+code {
+  font-family: inherit;
+  font-size: 25px;
+  font-variant: small-caps;
+}
+
+code.binary {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+code.binary span {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  width: calc(32px - 8px);
+  text-align: center;
+}
+
+code.binary span::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 24px;
+  background: Indigo;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0.25;
+}
+
+code.binary span[data-bit="1"] {
+  color: Coral;
+}
