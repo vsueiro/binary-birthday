@@ -68,7 +68,9 @@ export default class Form {
     }
 
     this.ageDisplay.update();
-    this.sounds.play("hit.mp3");
+
+    // TEMP: Disable sounds
+    // this.sounds.play("hit.mp3");
   }
 
   callback(customFunction) {

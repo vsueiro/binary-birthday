@@ -54,15 +54,12 @@ strong {
   margin: 0 auto 64px;
 }
 
-code {
-  font-family: inherit;
-  font-size: 25px;
-  font-variant: small-caps;
-}
-
 code.binary {
   display: flex;
   justify-content: center;
+  font-family: inherit;
+  font-size: 25px;
+  font-variant: small-caps;
   gap: 8px;
 }
 
