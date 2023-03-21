@@ -1,6 +1,6 @@
 export default class Sounds {
   constructor() {
-    this.path = "../../sounds/";
+    this.path = "./sounds/";
   }
 
   play(file) {
