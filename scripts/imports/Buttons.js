@@ -5,8 +5,8 @@ export default class Buttons {
     this.elements = document.querySelectorAll(this.selector);
     this.timeout = undefined;
     this.interval = undefined;
-    this.delay = 400;
-    this.debounce = 100;
+    this.delay = 300;
+    this.debounce = 150;
     this.isPressing = false;
 
     this.enableActiveState();
@@ -86,8 +86,8 @@ export default class Buttons {
         this.handlePress(step);
       });
 
-      // When mouseup
-      button.addEventListener("mouseup", () => {
+      // When mouseup is fired
+      document.body.addEventListener("mouseup", () => {
         this.handleRelease();
       });
     }
