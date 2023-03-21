@@ -27,18 +27,6 @@ form.callback((form) => {
   candles.describe(".description");
 });
 
-// When age is changed by clicking - button
-form.minus.addEventListener("click", () => {
-  const step = Number(form.minus.dataset.step);
-  form.constrain("age", undefined, step);
-});
-
-// When age is changed by clicking + button
-form.plus.addEventListener("click", () => {
-  const step = Number(form.plus.dataset.step);
-  form.constrain("age", undefined, step);
-});
-
 // When age is manually changed
 form.age.addEventListener("input", () => {
   const value = Number(form.age.value);
@@ -49,7 +37,7 @@ form.age.addEventListener("input", () => {
 form.age.addEventListener(
   "focus",
   () => {
-    form.age.value = "0";
+    form.constrain("age", 0);
     return;
   },
   { once: true }

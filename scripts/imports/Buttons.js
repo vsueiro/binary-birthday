@@ -4,6 +4,10 @@ export default class Buttons {
     this.selector = selector || "button";
     this.elements = document.querySelectorAll(this.selector);
     this.timeout = undefined;
+    this.interval = undefined;
+    this.delay = 400;
+    this.debounce = 100;
+    this.isPressing = false;
 
     this.enableActiveState();
     this.updateAgeOnPress();
@@ -20,23 +24,71 @@ export default class Buttons {
       });
     }
   }
+
+  handlePress(step) {
+    // Make first increment
+    this.form.constrain("age", undefined, step);
+
+    // Wait before triggerring fast increment mode
+    this.timeout = setTimeout(() => {
+      this.isPressing = true;
+
+      // Trigger each increment
+      this.interval = setInterval(() => {
+        // If button is currently pressed
+        if (this.isPressing) {
+          // Increment age input
+          this.form.constrain("age", undefined, step);
+        } else {
+          // Stop increments
+          clearInterval(this.interval);
+        }
+      }, this.debounce);
+    }, this.delay);
+  }
+
+  handleRelease() {
+    // Cancel increments
+    this.isPressing = false;
+
+    // Prevent entering fast increment mode
+    clearTimeout(this.timeout);
+  }
+
   updateAgeOnPress() {
     for (let button of this.elements) {
+      // Ignore buttons that don’t have a data-step attribute
       if (!button.dataset.step) {
         continue;
       }
 
+      // Get step (like -1 or +1)
       const step = Number(button.dataset.step);
 
-      button.addEventListener("touchstart", () => {
-        this.timeout = setTimeout(() => {
-          this.form.constrain("age", undefined, step);
-        }, 1000);
+      // When touch begins
+      button.addEventListener("touchstart", (event) => {
+        this.handlePress(step);
+
+        // Prevent further mouse events from firing
+        event.preventDefault();
       });
 
-      button.addEventListener("touchend", () => {
-        // …
-        clearTimeout(this.timeout);
+      // When touch ends
+      button.addEventListener("touchend", (event) => {
+        this.handleRelease();
+
+        // Prevent further mouse events from firing
+        event.preventDefault();
+      });
+
+      // When mousedown begins
+      button.addEventListener("mousedown", () => {
+        this.handlePress(step);
+      });
+
+      // When mouseup
+      button.addEventListener("mouseup", () => {
+        this.handleRelease();
       });
     }
   }

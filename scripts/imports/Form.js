@@ -51,7 +51,9 @@ export default class Form {
     const min = Number(this[field].min);
     const max = Number(this[field].max);
 
-    value = value || Number(this[field].value) + increment;
+    if (typeof value !== "number") {
+      value = Number(this[field].value) + increment;
+    }
 
     this[field].value = value;
 
