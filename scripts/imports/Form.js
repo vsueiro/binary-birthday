@@ -1,5 +1,4 @@
 import AgeDisplay from "./AgeDisplay.js";
-import Sounds from "./Sounds.js";
 
 export default class Form {
   constructor(selector) {
@@ -11,7 +10,6 @@ export default class Form {
     this.age = this.element.querySelector("input#age");
 
     this.ageDisplay = new AgeDisplay(".age-display", this);
-    this.sounds = new Sounds();
   }
 
   get data() {
@@ -68,9 +66,6 @@ export default class Form {
     }
 
     this.ageDisplay.update();
-
-    // TEMP: Disable sounds
-    // this.sounds.play("hit.mp3");
   }
 
   callback(customFunction) {
