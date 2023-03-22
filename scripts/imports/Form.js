@@ -70,6 +70,8 @@ export default class Form {
 
   callback(customFunction) {
     this.element.addEventListener("submit", (event) => {
+      console.log("Form was submitted");
+
       // Handle form submission using custom callback function
       if (customFunction) {
         customFunction(this);
