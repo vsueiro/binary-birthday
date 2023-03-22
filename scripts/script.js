@@ -64,7 +64,3 @@ new Preloader(
   "./media/stick-1.png",
   "./media/wick-0.png"
 );
-
-document.body.addEventListener("click", (event) => {
-  console.log(event.target);
-});
