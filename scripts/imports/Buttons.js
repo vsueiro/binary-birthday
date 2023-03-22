@@ -75,9 +75,6 @@ export default class Buttons {
       // When touch ends
       window.addEventListener("touchend", (event) => {
         this.handleRelease();
-        // Prevent further mouse events from firing
-        event.preventDefault();
-        // }
       });
 
       // When mousedown begins
