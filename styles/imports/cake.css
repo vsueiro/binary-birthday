@@ -4,37 +4,46 @@
 @import "./connectors.css";
 
 .cake-container {
-  width: calc(256 * var(--px));
-  height: calc(320 * var(--px));
   background: pink;
+  height: calc(320 * var(--px));
+  width: calc(256 * var(--px));
 }
 
 .cake {
-  width: calc(256 * var(--px));
-  height: calc(96 * var(--px));
   background: lightblue;
+  height: calc(96 * var(--px));
+  position: relative;
+  width: calc(256 * var(--px));
+}
+
+.strawberries {
+  background: HotPink;
+  bottom: calc(8 * var(--px));
+  height: calc(20 * var(--px));
+  position: absolute;
+  width: calc(256 * var(--px));
 }
 
 .candles-container,
 .candles-container form {
-  width: calc(256 * var(--px));
-  height: calc(64 * var(--px));
   background: palegoldenrod;
+  height: calc(64 * var(--px));
+  width: calc(256 * var(--px));
 }
 
 .labels-container {
-  width: calc(256 * var(--px));
-  height: calc(48 * var(--px));
   background: lavender;
+  height: calc(48 * var(--px));
+  width: calc(256 * var(--px));
 }
 
 .connectors-container {
-  width: calc(256 * var(--px));
   height: calc(48 * var(--px));
+  width: calc(256 * var(--px));
 }
 
 .connectors {
-  width: calc(256 * var(--px));
-  height: calc(48 * var(--px));
   background: purple;
+  height: calc(48 * var(--px));
+  width: calc(256 * var(--px));
 }
