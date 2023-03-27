@@ -9,5 +9,62 @@
   </head>
   <body>
     <div class="confetti-container" aria-hidden="true"></div>
+
+    <div class="cake-container">
+      <div
+        class="candles-container"
+        data-interactive="true"
+        data-system="decimal"
+      >
+        <form>
+          <input type="text" />
+          <button class="decrement">
+            <span>&minus;</span>
+          </button>
+          <button class="increment">
+            <span>&plus;</span>
+          </button>
+        </form>
+        <div class="candle" data-number="1" data-status="on"></div>
+        <div class="candle" data-number="2" data-status="on"></div>
+        <div class="candle" data-number="2" data-status="on"></div>
+      </div>
+      <div class="connectors-container">
+        <canvas class="connectors"></canvas>
+      </div>
+      <div class="labels-container">
+        <div class="label" data-status="on">64</div>
+        <div class="label" data-status="off">32</div>
+        <div class="label" data-status="on">16</div>
+        <div class="label" data-status="off">8</div>
+        <div class="label" data-status="on">4</div>
+        <div class="label" data-status="off">2</div>
+        <div class="label" data-status="on">1</div>
+      </div>
+      <div
+        class="candles-container"
+        data-interactive="false"
+        data-system="binary"
+      >
+        <div class="candle" data-status="on"></div>
+        <div class="candle" data-status="off"></div>
+        <div class="candle" data-status="on"></div>
+        <div class="candle" data-status="off"></div>
+        <div class="candle" data-status="on"></div>
+        <div class="candle" data-status="off"></div>
+        <div class="candle" data-status="on"></div>
+      </div>
+      <div class="cake">
+        <div class="strawberries">
+          <div class="strawberry" data-eaten="0"></div>
+          <div class="strawberry" data-eaten="1"></div>
+          <div class="strawberry" data-eaten="2"></div>
+          <div class="strawberry" data-eaten="0"></div>
+          <div class="strawberry" data-eaten="1"></div>
+          <div class="strawberry" data-eaten="2"></div>
+          <div class="strawberry" data-eaten="0"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
