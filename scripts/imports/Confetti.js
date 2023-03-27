@@ -43,6 +43,6 @@ export default class Confetti {
       `;
     }
 
-    this.element.insertAdjacentHTML("beforeend", markup);
+    this.element.innerHTML = markup;
   }
 }
