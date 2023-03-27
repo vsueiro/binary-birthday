@@ -2,3 +2,39 @@
 @import "./candles.css";
 @import "./labels.css";
 @import "./connectors.css";
+
+.cake-container {
+  width: calc(256 * var(--px));
+  height: calc(320 * var(--px));
+  background: pink;
+}
+
+.cake {
+  width: calc(256 * var(--px));
+  height: calc(96 * var(--px));
+  background: lightblue;
+}
+
+.candles-container,
+.candles-container form {
+  width: calc(256 * var(--px));
+  height: calc(64 * var(--px));
+  background: palegoldenrod;
+}
+
+.labels-container {
+  width: calc(256 * var(--px));
+  height: calc(48 * var(--px));
+  background: lavender;
+}
+
+.connectors-container {
+  width: calc(256 * var(--px));
+  height: calc(48 * var(--px));
+}
+
+.connectors {
+  width: calc(256 * var(--px));
+  height: calc(48 * var(--px));
+  background: purple;
+}

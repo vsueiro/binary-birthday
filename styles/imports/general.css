@@ -1,7 +1,6 @@
 body {
   background: RebeccaPurple;
   color: Lavender;
-  margin: 16px;
   text-shadow: calc(2 * var(--px)) calc(2 * var(--px)) Indigo;
 }
 
