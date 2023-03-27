@@ -8,58 +8,6 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <section class="intro">
-      <h1>Binary Birthday</h1>
-
-      <p class="tagline">Light up your candles the smart way</p>
-
-      <p>
-        Why spend money on fancy numbered candles if you can use simple ones to
-        represent your age?
-      </p>
-      <p>
-        Calculate how many candles you’ll need – and which ones you actually
-        need to light up!
-      </p>
-    </section>
-
-    <form>
-      <label for="age">
-        <span>What age will you celebrate?</span>
-      </label>
-
-      <div class="age-container">
-        <button type="button" class="minus" data-step="-1">&minus;</button>
-        <div class="birthday-cake">
-          <div class="age-input">
-            <input
-              type="number"
-              inputmode="numeric"
-              min="0"
-              max="127"
-              placeholder="21"
-              autocomplete="off"
-              value="21"
-              id="age"
-              name="age"
-            />
-            <div class="age-display"></div>
-          </div>
-          <div class="cake"></div>
-        </div>
-        <button type="button" class="plus" data-step="+1">&plus;</button>
-      </div>
-
-      <button type="submit">Convert to binary candles</button>
-    </form>
-
-    <section class="results">
-      <div class="description"></div>
-      <button onclick="alert('This would begin explanation…')">
-        Wait… What?
-      </button>
-    </section>
-
     <div class="confetti" aria-hidden="true"></div>
   </body>
 </html>

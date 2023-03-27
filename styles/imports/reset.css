@@ -1,25 +1,33 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+input,
+button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 button {
   all: unset;
   touch-action: none;
-  -webkit-touch-callout: none; /* Safari */
-  -webkit-user-select: none; /* Chrome */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
 }

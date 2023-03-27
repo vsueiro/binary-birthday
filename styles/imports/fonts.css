@@ -1,18 +1,16 @@
 @font-face {
+  font-display: block;
   font-family: "SH Pinscher";
   src: url(../../fonts/SHPinscher-Regular.woff2);
-  font-display: block;
 }
 
-body,
-input,
-button {
-  font-size: 25px;
-  line-height: 1.25;
+body {
   font-family: "SH Pinscher", sans-serif;
+  font-size: calc(25 * var(--px));
+  line-height: 1.25;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: calc(50 * var(--px));
   line-height: 1;
 }
