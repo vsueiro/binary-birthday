@@ -7,10 +7,10 @@ new Confetti(".confetti-container");
 new Cake(".cake-container");
 
 new Preloader(
-  "./media/candle-number-9.png",
-  "./media/wick-1.png",
+  "./media/button-minus.png",
+  "./media/button-plus.png",
+  "./media/cake-fill.png",
   "./media/cake-outline.png",
-  "./media/cake.png",
   "./media/candle-number-0.png",
   "./media/candle-number-1.png",
   "./media/candle-number-2.png",
@@ -21,7 +21,13 @@ new Preloader(
   "./media/candle-number-7.png",
   "./media/candle-number-8.png",
   "./media/candle-number-9.png",
-  "./media/stick-0.png",
-  "./media/stick-1.png",
-  "./media/wick-0.png"
+  "./media/candle-stick.png",
+  "./media/candle-wick-0.png",
+  "./media/candle-wick-1.png",
+  "./media/strawberry-0.png",
+  "./media/strawberry-1-outline.png",
+  "./media/strawberry-1.png",
+  "./media/strawberry-2-outline.png",
+  "./media/strawberry-2.png",
+  "./media/strawberry-0-outline.png"
 );
