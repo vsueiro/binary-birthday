@@ -22,7 +22,7 @@
   }
 }
 
-.confetti {
+.confetti-container {
   align-items: center;
   display: flex;
   height: 100lvh;
@@ -36,7 +36,7 @@
   z-index: -1;
 }
 
-.symbol-track {
+.confetti-track {
   align-items: end;
   animation: fall 10s infinite ease-in;
   display: flex;
@@ -45,7 +45,7 @@
   width: calc(16 * var(--px));
 }
 
-.symbol {
+.confetti {
   align-items: center;
   animation: rotate-and-fade 10s infinite linear;
   aspect-ratio: 1;

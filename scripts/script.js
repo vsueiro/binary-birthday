@@ -1,7 +1,7 @@
 import Preloader from "./imports/Preloader.js";
 import Confetti from "./imports/Confetti.js";
 
-new Confetti(".confetti");
+new Confetti(".confetti-container");
 
 new Preloader(
   "./media/candle-number-9.png",

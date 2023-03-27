@@ -32,10 +32,10 @@ export default class Confetti {
 
       markup += `
         <div
-          class="symbol-track"
+          class="confetti-track"
           style="animation-delay: ${delay}s; animation-duration: ${duration}s">
           <div
-            class="symbol"
+            class="confetti"
             style="animation-delay: ${delay}s; animation-duration: ${duration}s">
               ${symbol}
           </div>
