@@ -52,7 +52,7 @@ export default class BirthdayCake {
 
     this.update();
   }
-  update() {
+  update(options) {
     this.connectors.update(this.binary);
     this.candlesBinary.update(this.binary);
     this.labels.update(this.binary);
