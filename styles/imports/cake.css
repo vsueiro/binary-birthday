@@ -1,49 +1,20 @@
 @import "./strawberries.css";
 @import "./candles.css";
+@import "./form.css";
 @import "./labels.css";
 @import "./connectors.css";
 
 .cake-container {
-  background: pink;
   height: calc(320 * var(--px));
   width: calc(256 * var(--px));
 }
 
 .cake {
-  background: lightblue;
+  background-image: url(../../media/cake.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   height: calc(96 * var(--px));
   position: relative;
   width: calc(256 * var(--px));
-}
-
-.strawberries {
-  background: HotPink;
-  bottom: calc(8 * var(--px));
-  height: calc(20 * var(--px));
-  position: absolute;
-  width: calc(256 * var(--px));
-}
-
-.candles-container,
-.candles-container form {
-  background: palegoldenrod;
-  height: calc(64 * var(--px));
-  width: calc(256 * var(--px));
-}
-
-.labels-container {
-  background: lavender;
-  height: calc(48 * var(--px));
-  width: calc(256 * var(--px));
-}
-
-.connectors-container {
-  height: calc(48 * var(--px));
-  width: calc(256 * var(--px));
-}
-
-.connectors {
-  background: purple;
-  height: calc(48 * var(--px));
-  width: calc(256 * var(--px));
+  filter: drop-shadow(calc(4 * var(--px)) calc(4 * var(--px)) 0 Indigo);
 }

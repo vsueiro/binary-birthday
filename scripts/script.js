@@ -9,7 +9,7 @@ new Cake(".cake-container");
 new Preloader(
   "./media/button-minus.png",
   "./media/button-plus.png",
-  "./media/cake-fill.png",
+  "./media/cake.png",
   "./media/cake-outline.png",
   "./media/candle-number-0.png",
   "./media/candle-number-1.png",

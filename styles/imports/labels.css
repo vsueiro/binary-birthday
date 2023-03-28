@@ -1,0 +1,22 @@
+.labels-container {
+  display: flex;
+  justify-content: center;
+  height: calc(48 * var(--px));
+  width: calc(256 * var(--px));
+}
+
+.labels-container .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(32 * var(--px));
+  height: calc(48 * var(--px));
+  font-variant: small-caps;
+  padding-bottom: 0.25em;
+  text-shadow: none;
+  color: Indigo;
+}
+
+.labels-container .label[data-status="on"] {
+  color: Coral;
+}

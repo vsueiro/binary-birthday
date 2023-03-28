@@ -4,27 +4,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
+  font-weight: normal;
 }
 
 input,
 button {
+  all: unset;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 button {
-  all: unset;
   touch-action: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;

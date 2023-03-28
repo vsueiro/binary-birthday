@@ -11,3 +11,10 @@ body {
 ::selection {
   background: rgba(64, 224, 208, 0.25); /* Turquoise */
 }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

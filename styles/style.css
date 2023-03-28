@@ -1,6 +1,8 @@
 @import "./imports/reset.css";
+@import "./imports/screen-reader.css";
 @import "./imports/variables.css";
 @import "./imports/general.css";
 @import "./imports/fonts.css";
+@import "./imports/buttons.css";
 @import "./imports/confetti.css";
 @import "./imports/cake.css";

@@ -1,0 +1,77 @@
+.candles-container form {
+  bottom: 0;
+  display: flex;
+  height: calc(64 * var(--px));
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(256 * var(--px));
+}
+
+.candles-container button:hover {
+  cursor: pointer;
+  /* filter: drop-shadow(calc(5 * var(--px)) calc(5 * var(--px)) 0 Indigo); */
+  /* transform: translate(calc(-1 * var(--px)), calc(-1 * var(--px))); */
+}
+
+.candles-container button:active {
+  filter: drop-shadow(calc(3 * var(--px)) calc(3 * var(--px)) 0 Indigo);
+  transform: translate(calc(1 * var(--px)), calc(1 * var(--px)));
+}
+
+.candles-container button::before,
+.candles-container button::after {
+  background: Indigo;
+  content: "";
+  display: flex;
+  height: calc(4 * var(--px));
+  left: 50%;
+  margin-left: calc(-6 * var(--px));
+  margin-top: calc(-2 * var(--px));
+  position: absolute;
+  top: 50%;
+  width: calc(12 * var(--px));
+}
+
+.candles-container button.decrement {
+  bottom: calc(8 * var(--px));
+  left: calc(12 * var(--px));
+  position: absolute;
+}
+
+.candles-container button.decrement::after {
+  display: none;
+}
+
+.candles-container button.increment::after {
+  transform: rotate(90deg);
+}
+
+.candles-container button.increment {
+  bottom: calc(8 * var(--px));
+  position: absolute;
+  right: calc(12 * var(--px));
+}
+
+.candles-container input {
+  border: 4px dashed transparent;
+  caret-color: DeepPink;
+  color: red;
+  color: transparent;
+  font-size: calc(50 * var(--px));
+  font-variant-numeric: tabular-nums;
+  height: calc(calc(25 * var(--px)) + calc(64 * var(--px)));
+  letter-spacing: 0;
+  letter-spacing: 0.28em;
+  line-height: 0;
+  padding-left: 0.32em;
+  padding-top: calc(12.5 * var(--px));
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  top: calc(-6.25 * var(--px));
+  width: calc(32 * 4 * var(--px));
+  z-index: 1;
+}
