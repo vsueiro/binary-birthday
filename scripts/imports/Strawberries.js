@@ -3,6 +3,7 @@ export class Strawberry {
     this.eaten = 0;
     this.respawn = 4000;
     this.limit = 2;
+    this.timeout;
 
     this.setup();
   }
@@ -13,8 +14,10 @@ export class Strawberry {
       this.update();
     }
 
-    if (this.eaten === this.limit) {
-      setTimeout(() => {
+    if (this.eaten > 0) {
+      clearTimeout(this.timeout);
+
+      this.timeout = setTimeout(() => {
         this.eaten = 0;
         this.update();
       }, this.respawn);
