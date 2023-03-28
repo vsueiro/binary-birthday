@@ -10,14 +10,26 @@
   <body>
     <div class="confetti-container" aria-hidden="true"></div>
 
-    <div class="cake-container">
+    <div class="birthday-cake-container"></div>
+
+    <!--
+    <div class="birthday-cake">
       <div
-        class="candles-container"
+        class="candles"
         data-interactive="true"
         data-system="decimal"
       >
         <form>
-          <input type="text" />
+          <input
+            type="number"
+            inputmode="numeric"
+            min="0"
+            max="127"
+            placeholder="21"
+            autocomplete="off"
+            value="21"
+            name="age"
+          />
           <button class="decrement">
             <span class="screen-reader">&minus;</span>
           </button>
@@ -25,12 +37,13 @@
             <span class="screen-reader">&plus;</span>
           </button>
         </form>
+
         <div class="candle" data-number="1" data-status="on"></div>
         <div class="candle" data-number="2" data-status="on"></div>
         <div class="candle" data-number="7" data-status="on"></div>
       </div>
-      <div class="connectors-container"></div>
-      <div class="labels-container">
+      <div class="connectors"></div>
+      <div class="labels">
         <div class="label" data-status="on">64</div>
         <div class="label" data-status="off">32</div>
         <div class="label" data-status="on">16</div>
@@ -40,7 +53,7 @@
         <div class="label" data-status="on">1</div>
       </div>
       <div
-        class="candles-container"
+        class="candles"
         data-interactive="false"
         data-system="binary"
       >
@@ -64,5 +77,6 @@
         </div>
       </div>
     </div>
+    -->
   </body>
 </html>

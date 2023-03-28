@@ -1,6 +1,6 @@
 export default class Connectors {
-  constructor(container, binary) {
-    this.container = document.querySelector(container);
+  constructor(container, binary = "0") {
+    this.container = container;
     this.binary = binary;
     this.size = 32;
     this.width = 256;
@@ -17,6 +17,8 @@ export default class Connectors {
   }
 
   drawTracks() {
+    console.log(this.binary);
+
     this.context.strokeStyle = "Indigo";
 
     for (let i = 0; i < this.binary.length; i++) {

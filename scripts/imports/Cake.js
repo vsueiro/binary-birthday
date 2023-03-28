@@ -1,14 +1,15 @@
-import Connectors from "./Connectors.js";
+import Strawberries from "./Strawberries.js";
 
 export default class Cake {
   constructor(container, options) {
-    this.container = document.querySelector(container);
+    this.container = container;
 
-    this.setup();
-  }
-  setup() {
-    const binary = "1010101";
-    this.connectors = new Connectors(".connectors-container");
-    this.connectors.update(binary);
+    this.defaults = {};
+
+    this.options = Object.assign({}, this.defaults, options);
+
+    this.strawberries = new Strawberries(7);
+
+    this.container.append(this.strawberries.element);
   }
 }
