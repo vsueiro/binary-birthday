@@ -7,6 +7,7 @@ export default class BirthdayCake {
   constructor(container, options) {
     this.defaults = {
       age: 21,
+      minCandles: 7,
     };
 
     this.options = Object.assign({}, this.defaults, options);
@@ -16,13 +17,17 @@ export default class BirthdayCake {
     this.setup();
   }
   get binary() {
-    return this.options.age.toString(2);
+    const string = this.options.age.toString(2);
+    const paddedString = string.padStart(this.options.minCandles, "0");
+    return paddedString;
   }
-  setup() {
-    this.containers = {};
 
-    this.containers.candlesDecimal = document.createElement("div");
-    this.containers.candlesDecimal.classList.add("candles");
+  createContainers() {
+    this.containers = {};
+    this.containers.candles = {};
+
+    this.containers.candles.decimal = document.createElement("div");
+    this.containers.candles.decimal.classList.add("candles");
 
     this.containers.connectors = document.createElement("div");
     this.containers.connectors.classList.add("connectors");
@@ -30,42 +35,44 @@ export default class BirthdayCake {
     this.containers.labels = document.createElement("div");
     this.containers.labels.classList.add("labels");
 
-    this.containers.candlesBinary = document.createElement("div");
-    this.containers.candlesBinary.classList.add("candles");
+    this.containers.candles.binary = document.createElement("div");
+    this.containers.candles.binary.classList.add("candles");
 
     this.containers.cake = document.createElement("div");
     this.containers.cake.classList.add("cake");
 
     this.container.append(
-      this.containers.candlesDecimal,
+      this.containers.candles.decimal,
       this.containers.connectors,
       this.containers.labels,
-      this.containers.candlesBinary,
+      this.containers.candles.binary,
       this.containers.cake
     );
+  }
 
-    this.candlesDecimal = new Candles(this.containers.candlesDecimal);
+  setup() {
+    this.createContainers();
 
-    this.connectors = new Connectors(this.containers.connectors);
+    this.candles = {};
 
-    this.labels = new Labels(this.containers.labels);
-
-    this.candlesBinary = new Candles(this.containers.candlesBinary, {
-      callback: this.handleCandleClick,
-    });
-
-    this.cake = new Cake(this.containers.cake);
+    this.candles.decimal = new Candles(this.containers.candles.decimal, this);
+    this.connectors = new Connectors(this.containers.connectors, this);
+    this.labels = new Labels(this.containers.labels, this);
+    this.candles.binary = new Candles(this.containers.candles.binary, this);
+    this.cake = new Cake(this.containers.cake, this);
 
     this.update();
   }
 
-  handleCandleClick() {
-    console.log("Update Birthday Cake based on new candles configuration");
+  getAgeFromCandles() {
+    const binary = this.candles.binary.string;
+    const age = parseInt(binary, 2);
+    this.options.age = age;
   }
 
-  update(options) {
+  update() {
     this.connectors.update(this.binary);
-    this.candlesBinary.update(this.binary);
+    this.candles.binary.update(this.binary);
     this.labels.update(this.binary);
   }
 }

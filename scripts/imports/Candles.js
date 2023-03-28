@@ -1,14 +1,12 @@
 import Candle from "./Candle.js";
 
 export default class Candles {
-  constructor(container, options) {
+  constructor(container, birthdayCake, options) {
     this.container = container;
+    this.birthdayCake = birthdayCake;
 
     this.defaults = {
       system: "binary",
-      callback: () => {
-        console.log("Candles callback");
-      },
     };
 
     this.options = Object.assign({}, this.defaults, options);
@@ -16,8 +14,19 @@ export default class Candles {
     this.setup();
   }
 
+  get string() {
+    let digits = "";
+
+    for (let candle of this.list) {
+      digits += candle.digit;
+    }
+
+    return digits;
+  }
+
   setup() {
-    this.digits = "0";
+    this.list = [];
+    this.callback = function () {};
   }
 
   clear() {
@@ -32,7 +41,7 @@ export default class Candles {
       this.digits = digits || this.digits;
 
       for (let digit of this.digits) {
-        const candle = new Candle(digit, this.options.callback);
+        const candle = new Candle(digit, this.birthdayCake);
         this.list.push(candle);
 
         this.container.append(candle.element);

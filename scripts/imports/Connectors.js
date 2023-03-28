@@ -1,6 +1,7 @@
 export default class Connectors {
-  constructor(container, binary = "0") {
+  constructor(container, birthdayCake, binary = "0") {
     this.container = container;
+    this.birthdayCake = birthdayCake;
     this.binary = binary;
     this.size = 32;
     this.width = 256;

@@ -1,10 +1,10 @@
 export default class Candle {
-  constructor(digit, callback) {
+  constructor(digit, birthdayCake) {
+    this.digit = digit;
+    this.birthdayCake = birthdayCake;
+
     this.element = document.createElement("div");
     this.element.classList.add("candle");
-    this.callback = callback;
-
-    this.digit = digit;
 
     this.setup();
   }
@@ -22,7 +22,9 @@ export default class Candle {
 
     this.element.addEventListener("click", () => {
       this.toggleStatus();
-      this.callback();
+
+      this.birthdayCake.getAgeFromCandles();
+      this.birthdayCake.update();
     });
   }
 
