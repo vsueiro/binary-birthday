@@ -1,11 +1,11 @@
-.labels-container {
+.labels {
   display: flex;
   justify-content: center;
   height: calc(48 * var(--px));
   width: calc(256 * var(--px));
 }
 
-.labels-container .label {
+.labels .label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,6 @@
   color: Indigo;
 }
 
-.labels-container .label[data-status="on"] {
+.labels .label[data-status="on"] {
   color: Coral;
 }

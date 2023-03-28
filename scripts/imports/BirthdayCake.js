@@ -52,5 +52,6 @@ export default class BirthdayCake {
   }
   update() {
     this.connectors.update(this.binary);
+    this.candlesBinary.update(this.binary);
   }
 }

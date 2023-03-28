@@ -31,10 +31,10 @@ export default class Confetti {
 
       markup += `
         <div
-          class="confetti-track"
+          class="particle-track"
           style="animation-delay: ${delay}s; animation-duration: ${duration}s">
           <div
-            class="confetti"
+            class="particle"
             style="animation-delay: ${delay}s; animation-duration: ${duration}s">
               ${symbol}
           </div>

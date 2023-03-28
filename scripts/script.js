@@ -2,9 +2,11 @@ import Preloader from "./imports/Preloader.js";
 import Confetti from "./imports/Confetti.js";
 import BirthdayCake from "./imports/BirthdayCake.js";
 
-new Confetti(".confetti-container");
+new Confetti(".confetti");
 
-new BirthdayCake(".birthday-cake-container");
+const birthdayCake = new BirthdayCake(".birthday-cake");
+
+birthdayCake.update();
 
 new Preloader(
   "./media/button-minus.png",
