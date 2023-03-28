@@ -1,6 +1,6 @@
 export default class Confetti {
   constructor(container) {
-    this.element = document.querySelector(container);
+    this.container = document.querySelector(container);
     this.amount = 256;
     this.symbols = "○●□■△▲";
     this.create();
@@ -42,6 +42,6 @@ export default class Confetti {
       `;
     }
 
-    this.element.innerHTML = markup;
+    this.container.innerHTML = markup;
   }
 }

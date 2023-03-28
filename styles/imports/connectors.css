@@ -1,10 +1,13 @@
 .connectors-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
   height: calc(48 * var(--px));
   width: calc(256 * var(--px));
 }
 
-.connectors {
-  background: purple;
-  height: calc(48 * var(--px));
+.connectors-container canvas {
+  height: calc(32 * var(--px));
   width: calc(256 * var(--px));
+  image-rendering: pixelated;
 }
