@@ -7,7 +7,7 @@ export class Strawberry {
     this.setup();
   }
   eat() {
-    if (this.eaten <= this.limit) {
+    if (this.eaten < this.limit) {
       this.eaten++;
       console.log(this);
       this.update();
