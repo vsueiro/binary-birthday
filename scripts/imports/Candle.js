@@ -23,7 +23,7 @@ export default class Candle {
     this.element.addEventListener("click", () => {
       this.toggleStatus();
 
-      this.birthdayCake.getAgeFromCandles();
+      this.birthdayCake.setAgeFromCandles();
       this.birthdayCake.update();
     });
   }

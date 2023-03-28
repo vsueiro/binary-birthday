@@ -17,7 +17,7 @@ export default class BirthdayCake {
     this.setup();
   }
   get binary() {
-    const string = this.options.age.toString(2);
+    const string = this.age.toString(2);
     const paddedString = string.padStart(this.options.minCandles, "0");
     return paddedString;
   }
@@ -51,6 +51,8 @@ export default class BirthdayCake {
   }
 
   setup() {
+    this.age = this.options.age;
+
     this.createContainers();
 
     this.candles = {};
@@ -64,15 +66,17 @@ export default class BirthdayCake {
     this.update();
   }
 
-  getAgeFromCandles() {
+  setAgeFromCandles() {
     const binary = this.candles.binary.string;
     const age = parseInt(binary, 2);
-    this.options.age = age;
+    this.age = age;
   }
 
   update() {
     this.connectors.update(this.binary);
     this.candles.binary.update(this.binary);
     this.labels.update(this.binary);
+
+    console.log(this.age);
   }
 }
