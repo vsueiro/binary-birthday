@@ -6,6 +6,9 @@ export default class Candles {
 
     this.defaults = {
       system: "binary",
+      callback: () => {
+        console.log("Candles callback");
+      },
     };
 
     this.options = Object.assign({}, this.defaults, options);
@@ -29,7 +32,7 @@ export default class Candles {
       this.digits = digits || this.digits;
 
       for (let digit of this.digits) {
-        const candle = new Candle(digit);
+        const candle = new Candle(digit, this.options.callback);
         this.list.push(candle);
 
         this.container.append(candle.element);

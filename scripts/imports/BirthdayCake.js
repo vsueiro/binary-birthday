@@ -45,13 +45,24 @@ export default class BirthdayCake {
     );
 
     this.candlesDecimal = new Candles(this.containers.candlesDecimal);
+
     this.connectors = new Connectors(this.containers.connectors);
+
     this.labels = new Labels(this.containers.labels);
-    this.candlesBinary = new Candles(this.containers.candlesBinary);
+
+    this.candlesBinary = new Candles(this.containers.candlesBinary, {
+      callback: this.handleCandleClick,
+    });
+
     this.cake = new Cake(this.containers.cake);
 
     this.update();
   }
+
+  handleCandleClick() {
+    console.log("Update Birthday Cake based on new candles configuration");
+  }
+
   update(options) {
     this.connectors.update(this.binary);
     this.candlesBinary.update(this.binary);

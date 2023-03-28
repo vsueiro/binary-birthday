@@ -1,7 +1,8 @@
 export default class Candle {
-  constructor(digit) {
+  constructor(digit, callback) {
     this.element = document.createElement("div");
     this.element.classList.add("candle");
+    this.callback = callback;
 
     this.digit = digit;
 
@@ -21,6 +22,7 @@ export default class Candle {
 
     this.element.addEventListener("click", () => {
       this.toggleStatus();
+      this.callback();
     });
   }
 
