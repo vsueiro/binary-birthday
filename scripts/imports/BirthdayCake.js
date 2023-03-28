@@ -49,9 +49,12 @@ export default class BirthdayCake {
     this.labels = new Labels(this.containers.labels);
     this.candlesBinary = new Candles(this.containers.candlesBinary);
     this.cake = new Cake(this.containers.cake);
+
+    this.update();
   }
   update() {
     this.connectors.update(this.binary);
     this.candlesBinary.update(this.binary);
+    this.labels.update(this.binary);
   }
 }

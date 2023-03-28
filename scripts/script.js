@@ -6,8 +6,6 @@ new Confetti(".confetti");
 
 const birthdayCake = new BirthdayCake(".birthday-cake");
 
-birthdayCake.update();
-
 new Preloader(
   "./media/button-minus.png",
   "./media/button-plus.png",
