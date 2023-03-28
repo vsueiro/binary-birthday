@@ -9,6 +9,16 @@ export default class Connectors {
 
     this.setup();
   }
+  setup() {
+    this.canvas = document.createElement("canvas");
+    this.canvas.width = this.width;
+    this.canvas.height = this.height;
+    this.context = this.canvas.getContext("2d");
+    this.context.lineWidth = this.thickness;
+    this.context.lineCap = "square";
+
+    this.container.append(this.canvas);
+  }
   update(binary) {
     if (binary) this.binary = binary;
 
@@ -17,8 +27,6 @@ export default class Connectors {
   }
 
   drawTracks() {
-    console.log(this.binary);
-
     this.context.strokeStyle = "Indigo";
 
     for (let i = 0; i < this.binary.length; i++) {
@@ -49,8 +57,9 @@ export default class Connectors {
     const leftBound = this.width / 2 - candlesWidth / 2;
     const offset = this.size / 2;
     const initial = leftBound + offset;
+    const additional = index * this.size;
 
-    return initial * (index + 1);
+    return initial + additional;
   }
 
   drawLine(x1, y1, x2, y2) {
@@ -69,15 +78,5 @@ export default class Connectors {
         this.drawTrack(i);
       }
     }
-  }
-  setup() {
-    this.canvas = document.createElement("canvas");
-    this.canvas.width = this.width;
-    this.canvas.height = this.height;
-    this.context = this.canvas.getContext("2d");
-    this.context.lineWidth = this.thickness;
-    this.context.lineCap = "square";
-
-    this.container.append(this.canvas);
   }
 }
