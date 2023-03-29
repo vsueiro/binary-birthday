@@ -6,10 +6,6 @@ export default class DecimalCandles {
     this.container = container;
     this.birthdayCake = birthdayCake;
 
-    this.defaults = {
-      form: true,
-    };
-
     this.options = Object.assign({}, this.defaults, options);
 
     this.form = new Form(this.container, this.birthdayCake);
@@ -42,5 +38,13 @@ export default class DecimalCandles {
 
       this.container.append(candle.element);
     }
+  }
+
+  hide() {
+    this.container.style.display = "none";
+  }
+
+  show() {
+    this.container.style.display = "flex";
   }
 }

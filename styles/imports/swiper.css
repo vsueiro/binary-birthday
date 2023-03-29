@@ -1,0 +1,51 @@
+.swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: end;
+}
+
+.swiper-buttons {
+  bottom: 0;
+  display: flex;
+  gap: calc(32 * var(--px));
+  justify-content: center;
+  margin-bottom: calc(16 * var(--px));
+  position: absolute;
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  bottom: initial;
+  height: 100%;
+  height: calc(48 * var(--px));
+  margin: 0;
+  max-width: calc(234 * var(--px));
+  overflow: hidden;
+  position: relative;
+  top: initial;
+  user-select: none;
+  width: calc(50% - calc(18 * var(--px)));
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: Indigo;
+  content: "←";
+  font-family: inherit;
+  font-size: calc(37.5 * var(--px));
+  line-height: 1;
+  margin-top: 0.12em;
+  text-shadow: none;
+}
+
+.swiper-button-next::after {
+  content: "→";
+}

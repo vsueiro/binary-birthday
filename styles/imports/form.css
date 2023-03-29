@@ -10,15 +10,6 @@
   width: calc(256 * var(--px));
 }
 
-.candles button:hover {
-  cursor: pointer;
-}
-
-.candles button:active {
-  filter: drop-shadow(calc(3 * var(--px)) calc(3 * var(--px)) 0 Indigo);
-  transform: translate(calc(1 * var(--px)), calc(1 * var(--px)));
-}
-
 .candles button::before,
 .candles button::after {
   background: Indigo;

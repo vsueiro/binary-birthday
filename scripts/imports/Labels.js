@@ -24,4 +24,12 @@ export default class Labels {
       this.container.append(label.element);
     }
   }
+
+  hide() {
+    this.container.style.display = "none";
+  }
+
+  show() {
+    this.container.style.display = "flex";
+  }
 }
