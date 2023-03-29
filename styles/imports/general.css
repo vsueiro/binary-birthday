@@ -15,6 +15,10 @@ body {
 body {
   align-items: center;
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+}
+
+*:focus:not(:hover) {
+  outline: calc(2 * var(--px)) dashed Turquoise;
 }

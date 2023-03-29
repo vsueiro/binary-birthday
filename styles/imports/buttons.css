@@ -1,4 +1,5 @@
-button {
+button,
+.button {
   align-self: start;
   background-clip: padding-box;
   background-color: HotPink;
@@ -16,4 +17,15 @@ button {
   min-width: calc(30 * var(--px));
   padding: 0 calc(8 * var(--px)) calc(4 * var(--px));
   position: relative;
+}
+
+button:hover,
+.button:hover {
+  cursor: pointer;
+}
+
+button:active,
+.button:active {
+  filter: drop-shadow(calc(3 * var(--px)) calc(3 * var(--px)) 0 Indigo);
+  transform: translate(calc(1 * var(--px)), calc(1 * var(--px)));
 }
