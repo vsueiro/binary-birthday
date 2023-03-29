@@ -2,6 +2,7 @@ export default class Form {
   constructor(container, birthdayCake, options) {
     this.container = container;
     this.birthdayCake = birthdayCake;
+    this.isFirstFocus = true;
 
     this.defaults = {};
 
@@ -57,9 +58,20 @@ export default class Form {
       event.preventDefault();
     });
 
+    this.input.addEventListener(
+      "focus",
+      () => {
+        this.input.value = 0;
+
+        this.constrainInput();
+        this.birthdayCake.setAgeFromInput();
+        this.birthdayCake.update();
+      },
+      { once: true }
+    );
+
     this.input.addEventListener("input", () => {
       this.constrainInput();
-
       this.birthdayCake.setAgeFromInput();
       this.birthdayCake.update();
     });
@@ -69,7 +81,6 @@ export default class Form {
       this.input.value = value - 1;
 
       this.constrainInput();
-
       this.birthdayCake.setAgeFromInput();
       this.birthdayCake.update();
     });
@@ -79,7 +90,6 @@ export default class Form {
       this.input.value = value + 1;
 
       this.constrainInput();
-
       this.birthdayCake.setAgeFromInput();
       this.birthdayCake.update();
     });
