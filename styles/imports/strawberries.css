@@ -16,6 +16,10 @@
   background-size: 100%;
 }
 
+.strawberry:active {
+  transform: translateY(calc(-2 * var(--px)));
+}
+
 .strawberry[data-eaten="1"] {
   background-image: url(../../media/strawberry-1.png);
 }

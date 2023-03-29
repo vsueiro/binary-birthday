@@ -16,6 +16,10 @@
   filter: drop-shadow(calc(4 * var(--px)) calc(4 * var(--px)) 0 Indigo);
 }
 
+.candle:active {
+  transform: translateY(calc(2 * var(--px)));
+}
+
 .candle[data-number="0"] {
   background-image: url(../../media/candle-number-0.png);
 }
