@@ -10,6 +10,7 @@ export default class Connectors {
 
     this.setup();
   }
+
   setup() {
     this.canvas = document.createElement("canvas");
     this.canvas.width = this.width;
@@ -20,6 +21,7 @@ export default class Connectors {
 
     this.container.append(this.canvas);
   }
+
   update(binary) {
     if (binary) this.binary = binary;
 
@@ -27,9 +29,11 @@ export default class Connectors {
     this.drawTracks();
     this.drawConnectors();
   }
+
   clear() {
     this.context.clearRect(0, 0, this.width, this.height);
   }
+
   drawTracks() {
     this.context.strokeStyle = "Indigo";
 

@@ -11,6 +11,7 @@ export default class Cake {
 
     this.setup();
   }
+
   setup() {
     this.strawberries = new Strawberries(7);
     this.container.append(this.strawberries.element);
