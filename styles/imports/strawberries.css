@@ -1,19 +1,19 @@
 .strawberries {
-  display: flex;
-  justify-content: center;
-  gap: calc(8 * var(--px));
   bottom: calc(8 * var(--px));
+  display: flex;
+  gap: calc(8 * var(--px));
   height: calc(20 * var(--px));
+  justify-content: center;
   position: absolute;
   width: calc(256 * var(--px));
 }
 
 .strawberry {
-  height: calc(20 * var(--px));
-  width: calc(24 * var(--px));
   background-image: url(../../media/strawberry-0.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  height: calc(20 * var(--px));
+  width: calc(24 * var(--px));
 }
 
 .strawberry:active {

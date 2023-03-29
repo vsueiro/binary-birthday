@@ -2,20 +2,20 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-weight: normal;
   margin: 0;
   padding: 0;
-  font-weight: normal;
 }
 
 input,
 button {
   all: unset;
+  box-sizing: border-box;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 button {
@@ -25,4 +25,16 @@ button {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

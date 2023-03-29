@@ -1,20 +1,20 @@
 .labels {
   display: flex;
-  justify-content: center;
   height: calc(48 * var(--px));
+  justify-content: center;
   width: calc(256 * var(--px));
 }
 
 .labels .label {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: calc(32 * var(--px));
-  height: calc(48 * var(--px));
+  color: Indigo;
+  display: flex;
   font-variant: small-caps;
+  height: calc(48 * var(--px));
+  justify-content: center;
   padding-bottom: 0.25em;
   text-shadow: none;
-  color: Indigo;
+  width: calc(32 * var(--px));
 }
 
 .labels .label[data-status="on"] {

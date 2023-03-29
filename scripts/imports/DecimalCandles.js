@@ -6,9 +6,13 @@ export default class DecimalCandles {
     this.container = container;
     this.birthdayCake = birthdayCake;
 
-    this.defaults = {};
+    this.defaults = {
+      form: true,
+    };
 
     this.options = Object.assign({}, this.defaults, options);
+
+    this.form = new Form(this.container, this.birthdayCake);
 
     this.setup();
   }
@@ -19,8 +23,10 @@ export default class DecimalCandles {
   }
 
   clear() {
+    for (let candle of this.list) {
+      candle.element.remove();
+    }
     this.list = [];
-    this.container.replaceChildren();
   }
 
   update(digits) {

@@ -35,21 +35,21 @@
   width: calc(12 * var(--px));
 }
 
-.candles button.decrement {
+.candles button.minus {
   bottom: calc(8 * var(--px));
   left: calc(12 * var(--px));
   position: absolute;
 }
 
-.candles button.decrement::after {
+.candles button.minus::after {
   display: none;
 }
 
-.candles button.increment::after {
+.candles button.plus::after {
   transform: rotate(90deg);
 }
 
-.candles button.increment {
+.candles button.plus {
   bottom: calc(8 * var(--px));
   position: absolute;
   right: calc(12 * var(--px));
@@ -58,7 +58,6 @@
 .candles input {
   border: 4px dashed transparent;
   caret-color: DeepPink;
-  color: red;
   color: transparent;
   font-size: calc(50 * var(--px));
   font-variant-numeric: tabular-nums;

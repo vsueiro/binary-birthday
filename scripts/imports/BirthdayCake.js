@@ -69,6 +69,12 @@ export default class BirthdayCake {
     this.update();
   }
 
+  setAgeFromInput() {
+    const decimal = this.candles.decimal.form.input.value;
+    const age = Number(decimal);
+    this.age = age;
+  }
+
   setAgeFromCandles() {
     const binary = this.candles.binary.string;
     const age = parseInt(binary, 2);

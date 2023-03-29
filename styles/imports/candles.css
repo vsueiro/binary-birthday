@@ -10,10 +10,10 @@
   background-image: url(../../media/candle-stick.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  filter: drop-shadow(calc(4 * var(--px)) calc(4 * var(--px)) 0 Indigo);
   height: calc(64 * var(--px));
   position: relative;
   width: calc(32 * var(--px));
-  filter: drop-shadow(calc(4 * var(--px)) calc(4 * var(--px)) 0 Indigo);
 }
 
 .candle:active {

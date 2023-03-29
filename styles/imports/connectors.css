@@ -1,13 +1,13 @@
 .connectors {
-  display: flex;
-  justify-content: center;
   align-items: end;
+  display: flex;
   height: calc(48 * var(--px));
+  justify-content: center;
   width: calc(256 * var(--px));
 }
 
 .connectors canvas {
   height: calc(32 * var(--px));
-  width: calc(256 * var(--px));
   image-rendering: pixelated;
+  width: calc(256 * var(--px));
 }

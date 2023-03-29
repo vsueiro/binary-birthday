@@ -23,10 +23,13 @@ export default class Connectors {
   update(binary) {
     if (binary) this.binary = binary;
 
+    this.clear();
     this.drawTracks();
     this.drawConnectors();
   }
-
+  clear() {
+    this.context.clearRect(0, 0, this.width, this.height);
+  }
   drawTracks() {
     this.context.strokeStyle = "Indigo";
 

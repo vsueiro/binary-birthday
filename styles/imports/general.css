@@ -13,8 +13,8 @@ body {
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
