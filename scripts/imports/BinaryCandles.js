@@ -1,13 +1,11 @@
-import Candle from "./Candle.js";
+import BinaryCandle from "./BinaryCandle.js";
 
-export default class Candles {
+export default class BinaryCandles {
   constructor(container, birthdayCake, options) {
     this.container = container;
     this.birthdayCake = birthdayCake;
 
-    this.defaults = {
-      system: "binary",
-    };
+    this.defaults = {};
 
     this.options = Object.assign({}, this.defaults, options);
 
@@ -37,15 +35,13 @@ export default class Candles {
   update(digits) {
     this.clear();
 
-    if (this.options.system === "binary") {
-      this.digits = digits || this.digits;
+    this.digits = digits || this.digits;
 
-      for (let digit of this.digits) {
-        const candle = new Candle(digit, this.birthdayCake);
-        this.list.push(candle);
+    for (let digit of this.digits) {
+      const candle = new BinaryCandle(digit, this.birthdayCake);
+      this.list.push(candle);
 
-        this.container.append(candle.element);
-      }
+      this.container.append(candle.element);
     }
   }
 }

@@ -1,4 +1,4 @@
-export default class Candle {
+export default class BinaryCandle {
   constructor(digit, birthdayCake) {
     this.digit = digit;
     this.birthdayCake = birthdayCake;
