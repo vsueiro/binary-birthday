@@ -102,4 +102,12 @@ export default class Form {
     this.container.append(this.element);
   }
   update() {}
+
+  hide() {
+    this.element.style.display = "none";
+  }
+
+  show() {
+    this.element.style.display = "flex";
+  }
 }

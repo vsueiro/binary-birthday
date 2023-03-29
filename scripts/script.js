@@ -23,6 +23,11 @@ const swiper = new Swiper(".swiper", {
   // speed: 0,
 });
 
+swiper.on("slideChange", function () {
+  const step = swiper.activeIndex;
+  birthdayCake.update(step);
+});
+
 new Preloader(
   "./media/button-minus.png",
   "./media/button-plus.png",

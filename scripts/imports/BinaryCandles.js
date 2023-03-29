@@ -44,4 +44,12 @@ export default class BinaryCandles {
       this.container.append(candle.element);
     }
   }
+
+  hide() {
+    this.container.style.display = "none";
+  }
+
+  show() {
+    this.container.style.display = "flex";
+  }
 }

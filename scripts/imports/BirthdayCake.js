@@ -7,7 +7,7 @@ import Cake from "./Cake.js";
 export default class BirthdayCake {
   constructor(container, options) {
     this.defaults = {
-      age: 21,
+      age: 7,
       minCandles: 7,
     };
 
@@ -66,7 +66,7 @@ export default class BirthdayCake {
     this.candles.binary = new BinaryCandles(this.el.candles.binary, this);
     this.cake = new Cake(this.el.cake, this);
 
-    this.update();
+    this.update(0);
   }
 
   setAgeFromInput() {
@@ -81,7 +81,41 @@ export default class BirthdayCake {
     this.age = age;
   }
 
-  update() {
+  update(step) {
+    if (step === 0) {
+      this.age = 7;
+      this.options.minCandles = 0;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.hide();
+      this.candles.binary.hide();
+    } else if (step === 1) {
+      this.age = 7;
+      this.options.minCandles = 0;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.show();
+      this.connectors.hide();
+      this.labels.hide();
+      this.candles.binary.hide();
+    } else if (step === 2) {
+      this.age = 127;
+      this.options.minCandles = 0;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.hide();
+      this.candles.binary.show();
+    } else if (step === 3) {
+      this.age = 7;
+      this.options.minCandles = 0;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.hide();
+      this.candles.binary.show();
+    }
+
     this.candles.decimal.update(this.decimal);
     this.connectors.update(this.binary);
     this.labels.update(this.binary);

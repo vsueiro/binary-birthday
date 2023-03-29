@@ -87,4 +87,12 @@ export default class Connectors {
       }
     }
   }
+
+  hide() {
+    this.container.style.display = "none";
+  }
+
+  show() {
+    this.container.style.display = "flex";
+  }
 }

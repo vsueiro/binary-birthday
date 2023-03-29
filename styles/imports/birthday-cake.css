@@ -5,7 +5,8 @@
 @import "./connectors.css";
 
 .birthday-cake {
-  height: calc(320 * var(--px));
+  /* height: calc(320 * var(--px)); */
+  height: fit-content;
   width: calc(256 * var(--px));
 }
 
