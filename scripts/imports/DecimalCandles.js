@@ -34,6 +34,8 @@ export default class DecimalCandles {
 
     this.digits = digits || this.digits;
 
+    this.form.input.value = this.digits;
+
     for (let digit of this.digits) {
       const candle = new DecimalCandle(digit, this.birthdayCake);
       this.list.push(candle);

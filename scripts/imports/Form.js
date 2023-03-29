@@ -35,12 +35,51 @@ export default class Form {
     this.element.append(this.input, this.button.minus, this.button.plus);
   }
 
+  constrainInput() {
+    const min = Number(this.input.min);
+    const max = Number(this.input.max);
+
+    let value = Number(this.input.value);
+
+    if (value < min) {
+      value = min;
+    }
+
+    if (value > max) {
+      value = max;
+    }
+
+    this.input.value = value;
+  }
+
   addEventListeners() {
     this.element.addEventListener("submit", (event) => {
       event.preventDefault();
     });
 
     this.input.addEventListener("input", () => {
+      this.constrainInput();
+
+      this.birthdayCake.setAgeFromInput();
+      this.birthdayCake.update();
+    });
+
+    this.button.minus.addEventListener("click", () => {
+      const value = Number(this.input.value);
+      this.input.value = value - 1;
+
+      this.constrainInput();
+
+      this.birthdayCake.setAgeFromInput();
+      this.birthdayCake.update();
+    });
+
+    this.button.plus.addEventListener("click", () => {
+      const value = Number(this.input.value);
+      this.input.value = value + 1;
+
+      this.constrainInput();
+
       this.birthdayCake.setAgeFromInput();
       this.birthdayCake.update();
     });
