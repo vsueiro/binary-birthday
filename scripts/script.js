@@ -1,32 +1,11 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js";
-
 import Preloader from "./imports/Preloader.js";
 import Confetti from "./imports/Confetti.js";
 import BirthdayCake from "./imports/BirthdayCake.js";
+import Explainer from "./imports/Explainer.js";
 
 const confetti = new Confetti(".confetti");
 const birthdayCake = new BirthdayCake(".birthday-cake");
-
-const swiper = new Swiper(".swiper", {
-  centeredSlides: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  keyboard: {
-    enabled: true,
-  },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  // speed: 0,
-});
-
-swiper.on("slideChange", function () {
-  const step = swiper.activeIndex;
-  birthdayCake.update(step);
-});
+const explainer = new Explainer(".explainer", birthdayCake);
 
 new Preloader(
   "./media/button-minus.png",

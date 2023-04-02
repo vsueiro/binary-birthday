@@ -1,0 +1,7 @@
+.typer-char {
+  opacity: 0;
+}
+
+.typer-char.typed {
+  opacity: 1;
+}

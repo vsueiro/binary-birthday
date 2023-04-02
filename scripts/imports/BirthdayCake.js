@@ -65,8 +65,6 @@ export default class BirthdayCake {
     this.labels = new Labels(this.el.labels, this);
     this.candles.binary = new BinaryCandles(this.el.candles.binary, this);
     this.cake = new Cake(this.el.cake, this);
-
-    this.update(0);
   }
 
   setAgeFromInput() {
@@ -120,7 +118,5 @@ export default class BirthdayCake {
     this.connectors.update(this.binary);
     this.labels.update(this.binary);
     this.candles.binary.update(this.binary);
-
-    console.log(this.age);
   }
 }
