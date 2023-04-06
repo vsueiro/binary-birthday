@@ -113,6 +113,38 @@ export default class BirthdayCake {
       this.connectors.hide();
       this.labels.hide();
       this.candles.binary.show();
+    } else if (step === 4) {
+      this.age = 7;
+      this.options.minCandles = 0;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.show();
+      this.candles.binary.show();
+    } else if (step === 5) {
+      this.age = 7;
+      this.options.minCandles = 3;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.show();
+      this.connectors.show();
+      this.labels.show();
+      this.candles.binary.show();
+    } else if (step === 6) {
+      this.age = 15;
+      this.options.minCandles = 4;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.show();
+      this.candles.binary.show();
+    } else if (step === 7) {
+      this.age = 8;
+      this.options.minCandles = 4;
+      this.candles.decimal.form.hide();
+      this.candles.decimal.show();
+      this.connectors.show();
+      this.labels.show();
+      this.candles.binary.show();
     }
 
     this.candles.decimal.update(this.decimal);

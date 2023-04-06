@@ -46,3 +46,20 @@ body:has(.explainer) {
 .explainer .box strong {
   color: DeepPink;
 }
+
+.explainer .box em {
+  color: Tomato;
+  font-style: normal;
+}
+
+.emoji {
+  display: inline-flex;
+  width: calc(25 * var(--px));
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.emoji-wick-1 {
+  background-image: url(../../media/emoji-candle-wick-1.png);
+}
