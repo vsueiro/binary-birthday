@@ -42,3 +42,7 @@ body:has(.explainer) {
   text-shadow: none;
   width: calc(100% - calc(24 * var(--px)));
 }
+
+.explainer .box strong {
+  color: DeepPink;
+}

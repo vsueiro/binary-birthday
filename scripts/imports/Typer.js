@@ -13,10 +13,10 @@ export default class Typer {
   }
 
   cleanText(string) {
-    return string.replace(/  +/g, " ").trim();
+    return string.replace(/  +/g, " ");
   }
 
-  addSpans(string) {
+  getSpans(string) {
     let markup = ``;
 
     for (let char of string) {
@@ -50,16 +50,25 @@ export default class Typer {
     }
   }
 
+  addSpans(element) {
+    for (let node of element.childNodes) {
+      if (this.isText(node)) {
+        const text = this.cleanText(node.nodeValue);
+        const group = document.createElement("span");
+
+        group.classList.add("typer-group");
+        group.innerHTML = this.getSpans(text);
+
+        element.replaceChild(group, node);
+      } else {
+        this.addSpans(node);
+      }
+    }
+  }
+
   setup() {
     for (let paragraph of this.paragraphs) {
-      for (let node of paragraph.childNodes) {
-        if (this.isText(node)) {
-          const text = this.cleanText(node.nodeValue);
-
-          paragraph.dataset.typerOriginal = text;
-          paragraph.innerHTML = this.addSpans(text);
-        }
-      }
+      this.addSpans(paragraph);
     }
   }
 }
