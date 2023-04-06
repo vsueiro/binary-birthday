@@ -10,6 +10,7 @@ export default class Explainer {
 
     this.swiper = new Swiper(".swiper", {
       centeredSlides: true,
+      speed: 0,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
