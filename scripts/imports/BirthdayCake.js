@@ -84,12 +84,13 @@ export default class BirthdayCake {
       this.age = 7;
       this.options.minCandles = 0;
       this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
+      this.candles.decimal.show();
       this.connectors.hide();
       this.labels.hide();
       this.candles.binary.hide();
     } else if (step === 1) {
       this.age = 7;
+      this.age = "seven";
       this.options.minCandles = 0;
       this.candles.decimal.form.hide();
       this.candles.decimal.show();

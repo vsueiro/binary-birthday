@@ -60,6 +60,22 @@
   background-image: url(../../media/candle-number-9.png);
 }
 
+.candle[data-letter="e"] {
+  background-image: url(../../media/candle-letter-e.png);
+}
+
+.candle[data-letter="n"] {
+  background-image: url(../../media/candle-letter-n.png);
+}
+
+.candle[data-letter="s"] {
+  background-image: url(../../media/candle-letter-s.png);
+}
+
+.candle[data-letter="v"] {
+  background-image: url(../../media/candle-letter-v.png);
+}
+
 .candle::before {
   background-image: url(../../media/candle-wick-0.png);
   background-repeat: no-repeat;

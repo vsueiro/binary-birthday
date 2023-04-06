@@ -14,9 +14,18 @@ export default class DecimalCandle {
     this.update();
   }
 
+  isNumber(char) {
+    return /^\d$/.test(char);
+  }
+
   update(digit) {
     this.digit = digit || this.digit;
 
-    this.element.dataset.number = this.digit;
+    const attribute = this.isNumber(this.digit) ? "number" : "letter";
+
+    this.element.dataset.number = "";
+    this.element.dataset.letter = "";
+
+    this.element.dataset[attribute] = this.digit;
   }
 }
