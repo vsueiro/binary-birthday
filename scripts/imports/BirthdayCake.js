@@ -99,7 +99,7 @@ export default class BirthdayCake {
       this.candles.binary.hide();
     } else if (step === 2) {
       this.age = 127;
-      this.options.minCandles = 0;
+      this.options.minCandles = 7;
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -107,7 +107,7 @@ export default class BirthdayCake {
       this.candles.binary.show();
     } else if (step === 3) {
       this.age = 7;
-      this.options.minCandles = 0;
+      this.options.minCandles = 3;
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -115,7 +115,7 @@ export default class BirthdayCake {
       this.candles.binary.show();
     } else if (step === 4) {
       this.age = 7;
-      this.options.minCandles = 0;
+      this.options.minCandles = 3;
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();

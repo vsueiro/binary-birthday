@@ -14,6 +14,7 @@
   background-size: 100%;
   height: calc(20 * var(--px));
   width: calc(24 * var(--px));
+  cursor: pointer;
 }
 
 .strawberry:active {
