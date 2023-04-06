@@ -4,6 +4,7 @@ export default class Typer {
     this.selector = selector;
     this.paragraphs = this.container.querySelectorAll(selector);
     this.delay = 20;
+    this.interval;
 
     this.setup();
   }
@@ -32,18 +33,19 @@ export default class Typer {
     const chars = parent.querySelectorAll(".typer-char");
     let index = 0;
 
-    const interval = setInterval(() => {
+    this.interval = setInterval(() => {
       const char = chars[index];
       char.classList.add("typed");
       index++;
 
       if (index >= chars.length) {
-        clearInterval(interval);
+        clearInterval(this.interval);
       }
     }, this.delay);
   }
 
   untype(parent) {
+    clearInterval(this.interval);
     const chars = parent.querySelectorAll(".typer-char");
     for (let char of chars) {
       char.classList.remove("typed");
