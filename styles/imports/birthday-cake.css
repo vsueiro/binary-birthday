@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
-  /* height: fit-content; */
+  align-items: center;
   height: calc(320 * var(--px));
   width: calc(256 * var(--px));
 }

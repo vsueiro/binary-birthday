@@ -13,12 +13,12 @@
     outline-style: dashed;
     /* outline-color: Turquoise; */
     outline-width: calc(4 * var(--px));
-    outline-offset: calc(10 * var(--px));
+    outline-offset: calc(5 * var(--px));
   }
   100% {
     outline-style: dashed;
     /* outline-color: Turquoise; */
     outline-width: calc(4 * var(--px));
-    outline-offset: calc(20 * var(--px));
+    outline-offset: calc(10 * var(--px));
   }
 }
