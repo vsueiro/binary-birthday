@@ -43,6 +43,10 @@ body:has(.explainer) {
   width: calc(100% - calc(24 * var(--px)));
 }
 
+.explainer .box.quiz {
+  border-color: Turquoise;
+}
+
 .explainer .box strong {
   color: DeepPink;
 }
