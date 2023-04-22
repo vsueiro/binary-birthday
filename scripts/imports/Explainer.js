@@ -5,6 +5,7 @@ export default class Explainer {
   constructor(container, birthdayCake) {
     this.container = document.querySelector(container);
     this.birthdayCake = birthdayCake;
+    this.initialDelay = 2000;
 
     this.typer = new Typer(this.container, ".box p");
 
@@ -29,7 +30,10 @@ export default class Explainer {
           const step = 0;
           this.birthdayCake.update(step);
           const slide = document.querySelector(".swiper-slide");
-          this.typer.type(slide);
+
+          setTimeout(() => {
+            this.typer.type(slide);
+          }, this.initialDelay);
         },
       },
     });
@@ -44,6 +48,10 @@ export default class Explainer {
     this.setup();
   }
 
-  setup() {}
+  setup() {
+    setTimeout(() => {
+      this.container.dataset.visible = "true";
+    }, 1000);
+  }
   update() {}
 }

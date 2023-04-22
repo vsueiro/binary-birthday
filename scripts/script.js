@@ -4,10 +4,18 @@ import BirthdayCake from "./imports/BirthdayCake.js";
 import Explainer from "./imports/Explainer.js";
 
 const confetti = new Confetti(".confetti");
-const birthdayCake = new BirthdayCake(".birthday-cake");
-const explainer = new Explainer(".explainer", birthdayCake);
+
+document.querySelector(".start-button").addEventListener("click", (event) => {
+  const birthdayCake = new BirthdayCake(".birthday-cake");
+  const explainer = new Explainer(".explainer", birthdayCake);
+
+  // Enable audio
+
+  event.target.closest(".start-screen").remove();
+});
 
 new Preloader(
+  "./images/composite/logo.png",
   "./images/button-minus.png",
   "./images/button-plus.png",
   "./images/cake.png",

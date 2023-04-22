@@ -4,6 +4,7 @@ import Labels from "./Labels.js";
 import BinaryCandles from "./BinaryCandles.js";
 import Cake from "./Cake.js";
 import Glow from "./Glow.js";
+import Logo from "./Logo.js";
 
 export default class BirthdayCake {
   constructor(container, options) {
@@ -66,6 +67,7 @@ export default class BirthdayCake {
     this.labels = new Labels(this.el.labels, this);
     this.candles.binary = new BinaryCandles(this.el.candles.binary, this);
     this.cake = new Cake(this.el.cake, this);
+    this.logo = new Logo(".logo", this);
 
     this.glow = new Glow();
   }
@@ -86,6 +88,7 @@ export default class BirthdayCake {
     if (step === 0) {
       this.age = 7;
       this.options.minCandles = 0;
+      this.logo.show();
       this.candles.decimal.form.hide();
       this.candles.decimal.show();
       this.connectors.hide();
@@ -96,6 +99,7 @@ export default class BirthdayCake {
       this.age = 7;
       this.age = "seven";
       this.options.minCandles = 0;
+      this.logo.show();
       this.candles.decimal.form.hide();
       this.candles.decimal.show();
       this.connectors.hide();
@@ -105,6 +109,7 @@ export default class BirthdayCake {
     } else if (step === 2) {
       this.age = 127;
       this.options.minCandles = 7;
+      this.logo.show();
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -114,6 +119,7 @@ export default class BirthdayCake {
     } else if (step === 3) {
       this.age = 7;
       this.options.minCandles = 3;
+      this.logo.show();
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -123,6 +129,7 @@ export default class BirthdayCake {
     } else if (step === 4) {
       this.age = 7;
       this.options.minCandles = 3;
+      this.logo.hide();
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -132,6 +139,7 @@ export default class BirthdayCake {
     } else if (step === 5) {
       this.age = 7;
       this.options.minCandles = 3;
+      this.logo.hide();
       this.candles.decimal.form.hide();
       this.candles.decimal.show();
       this.connectors.show();
@@ -141,6 +149,7 @@ export default class BirthdayCake {
     } else if (step === 6) {
       this.age = 15;
       this.options.minCandles = 4;
+      this.logo.hide();
       this.candles.decimal.form.hide();
       this.candles.decimal.hide();
       this.connectors.hide();
@@ -150,6 +159,7 @@ export default class BirthdayCake {
     } else if (step === 7) {
       this.age = 8;
       this.options.minCandles = 4;
+      this.logo.hide();
       this.candles.decimal.form.hide();
       this.candles.decimal.show();
       this.connectors.show();
@@ -159,6 +169,7 @@ export default class BirthdayCake {
     } else if (step === 8) {
       this.age = 8;
       this.options.minCandles = 4;
+      this.logo.hide();
       this.candles.decimal.form.hide();
       this.candles.decimal.show();
       this.connectors.show();
@@ -166,8 +177,6 @@ export default class BirthdayCake {
       this.candles.binary.show();
       this.glow.set(".candles:nth-of-type(4)");
     }
-
-    console.log(step);
 
     this.candles.decimal.update(this.decimal);
     this.connectors.update(this.binary);

@@ -1,0 +1,13 @@
+.logo {
+  background-image: url(../../images/composite/logo.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: calc(160 * var(--px));
+  transform: translateY(-100%);
+  transition: transform 1s ease-in-out;
+  width: calc(240 * var(--px));
+}
+
+.logo[data-visible="true"] {
+  transform: translateY(0%);
+}
