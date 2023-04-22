@@ -9,7 +9,7 @@
 }
 
 .strawberry {
-  background-image: url(../../media/strawberry-0.png);
+  background-image: url(../../images/strawberry-0.png);
   background-repeat: no-repeat;
   background-size: 100%;
   height: calc(20 * var(--px));
@@ -22,9 +22,9 @@
 }
 
 .strawberry[data-eaten="1"] {
-  background-image: url(../../media/strawberry-1.png);
+  background-image: url(../../images/strawberry-1.png);
 }
 
 .strawberry[data-eaten="2"] {
-  background-image: url(../../media/strawberry-2.png);
+  background-image: url(../../images/strawberry-2.png);
 }

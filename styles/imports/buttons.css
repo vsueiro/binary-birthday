@@ -6,7 +6,7 @@ button,
   border-image-outset: 0 0 0 0;
   border-image-repeat: repeat;
   border-image-slice: 24 24 24 24;
-  border-image-source: url(../../media/button-minus.png);
+  border-image-source: url(../../images/button-minus.png);
   border-image-width: calc(6 * var(--px));
   border-style: solid;
   border-width: calc(6 * var(--px));
