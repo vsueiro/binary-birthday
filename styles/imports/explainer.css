@@ -27,7 +27,7 @@ body:has(.explainer) {
 .explainer .verbal {
   height: fit-content;
   width: 100%;
-  padding-bottom: calc(24 * var(--px));
+  padding-bottom: calc(8 * var(--px));
   transform: translateY(100%);
   transition: transform 1s ease-in-out;
 }
@@ -42,7 +42,7 @@ body:has(.explainer) {
   box-shadow: calc(4 * var(--px)) calc(4 * var(--px)) 0 0 Indigo;
   color: Indigo;
   /* height: 100%; */
-  margin-bottom: calc(80 * var(--px));
+  /* margin-bottom: calc(80 * var(--px)); */
   max-width: calc(480 * var(--px));
   padding: calc(8 * var(--px)) calc(16 * var(--px));
   text-shadow: none;

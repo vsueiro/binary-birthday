@@ -1,6 +1,9 @@
 .swiper {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--px));
 }
 
 .swiper-slide {
@@ -16,8 +19,8 @@
   display: flex;
   gap: calc(32 * var(--px));
   justify-content: center;
-  margin-bottom: calc(16 * var(--px));
-  position: absolute;
+  margin-bottom: calc(4 * var(--px));
+  position: relative;
   width: 100%;
 }
 
@@ -25,7 +28,7 @@
 .swiper-button-prev {
   bottom: initial;
   height: 100%;
-  height: calc(48 * var(--px));
+  height: calc(34 * var(--px));
   margin: 0;
   max-width: calc(234 * var(--px));
   overflow: hidden;
@@ -40,7 +43,7 @@
   color: Indigo;
   content: "←";
   font-family: inherit;
-  font-size: calc(37.5 * var(--px));
+  font-size: calc(25 * var(--px));
   line-height: 1;
   margin-top: 0.12em;
   text-shadow: none;
