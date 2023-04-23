@@ -176,6 +176,7 @@ export default class BirthdayCake {
       this.labels.show();
       this.candles.binary.show();
       this.glow.set(".candles:nth-of-type(4)");
+      // TODO: Enable next button if age == 9
     } else if (step === 9) {
       this.age = 0;
       this.options.minCandles = 7;
@@ -186,6 +187,7 @@ export default class BirthdayCake {
       this.labels.show();
       this.candles.binary.show();
       this.glow.set();
+      // TODO: Enable next button if age > 0
     } else if (step === 10) {
       this.age = 127;
       this.options.minCandles = 7;
