@@ -6,11 +6,10 @@ body:has(.explainer) {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
   justify-content: end;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
 }

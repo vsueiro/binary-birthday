@@ -1,6 +1,15 @@
+html,
 body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
   background: RebeccaPurple;
   color: Lavender;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   text-shadow: calc(2 * var(--px)) calc(2 * var(--px)) Indigo;
 }
 
@@ -10,13 +19,6 @@ body {
 
 ::selection {
   background: rgba(64, 224, 208, 0.25); /* Turquoise */
-}
-
-body {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
 }
 
 *:focus:not(:hover) {

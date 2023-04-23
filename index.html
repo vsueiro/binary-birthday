@@ -8,121 +8,123 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <div class="confetti" aria-hidden="true"></div>
+    <div class="app">
+      <div class="confetti" aria-hidden="true"></div>
 
-    <header>
-      <h1 class="logo">
-        <span class="screen-reader">Binary Birthday</span>
-      </h1>
-    </header>
+      <header>
+        <h1 class="logo">
+          <span class="screen-reader">Binary Birthday</span>
+        </h1>
+      </header>
 
-    <div class="explainer">
-      <div class="visual">
-        <div class="birthday-cake"></div>
-      </div>
-      <div class="verbal">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <!-- 0 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>
-                  Imagine you are turning 7 and your family got you a birthday
-                  cake.
-                  <strong>What else could be on top of it?</strong>
-                </p>
+      <div class="explainer">
+        <div class="visual">
+          <div class="birthday-cake"></div>
+        </div>
+        <div class="verbal">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- 0 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Imagine you are turning 7 and your family got you a birthday
+                    cake.
+                    <strong>What else could be on top of it?</strong>
+                  </p>
+                </div>
+              </div>
+              <!-- 1 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>The word “Seven”?</p>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Or maybe 1 candle per year? Those are all ways of
+                    representing the same number…
+                  </p>
+                </div>
+              </div>
+              <!-- 3 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    But what if I told you we can represent the number 7 using
+                    only 3 candles? Enter <strong>Binary Numbers</strong>!
+                  </p>
+                </div>
+              </div>
+              <!-- 4 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>This means we need to agree on some rules:</p>
+                  <p>• Each candle is worth a <em>unique value</em></p>
+                </div>
+              </div>
+              <!-- 5 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>• We <em>add those values</em> to reveal our age</p>
+                </div>
+              </div>
+              <!-- 6 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    <strong>“But… What happens when I turn 8?”</strong>
+                    <!--Glad you asked! -->To represent that number, we need one
+                    more candle on the left
+                  </p>
+                </div>
+              </div>
+              <!-- 7 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>Which brings us to our final rule:</p>
+                  <p>
+                    • We <em>only add lit candles</em>
+                    <span class="typer-char emoji emoji-wick-1"></span>
+                  </p>
+                </div>
+              </div>
+              <!-- 8 -->
+              <div class="swiper-slide">
+                <div class="box quiz">
+                  <p>
+                    <strong>Try for yourself!</strong> On your 9<sup>th</sup>
+                    birthday, which candles need to be lit?
+                  </p>
+                  <p><small>Click on any candle to light it up</small></p>
+                </div>
+              </div>
+              <!-- 9 -->
+              <div class="swiper-slide">
+                <div class="box quiz">
+                  <p>
+                    Now, back to reality. Can you lit candles that add up to
+                    <strong>your current age</strong>?
+                  </p>
+                </div>
+              </div>
+              <!-- 10 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Did you notice a pattern here? In binary, every candle is
+                    <em>worth&nbsp;2&times;</em>
+                    the one on its right
+                  </p>
+                </div>
               </div>
             </div>
-            <!-- 1 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>The word “Seven”?</p>
-              </div>
+            <div class="swiper-buttons">
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
             </div>
-            <!-- 2 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>
-                  Or maybe 1 candle per year? Those are all ways of representing
-                  the same number…
-                </p>
-              </div>
-            </div>
-            <!-- 3 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>
-                  But what if I told you we can represent the number 7 using
-                  only 3 candles? Enter <strong>Binary Numbers</strong>!
-                </p>
-              </div>
-            </div>
-            <!-- 4 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>This means we need to agree on some rules:</p>
-                <p>• Each candle is worth a <em>unique value</em></p>
-              </div>
-            </div>
-            <!-- 5 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>• We <em>add those values</em> to reveal our age</p>
-              </div>
-            </div>
-            <!-- 6 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>
-                  <strong>“But… What happens when I turn 8?”</strong>
-                  <!--Glad you asked! -->To represent that number, we need one
-                  more candle on the left
-                </p>
-              </div>
-            </div>
-            <!-- 7 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>Which brings us to our final rule:</p>
-                <p>
-                  • We <em>only add lit candles</em>
-                  <span class="typer-char emoji emoji-wick-1"></span>
-                </p>
-              </div>
-            </div>
-            <!-- 8 -->
-            <div class="swiper-slide">
-              <div class="box quiz">
-                <p>
-                  <strong>Try for yourself!</strong> On your 9<sup>th</sup>
-                  birthday, which candles need to be lit?
-                </p>
-                <p><small>Click on any candle to light it up</small></p>
-              </div>
-            </div>
-            <!-- 9 -->
-            <div class="swiper-slide">
-              <div class="box quiz">
-                <p>
-                  Now, back to reality. Can you lit candles that add up to
-                  <strong>your current age</strong>?
-                </p>
-              </div>
-            </div>
-            <!-- 10 -->
-            <div class="swiper-slide">
-              <div class="box">
-                <p>
-                  Did you notice a pattern here? In binary, every candle is
-                  <em>worth 2&times;</em>
-                  the one on its right
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-buttons">
-            <button class="swiper-button-prev"></button>
-            <button class="swiper-button-next"></button>
           </div>
         </div>
       </div>
