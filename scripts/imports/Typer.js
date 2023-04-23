@@ -27,6 +27,11 @@ export default class Typer {
     return markup;
   }
 
+  isPunctuation(character) {
+    const punctuation = ".!?…";
+    return punctuation.includes(character);
+  }
+
   type(parent) {
     this.untype(parent);
 
