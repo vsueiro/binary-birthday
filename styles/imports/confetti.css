@@ -36,6 +36,18 @@
   z-index: -1;
 }
 
+.confetti::before {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(Indigo, Transparent);
+  opacity: 0.25;
+}
+
 .particle-track {
   align-items: end;
   animation: fall 10s infinite ease-in;
