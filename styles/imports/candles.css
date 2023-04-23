@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   width: calc(256 * var(--px));
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 .candle {
