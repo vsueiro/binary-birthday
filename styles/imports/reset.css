@@ -38,3 +38,18 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Prevent <sup> or <sub> from changing line height */
+sup,
+sub {
+  position: relative;
+  top: -0.4em;
+  vertical-align: baseline;
+}
+sub {
+  top: 0.4em;
+}
+
+abbr {
+  text-decoration: none;
+}

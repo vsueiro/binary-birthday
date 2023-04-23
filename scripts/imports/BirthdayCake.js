@@ -176,6 +176,26 @@ export default class BirthdayCake {
       this.labels.show();
       this.candles.binary.show();
       this.glow.set(".candles:nth-of-type(4)");
+    } else if (step === 9) {
+      this.age = 0;
+      this.options.minCandles = 7;
+      this.logo.hide();
+      this.candles.decimal.form.hide();
+      this.candles.decimal.show();
+      this.connectors.show();
+      this.labels.show();
+      this.candles.binary.show();
+      this.glow.set();
+    } else if (step === 10) {
+      this.age = 127;
+      this.options.minCandles = 7;
+      this.logo.hide();
+      this.candles.decimal.form.hide();
+      this.candles.decimal.hide();
+      this.connectors.hide();
+      this.labels.show();
+      this.candles.binary.show();
+      this.glow.set();
     }
 
     this.candles.decimal.update(this.decimal);
