@@ -34,7 +34,7 @@ export default class Typer {
   }
 
   isPunctuation(character) {
-    const punctuation = ".!?…:";
+    const punctuation = ".…,:!?";
 
     if (character === "" || character.length > 1) {
       return false;
@@ -103,8 +103,6 @@ export default class Typer {
         const group = document.createElement("span");
 
         group.classList.add("typer-group");
-
-        // console.log(node);
 
         if (this.isFirstNode(node)) {
           text = text.trimStart();
