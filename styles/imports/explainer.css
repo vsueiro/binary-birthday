@@ -28,7 +28,7 @@ body:has(.explainer) {
   width: 100%;
   padding-bottom: calc(8 * var(--px));
   transform: translateY(100%);
-  transition: transform 1.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
 }
 
 .explainer[data-visible="true"] .verbal {

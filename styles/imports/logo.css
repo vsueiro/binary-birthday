@@ -1,13 +1,15 @@
 .logo {
-  background-image: url(../../images/composite/logo.png);
+  position: relative;
+  background-image: url(../../images/composite/logo-extended.png);
   background-repeat: no-repeat;
   background-size: 100%;
-  height: calc(160 * var(--px));
-  transform: translateY(-100%);
-  transition: transform 1.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  height: calc(320 * var(--px));
+  top: calc(-160 * var(--px));
+  transform: translateY(calc(-160 * var(--px)));
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
   width: calc(240 * var(--px));
 }
 
 .logo[data-visible="true"] {
-  transform: translateY(0%);
+  transform: translateY(0);
 }
