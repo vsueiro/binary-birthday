@@ -7,7 +7,6 @@
   top: calc(-160 * var(--px));
   transform: translateY(calc(-160 * var(--px)));
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
-  transition-delay: 0.5s;
   width: calc(240 * var(--px));
 }
 
