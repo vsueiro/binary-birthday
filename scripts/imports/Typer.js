@@ -4,7 +4,9 @@ export default class Typer {
     this.selector = selector;
     this.paragraphs = this.container.querySelectorAll(selector);
     this.delay = 20;
+    this.punctuationDelay = 600;
     this.interval;
+    this.timeout;
 
     this.setup();
   }
@@ -14,7 +16,11 @@ export default class Typer {
   }
 
   cleanText(string) {
-    return string.replace(/  +/g, " ");
+    let clean = string;
+
+    clean = clean.replace(/[\n\t]/g, "");
+    clean = clean.replace(/  +/g, " ");
+    return clean;
   }
 
   getSpans(string) {
@@ -28,8 +34,32 @@ export default class Typer {
   }
 
   isPunctuation(character) {
-    const punctuation = ".!?…";
+    const punctuation = ".!?…:";
+
+    if (character === "" || character.length > 1) {
+      return false;
+    }
+
     return punctuation.includes(character);
+  }
+
+  typeChar(chars, index) {
+    const char = chars[index];
+    char.classList.add("typed");
+
+    index++;
+
+    if (index < chars.length) {
+      let delay = this.delay;
+
+      if (this.isPunctuation(char.textContent)) {
+        delay = this.punctuationDelay;
+      }
+
+      this.timeout = setTimeout(() => {
+        this.typeChar(chars, index);
+      }, delay);
+    }
   }
 
   type(parent) {
@@ -38,32 +68,52 @@ export default class Typer {
     const chars = parent.querySelectorAll(".typer-char");
     let index = 0;
 
-    this.interval = setInterval(() => {
-      const char = chars[index];
-      char.classList.add("typed");
-      index++;
-
-      if (index >= chars.length) {
-        clearInterval(this.interval);
-      }
-    }, this.delay);
+    this.typeChar(chars, index);
   }
 
   untype(parent) {
-    clearInterval(this.interval);
+    clearTimeout(this.timeout);
     const chars = parent.querySelectorAll(".typer-char");
     for (let char of chars) {
       char.classList.remove("typed");
     }
   }
 
+  isFirstNode(node) {
+    return node === node.parentNode.firstChild;
+  }
+
+  isLastNode(node) {
+    return node === node.parentNode.lastChild;
+  }
+
+  isWhitespace(string) {
+    return /^\s*$/.test(string);
+  }
+
   addSpans(element) {
     for (let node of element.childNodes) {
       if (this.isText(node)) {
-        const text = this.cleanText(node.nodeValue);
+        let text = this.cleanText(node.nodeValue);
+
+        if (this.isWhitespace(text)) {
+          continue;
+        }
+
         const group = document.createElement("span");
 
         group.classList.add("typer-group");
+
+        // console.log(node);
+
+        if (this.isFirstNode(node)) {
+          text = text.trimStart();
+        }
+
+        if (this.isLastNode(node)) {
+          text = text.trimEnd();
+        }
+
         group.innerHTML = this.getSpans(text);
 
         element.replaceChild(group, node);
