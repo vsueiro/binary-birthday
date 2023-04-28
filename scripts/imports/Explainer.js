@@ -5,7 +5,7 @@ export default class Explainer {
   constructor(container, birthdayCake) {
     this.container = document.querySelector(container);
     this.birthdayCake = birthdayCake;
-    this.initialDelay = 2000;
+    this.initialDelay = 2500;
 
     this.typer = new Typer(this.container, ".box p");
 

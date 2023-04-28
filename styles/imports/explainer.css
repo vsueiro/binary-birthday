@@ -21,6 +21,12 @@ body:has(.explainer) {
   height: 100%;
   justify-content: center;
   width: 100%;
+  transform: translateX(-100%);
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+}
+
+.explainer .visual:has(.candle) {
+  transform: translateX(0);
 }
 
 .explainer .verbal {
