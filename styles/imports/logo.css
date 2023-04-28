@@ -1,6 +1,6 @@
 .logo {
   position: relative;
-  background-image: url(../../images/composite/logo-extended.png);
+  background-image: url(../../images/composite/logo-extended-animated.png);
   background-repeat: no-repeat;
   background-size: 100%;
   height: calc(320 * var(--px));
