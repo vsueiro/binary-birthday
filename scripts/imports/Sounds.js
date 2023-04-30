@@ -16,5 +16,22 @@ export default class Sounds {
       src: ["audio/beep.mp3"],
       volume: 0.025,
     });
+
+    // By https://freesound.org/people/gis_sweden/sounds/651801/
+    this.background = new Howl({
+      src: ["audio/music.mp3"],
+      volume: 0.025,
+      loop: true,
+    });
+
+    document.addEventListener(
+      "click",
+      () => {
+        this.background.play();
+        this.background.fade(0, 0.05, 1000);
+      },
+      { once: true }
+    );
+  }
   }
 }
