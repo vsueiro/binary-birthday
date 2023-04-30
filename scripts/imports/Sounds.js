@@ -33,5 +33,16 @@ export default class Sounds {
       { once: true }
     );
   }
+
+  mute() {
+    for (let sound in this) {
+      this[sound].mute(true);
+    }
+  }
+
+  unmute() {
+    for (let sound in this) {
+      this[sound].mute(false);
+    }
   }
 }
