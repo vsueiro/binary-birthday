@@ -43,6 +43,7 @@ export default class Explainer {
       this.birthdayCake.update(step);
       const slide = this.swiper.slides[step];
       this.typer.type(slide);
+      sounds.key.play();
     });
 
     this.setup();

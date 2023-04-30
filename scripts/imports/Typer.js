@@ -47,6 +47,10 @@ export default class Typer {
     const char = chars[index];
     char.classList.add("typed");
 
+    if (index % 4 == 0) {
+      sounds.type.play();
+    }
+
     index++;
 
     if (index < chars.length) {

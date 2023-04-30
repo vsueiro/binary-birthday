@@ -25,6 +25,8 @@ export default class BinaryCandle {
 
       this.birthdayCake.setAgeFromCandles();
       this.birthdayCake.update();
+
+      sounds.candle.play();
     });
   }
 

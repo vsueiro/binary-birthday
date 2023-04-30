@@ -2,9 +2,12 @@ import Preloader from "./Preloader.js";
 import Confetti from "./Confetti.js";
 import BirthdayCake from "./BirthdayCake.js";
 import Explainer from "./Explainer.js";
+import Sounds from "./Sounds.js";
 
 export default class App {
   constructor() {
+    window.sounds = new Sounds();
+
     this.confetti = new Confetti(".confetti");
     this.birthdayCake = new BirthdayCake(".birthday-cake");
     this.explainer = new Explainer(".explainer", this.birthdayCake);
