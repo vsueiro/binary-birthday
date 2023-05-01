@@ -1,3 +1,7 @@
+header {
+  overflow: hidden;
+}
+
 .logo {
   position: relative;
   background-image: url(../../images/composite/logo-extended-animated.png);

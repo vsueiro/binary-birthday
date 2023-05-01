@@ -12,7 +12,7 @@ export default class DecimalCandle {
     this.element.dataset.status = "on";
 
     this.element.addEventListener("click", () => {
-      sounds.candle.play();
+      sounds.list.candle.play();
     });
 
     this.update();

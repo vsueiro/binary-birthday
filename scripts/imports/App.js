@@ -12,7 +12,7 @@ export default class App {
   }
 
   setup() {
-    window.sounds = new Sounds();
+    window.sounds = new Sounds(".audio");
 
     this.confetti = new Confetti(".confetti");
     this.preloader = new Preloader();

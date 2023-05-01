@@ -25,10 +25,11 @@
   justify-content: space-evenly;
   pointer-events: none;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   width: 100%;
   z-index: -1;
+  overflow: hidden;
 }
 
 .confetti::before {
