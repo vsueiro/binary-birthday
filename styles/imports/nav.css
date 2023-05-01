@@ -6,6 +6,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1;
+  padding: calc(12 * var(--px));
 }
 
 nav button * {
@@ -13,15 +14,25 @@ nav button * {
 }
 
 .menu {
+  background-image: url(../../images/menu.png);
+  background-size: calc(12 * var(--px)) calc(10 * var(--px));
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .audio {
+  background-image: url(../../images/audio-1.png);
+  background-size: calc(14 * var(--px)) calc(12 * var(--px));
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.audio[data-muted="false"]::before {
-  content: "🔈";
+.audio[data-muted="false"] {
+  /* content: "🔈"; */
+  background-image: url(../../images/audio-animated.png);
 }
 
-.audio[data-muted="true"]::before {
-  content: "🔇";
+.audio[data-muted="true"] {
+  /* content: "🔇"; */
+  background-image: url(../../images/audio-muted.png);
 }
