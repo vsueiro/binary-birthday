@@ -46,7 +46,7 @@ export default class Explainer {
       this.birthdayCake.update();
       this.typer.type(slide);
 
-      sounds.list.key.play();
+      sounds.key.play();
     });
 
     this.setup();

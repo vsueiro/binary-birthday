@@ -48,7 +48,7 @@ export default class Typer {
     char.classList.add("typed");
 
     if (index % 4 == 0) {
-      sounds.list.type.play();
+      sounds.type.play();
     }
 
     index++;
