@@ -3,7 +3,6 @@ import Connectors from "./Connectors.js";
 import Labels from "./Labels.js";
 import BinaryCandles from "./BinaryCandles.js";
 import Cake from "./Cake.js";
-import Glow from "./Glow.js";
 import Logo from "./Logo.js";
 
 export default class BirthdayCake {
@@ -70,8 +69,6 @@ export default class BirthdayCake {
     this.cake = new Cake(this.el.cake, this);
     this.logo = new Logo(".logo", this);
 
-    this.glow = new Glow();
-
     this.handle(this.step);
   }
 
@@ -80,8 +77,6 @@ export default class BirthdayCake {
     this.connectors.update(this.binary);
     this.labels.update(this.binary);
     this.candles.binary.update(this.binary);
-
-    this.glow.apply();
   }
 
   setAgeFromInput() {
@@ -111,7 +106,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.hide();
         this.candles.binary.hide();
-        this.glow.set();
         break;
 
       case 1:
@@ -123,7 +117,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.hide();
         this.candles.binary.hide();
-        this.glow.set();
         break;
 
       case 2:
@@ -135,7 +128,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.hide();
         this.candles.binary.show();
-        this.glow.set();
         break;
 
       case 3:
@@ -147,7 +139,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.hide();
         this.candles.binary.show();
-        this.glow.set();
         break;
 
       case 4:
@@ -159,7 +150,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set(".labels");
         break;
 
       case 5:
@@ -171,7 +161,6 @@ export default class BirthdayCake {
         this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set(".candles:first-of-type");
         break;
 
       case 6:
@@ -183,7 +172,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set(".label:first-child");
         break;
 
       case 7:
@@ -195,7 +183,6 @@ export default class BirthdayCake {
         this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set();
         break;
 
       case 8:
@@ -207,7 +194,6 @@ export default class BirthdayCake {
         this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set(".candles:nth-of-type(4)");
         break;
 
       case 9:
@@ -219,7 +205,6 @@ export default class BirthdayCake {
         this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set();
         // TODO: Enable next button if age > 0
         break;
 
@@ -232,7 +217,6 @@ export default class BirthdayCake {
         this.connectors.hide();
         this.labels.show();
         this.candles.binary.show();
-        this.glow.set();
         break;
       default:
     }
