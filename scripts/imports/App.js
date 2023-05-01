@@ -19,7 +19,6 @@ export default class App {
 
     setTimeout(() => {
       this.birthdayCake = new BirthdayCake(".birthday-cake");
-      this.explainer = new Explainer(".explainer", this.birthdayCake);
     }, this.delay);
   }
 }

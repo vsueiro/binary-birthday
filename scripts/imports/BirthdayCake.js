@@ -4,6 +4,7 @@ import Labels from "./Labels.js";
 import BinaryCandles from "./BinaryCandles.js";
 import Cake from "./Cake.js";
 import Logo from "./Logo.js";
+import Explainer from "./Explainer.js";
 
 export default class BirthdayCake {
   constructor(container, options) {
@@ -68,6 +69,8 @@ export default class BirthdayCake {
     this.candles.binary = new BinaryCandles(this.el.candles.binary, this);
     this.cake = new Cake(this.el.cake, this);
     this.logo = new Logo(".logo", this);
+
+    this.explainer = new Explainer(".explainer", this);
 
     this.handle(this.step);
   }
