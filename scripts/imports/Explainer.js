@@ -40,9 +40,12 @@ export default class Explainer {
 
     this.swiper.on("slideChange", () => {
       const step = this.swiper.activeIndex;
-      this.birthdayCake.update(step);
       const slide = this.swiper.slides[step];
+
+      this.birthdayCake.handle(step);
+      this.birthdayCake.update();
       this.typer.type(slide);
+
       sounds.key.play();
     });
 

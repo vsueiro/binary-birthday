@@ -71,6 +71,17 @@ export default class BirthdayCake {
     this.logo = new Logo(".logo", this);
 
     this.glow = new Glow();
+
+    this.handle(this.step);
+  }
+
+  update() {
+    this.candles.decimal.update(this.decimal);
+    this.connectors.update(this.binary);
+    this.labels.update(this.binary);
+    this.candles.binary.update(this.binary);
+
+    this.glow.apply();
   }
 
   setAgeFromInput() {
@@ -85,135 +96,145 @@ export default class BirthdayCake {
     this.age = age;
   }
 
-  handleStep(step) {
-    // TODO: Enable next button if age === 9 and step === 7
+  handle(step) {
+    this.step = step;
 
-    if (step === 0) {
-      this.age = 7;
-      this.options.minCandles = 0;
-      this.logo.show();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.hide();
-      this.labels.hide();
-      this.candles.binary.hide();
-      this.glow.set();
-    } else if (step === 1) {
-      this.age = "seven";
-      this.options.minCandles = 0;
-      this.logo.show();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.hide();
-      this.labels.hide();
-      this.candles.binary.hide();
-      this.glow.set();
-    } else if (step === 2) {
-      this.age = 127;
-      this.options.minCandles = 7;
-      this.logo.show();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
-      this.connectors.hide();
-      this.labels.hide();
-      this.candles.binary.show();
-      this.glow.set();
-    } else if (step === 3) {
-      this.age = 7;
-      this.options.minCandles = 3;
-      this.logo.show();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
-      this.connectors.hide();
-      this.labels.hide();
-      this.candles.binary.show();
-      this.glow.set();
-    } else if (step === 4) {
-      this.age = 7;
-      this.options.minCandles = 3;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
-      this.connectors.hide();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set(".labels");
-    } else if (step === 5) {
-      this.age = 7;
-      this.options.minCandles = 3;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.show();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set(".candles:first-of-type");
-    } else if (step === 6) {
-      this.age = 15;
-      this.options.minCandles = 4;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
-      this.connectors.hide();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set(".label:first-child");
-    } else if (step === 7) {
-      this.age = 8;
-      this.options.minCandles = 4;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.show();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set();
-    } else if (step === 8) {
-      this.age = 8;
-      this.options.minCandles = 4;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.show();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set(".candles:nth-of-type(4)");
-      // TODO: Enable next button if age == 9
-    } else if (step === 9) {
-      this.age = 0;
-      this.options.minCandles = 7;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.show();
-      this.connectors.show();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set();
-      // TODO: Enable next button if age > 0
-    } else if (step === 10) {
-      this.age = 127;
-      this.options.minCandles = 7;
-      this.logo.hide();
-      this.candles.decimal.form.hide();
-      this.candles.decimal.hide();
-      this.connectors.hide();
-      this.labels.show();
-      this.candles.binary.show();
-      this.glow.set();
+    // TODO: Enable next button if age === 9 and step === 7 ?
+
+    switch (step) {
+      case 0:
+        this.age = 7;
+        this.options.minCandles = 0;
+        this.logo.show();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.hide();
+        this.labels.hide();
+        this.candles.binary.hide();
+        this.glow.set();
+        break;
+
+      case 1:
+        this.age = "seven";
+        this.options.minCandles = 0;
+        this.logo.show();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.hide();
+        this.labels.hide();
+        this.candles.binary.hide();
+        this.glow.set();
+        break;
+
+      case 2:
+        this.age = 127;
+        this.options.minCandles = 7;
+        this.logo.show();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.hide();
+        this.candles.binary.show();
+        this.glow.set();
+        break;
+
+      case 3:
+        this.age = 7;
+        this.options.minCandles = 3;
+        this.logo.show();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.hide();
+        this.candles.binary.show();
+        this.glow.set();
+        break;
+
+      case 4:
+        this.age = 7;
+        this.options.minCandles = 3;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set(".labels");
+        break;
+
+      case 5:
+        this.age = 7;
+        this.options.minCandles = 3;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set(".candles:first-of-type");
+        break;
+
+      case 6:
+        this.age = 15;
+        this.options.minCandles = 4;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set(".label:first-child");
+        break;
+
+      case 7:
+        this.age = 8;
+        this.options.minCandles = 4;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set();
+        break;
+
+      case 8:
+        this.age = 8;
+        this.options.minCandles = 4;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set(".candles:nth-of-type(4)");
+        break;
+
+      case 9:
+        this.age = 0;
+        this.options.minCandles = 7;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set();
+        // TODO: Enable next button if age > 0
+        break;
+
+      case 10:
+        this.age = 127;
+        this.options.minCandles = 7;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.show();
+        this.candles.binary.show();
+        this.glow.set();
+        break;
+      default:
     }
-  }
-
-  update(step) {
-    if (step !== undefined) {
-      this.step = step;
-      this.handleStep(step);
-    }
-
-    this.candles.decimal.update(this.decimal);
-    this.connectors.update(this.binary);
-    this.labels.update(this.binary);
-    this.candles.binary.update(this.binary);
-
-    this.glow.apply();
   }
 }
