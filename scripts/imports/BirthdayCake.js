@@ -73,6 +73,7 @@ export default class BirthdayCake {
     this.explainer = new Explainer(".explainer", this);
 
     this.handle(this.step);
+    this.update();
   }
 
   update() {
@@ -80,6 +81,7 @@ export default class BirthdayCake {
     this.connectors.update(this.binary);
     this.labels.update(this.binary);
     this.candles.binary.update(this.binary);
+    this.explainer.update();
   }
 
   setAgeFromInput() {

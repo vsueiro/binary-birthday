@@ -27,11 +27,8 @@ export default class Explainer {
       on: {
         // TODO: Improve design
         init: () => {
-          const step = 0;
-          this.birthdayCake.update(step);
-          const slide = document.querySelector(".swiper-slide");
-
           setTimeout(() => {
+            const slide = document.querySelector(".swiper-slide");
             this.typer.type(slide);
           }, this.initialDelay);
         },
@@ -52,10 +49,59 @@ export default class Explainer {
     this.setup();
   }
 
+  get direction() {
+    const active = this.swiper.activeIndex;
+    const previous = this.swiper.previousIndex;
+
+    if (active > previous) {
+      return "next";
+    } else {
+      return "prev";
+    }
+  }
+
   setup() {
     setTimeout(() => {
       this.container.dataset.visible = "true";
     }, 1000);
   }
-  update() {}
+
+  disableNext() {
+    if (this.direction === "next") {
+      this.swiper.disable();
+      this.swiper.navigation.nextEl[0].blur();
+    }
+  }
+
+  enableNext() {
+    if (this.direction === "next") {
+      this.swiper.enable();
+      // this.swiper.navigation.nextEl[0].focus();
+    }
+  }
+
+  update() {
+    const step = this.birthdayCake.step;
+    const age = this.birthdayCake.age;
+
+    switch (step) {
+      case 8:
+        if (age === 9) {
+          this.enableNext();
+        } else {
+          this.disableNext();
+        }
+        break;
+
+      case 9:
+        if (age > 0) {
+          this.enableNext();
+        } else {
+          this.disableNext();
+        }
+        break;
+
+      default:
+    }
+  }
 }
