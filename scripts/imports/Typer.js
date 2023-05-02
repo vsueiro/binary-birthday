@@ -23,11 +23,13 @@ export default class Typer {
     return clean;
   }
 
-  getSpans(string) {
+  getSpans(string, typed = false) {
     let markup = ``;
 
     for (let char of string) {
-      markup += `<span class="typer-char">${char}</span>`;
+      markup += `<span class="typer-char ${
+        typed ? "typed" : ""
+      }" >${char}</span>`;
     }
 
     return markup;
@@ -95,7 +97,7 @@ export default class Typer {
     return /^\s*$/.test(string);
   }
 
-  addSpans(element) {
+  addSpans(element, typed = false) {
     for (let node of element.childNodes) {
       if (this.isText(node)) {
         let text = this.cleanText(node.nodeValue);
@@ -116,7 +118,7 @@ export default class Typer {
           text = text.trimEnd();
         }
 
-        group.innerHTML = this.getSpans(text);
+        group.innerHTML = this.getSpans(text, typed);
 
         element.replaceChild(group, node);
       } else {

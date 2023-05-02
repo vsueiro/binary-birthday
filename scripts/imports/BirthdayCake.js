@@ -16,6 +16,7 @@ export default class BirthdayCake {
     this.container = document.querySelector(container);
     this.options = Object.assign({}, this.defaults, options);
     this.age = this.options.age;
+    this.userAge = 0;
     this.step = 0;
 
     this.setup();
@@ -202,7 +203,7 @@ export default class BirthdayCake {
         break;
 
       case 9:
-        this.age = 0;
+        this.age = this.userAge ? this.userAge : 0;
         this.options.minCandles = 7;
         this.logo.hide();
         this.candles.decimal.form.hide();
@@ -210,10 +211,28 @@ export default class BirthdayCake {
         this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
-        // TODO: Enable next button if age > 0
         break;
 
       case 10:
+        if (this.explainer.direction === "next") {
+          this.userAge = this.age;
+        } else {
+          this.age = this.userAge;
+        }
+        this.options.minCandles = 7;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        break;
+
+      case 11:
+        if (this.explainer.direction === "next") {
+          this.userAge = this.age;
+        }
+
         this.age = 127;
         this.options.minCandles = 7;
         this.logo.hide();

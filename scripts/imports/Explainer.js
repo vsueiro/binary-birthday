@@ -60,6 +60,21 @@ export default class Explainer {
     }
   }
 
+  updateDynamicText() {
+    const decimals = document.querySelectorAll(".user-age-decimal");
+    const binaries = document.querySelectorAll(".user-age-binary");
+    const typed = true;
+
+    for (let decimal of decimals) {
+      decimal.textContent = this.birthdayCake.age;
+      this.typer.addSpans(decimal, typed);
+    }
+    for (let binary of binaries) {
+      binary.textContent = this.birthdayCake.age.toString(2);
+      this.typer.addSpans(binary, typed);
+    }
+  }
+
   setup() {
     setTimeout(() => {
       this.container.dataset.visible = "true";
@@ -103,5 +118,7 @@ export default class Explainer {
 
       default:
     }
+
+    this.updateDynamicText();
   }
 }

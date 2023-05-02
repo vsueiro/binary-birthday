@@ -78,3 +78,22 @@ body:has(.explainer) {
 .emoji-wick-1 {
   background-image: url(../../images/emoji-candle-wick-1.png);
 }
+
+code.user-age {
+  font-family: inherit;
+  font-variant: small-caps;
+  color: tomato;
+}
+
+code.user-age {
+  font-family: inherit;
+  font-variant: small-caps;
+  color: tomato;
+  white-space: nowrap;
+}
+
+code .typer-char {
+  width: 1ch;
+  display: inline-flex;
+  justify-content: center;
+}
