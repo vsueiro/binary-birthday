@@ -6,9 +6,6 @@ export default class Logo {
     this.isFirst = true;
   }
 
-  setup() {}
-  update() {}
-
   hide() {
     this.container.dataset.visible = "false";
   }

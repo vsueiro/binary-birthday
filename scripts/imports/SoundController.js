@@ -19,14 +19,5 @@ export default class SoundController {
         this.button.dataset.muted = true;
       }
     });
-
-    document.addEventListener(
-      "click",
-      () => {
-        this.sounds.background.play();
-        this.sounds.background.fade(0, 0.05, 1000);
-      },
-      { once: true }
-    );
   }
 }

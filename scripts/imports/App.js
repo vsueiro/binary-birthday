@@ -18,6 +18,16 @@ export default class App {
 
     setTimeout(() => {
       this.birthdayCake = new BirthdayCake(".birthday-cake");
+
+      document.addEventListener(
+        "click",
+        () => {
+          sounds.background.play();
+          sounds.background.fade(0, 0.05, 1000);
+          this.birthdayCake.navigation.show();
+        },
+        { once: true }
+      );
     }, this.delay);
   }
 }
