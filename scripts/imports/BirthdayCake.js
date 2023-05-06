@@ -177,8 +177,8 @@ export default class BirthdayCake {
         this.options.minCandles = 4;
         this.logo.hide();
         this.candles.decimal.form.hide();
-        this.candles.decimal.hide();
-        this.connectors.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
         break;
@@ -222,7 +222,7 @@ export default class BirthdayCake {
         } else {
           this.age = this.userAge;
         }
-        this.options.minCandles = 0;
+        this.options.minCandles = 7;
         this.logo.hide();
         this.candles.decimal.form.hide();
         this.candles.decimal.show();
@@ -235,7 +235,17 @@ export default class BirthdayCake {
         if (this.explainer.direction === "next") {
           this.userAge = this.age;
         }
+        this.age = this.userAge;
+        this.options.minCandles = 7;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.show();
+        this.candles.binary.show();
+        break;
 
+      case 12:
         this.age = 127;
         this.options.minCandles = 7;
         this.logo.hide();
@@ -245,6 +255,7 @@ export default class BirthdayCake {
         this.labels.show();
         this.candles.binary.show();
         break;
+
       default:
     }
   }

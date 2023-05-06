@@ -96,3 +96,35 @@
 .candle[data-status="on"]::before {
   background-image: url(../../images/candle-wick-1.png);
 }
+
+/* Step 10 */
+
+.app[data-step="10"] .candle {
+  position: relative;
+}
+
+.app[data-step="10"] .candle:not([data-number]),
+.app[data-step="10"] .candle:not([data-number])::before {
+  background: none;
+  filter: none;
+}
+
+.app[data-step="10"] .candle:not([data-number])::after {
+  content: "0";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: none;
+  color: Indigo;
+  font-size: calc(50 * var(--px));
+}
+
+.app[data-step="10"] .candle:not([data-number])[data-status="on"]::after {
+  content: "1";
+  color: Coral;
+}
