@@ -4,8 +4,9 @@ import BirthdayCake from "./BirthdayCake.js";
 import Sounds from "./Sounds.js";
 
 export default class App {
-  constructor() {
+  constructor(selector = ".app") {
     this.delay = 1000;
+    this.element = document.querySelector(selector);
 
     this.setup();
   }
@@ -17,7 +18,7 @@ export default class App {
     this.preloader = new Preloader();
 
     setTimeout(() => {
-      this.birthdayCake = new BirthdayCake(".birthday-cake");
+      this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);
 
       document.addEventListener(
         "click",

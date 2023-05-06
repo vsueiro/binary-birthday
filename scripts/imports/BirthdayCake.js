@@ -8,13 +8,14 @@ import Explainer from "./Explainer.js";
 import Navigation from "./Navigation.js";
 
 export default class BirthdayCake {
-  constructor(container, options) {
+  constructor(container, app, options) {
     this.defaults = {
       age: 7,
       minCandles: 7,
     };
 
     this.container = document.querySelector(container);
+    this.app = app;
     this.options = Object.assign({}, this.defaults, options);
     this.age = this.options.age;
     this.userAge = 0;
@@ -102,7 +103,7 @@ export default class BirthdayCake {
   handle(step) {
     this.step = step;
 
-    // TODO: Enable next button if age === 9 and step === 7 ?
+    this.app.dataset.step = this.step;
 
     switch (step) {
       case 0:
