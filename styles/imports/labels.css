@@ -22,3 +22,21 @@
 .labels .label[data-status="on"] {
   color: Coral;
 }
+
+.app[data-step="10"] .label {
+  visibility: hidden;
+  position: relative;
+}
+
+.app[data-step="10"] .label::before {
+  position: absolute;
+  visibility: visible;
+}
+
+.app[data-step="10"] .label[data-status="off"]::before {
+  content: "0";
+}
+
+.app[data-step="10"] .label[data-status="on"]::before {
+  content: "1";
+}

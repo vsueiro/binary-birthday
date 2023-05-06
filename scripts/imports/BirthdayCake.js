@@ -222,7 +222,7 @@ export default class BirthdayCake {
         } else {
           this.age = this.userAge;
         }
-        this.options.minCandles = 7;
+        this.options.minCandles = 0;
         this.logo.hide();
         this.candles.decimal.form.hide();
         this.candles.decimal.show();

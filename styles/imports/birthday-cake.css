@@ -22,3 +22,8 @@
   position: relative;
   width: calc(256 * var(--px));
 }
+
+.app[data-step="10"] .birthday-cake {
+  pointer-events: none;
+  cursor: default;
+}
