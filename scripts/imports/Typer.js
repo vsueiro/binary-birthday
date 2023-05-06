@@ -27,9 +27,10 @@ export default class Typer {
     let markup = ``;
 
     for (let char of string) {
-      markup += `<span class="typer-char ${
-        typed ? "typed" : ""
-      }" >${char}</span>`;
+      markup += `<span
+        class="typer-char ${typed ? "typed" : ""}"
+        data-char="${char}"
+      >${char}</span>`;
     }
 
     return markup;
