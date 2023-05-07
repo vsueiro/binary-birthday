@@ -1,11 +1,16 @@
 export default class Preloader {
   constructor() {
     this.images = [
-      "./images/composite/logo.png",
+      "./images/audio-animated.png",
+      "./images/audio-muted.png",
       "./images/button-minus.png",
       "./images/button-plus.png",
-      "./images/cake.png",
       "./images/cake-outline.png",
+      "./images/cake.png",
+      "./images/candle-letter-e.png",
+      "./images/candle-letter-n.png",
+      "./images/candle-letter-s.png",
+      "./images/candle-letter-v.png",
       "./images/candle-number-0.png",
       "./images/candle-number-1.png",
       "./images/candle-number-2.png",
@@ -19,12 +24,14 @@ export default class Preloader {
       "./images/candle-stick.png",
       "./images/candle-wick-0.png",
       "./images/candle-wick-1.png",
+      "./images/composite/logo.png",
+      "./images/menu.png",
+      "./images/strawberry-0-outline.png",
       "./images/strawberry-0.png",
       "./images/strawberry-1-outline.png",
       "./images/strawberry-1.png",
       "./images/strawberry-2-outline.png",
       "./images/strawberry-2.png",
-      "./images/strawberry-0-outline.png",
     ];
 
     this.load();
