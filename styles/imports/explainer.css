@@ -20,9 +20,9 @@ body:has(.explainer) {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  width: 100%;
   transform: translateX(-100%);
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+  width: 100%;
 }
 
 .explainer .visual:has(.candle) {
@@ -31,10 +31,10 @@ body:has(.explainer) {
 
 .explainer .verbal {
   height: fit-content;
-  width: 100%;
   padding-bottom: calc(8 * var(--px));
   transform: translateY(100%);
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+  width: 100%;
 }
 
 .explainer[data-visible="true"] .verbal {
@@ -68,11 +68,11 @@ body:has(.explainer) {
 }
 
 .emoji {
-  display: inline-flex;
-  width: calc(25 * var(--px));
   aspect-ratio: 1;
   background-repeat: no-repeat;
   background-size: 100%;
+  display: inline-flex;
+  width: calc(25 * var(--px));
 }
 
 .emoji-wick-1 {
@@ -82,18 +82,70 @@ body:has(.explainer) {
 code.user-age {
   font-family: inherit;
   font-variant: small-caps;
-  color: tomato;
-}
-
-code.user-age {
-  font-family: inherit;
-  font-variant: small-caps;
-  color: tomato;
   white-space: nowrap;
 }
 
+code.user-age.bit {
+  color: Tomato;
+}
+
 code .typer-char {
-  width: 1ch;
   display: inline-flex;
   justify-content: center;
+  min-width: 1ch;
+}
+
+code.user-age-decimal {
+  color: DeepPink;
+}
+
+code.user-age-binary .typer-char {
+  background: RebeccaPurple;
+  color: Coral;
+  position: relative;
+  box-shadow: 0 calc(2 * var(--px)) 0 RebeccaPurple;
+}
+
+code.user-age-binary .typer-char[data-char="0"] {
+  color: Indigo;
+}
+
+code.user-age-binary .typer-char:first-child {
+  padding-left: calc(6 * var(--px));
+}
+
+code.user-age-binary .typer-char:last-child {
+  padding-right: calc(6 * var(--px));
+}
+
+code.user-age-binary .typer-char:first-child::before,
+code.user-age-binary .typer-char:first-child::after,
+code.user-age-binary .typer-char:last-child::before,
+code.user-age-binary .typer-char:last-child::after {
+  aspect-ratio: 1;
+  background: Lavender;
+  content: "";
+  display: flex;
+  position: absolute;
+  width: calc(2 * var(--px));
+}
+
+code.user-age-binary .typer-char:first-child::before {
+  left: 0;
+  top: 0;
+}
+
+code.user-age-binary .typer-char:first-child::after {
+  bottom: calc(-2 * var(--px));
+  left: 0;
+}
+
+code.user-age-binary .typer-char:last-child::before {
+  right: 0;
+  top: 0;
+}
+
+code.user-age-binary .typer-char:last-child::after {
+  bottom: calc(-2 * var(--px));
+  right: 0;
 }

@@ -61,3 +61,7 @@ hr {
   background: RebeccaPurple;
   margin: calc(18.75 * var(--px)) 0;
 }
+
+.about .user-age.bit {
+  color: Coral;
+}
