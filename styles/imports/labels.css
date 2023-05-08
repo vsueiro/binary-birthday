@@ -23,20 +23,20 @@
   color: Coral;
 }
 
-/* .app[data-step="10"] .label {
+.app[data-step="13"] .label {
   visibility: hidden;
   position: relative;
 }
 
-.app[data-step="10"] .label::before {
+.app[data-step="13"] .label::before {
   position: absolute;
   visibility: visible;
 }
 
-.app[data-step="10"] .label[data-status="off"]::before {
+.app[data-step="13"] .label[data-status="off"]::before {
   content: "0";
 }
 
-.app[data-step="10"] .label[data-status="on"]::before {
+.app[data-step="13"] .label[data-status="on"]::before {
   content: "1";
-} */
+}

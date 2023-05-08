@@ -20,6 +20,8 @@ export default class BirthdayCake {
     this.age = this.options.age;
     this.userAge = 0;
     this.step = 0;
+    this.state = 0;
+    this.timeout;
 
     this.setup();
   }
@@ -101,8 +103,9 @@ export default class BirthdayCake {
   }
 
   handle(step) {
-    this.step = step;
+    clearTimeout(this.timeout);
 
+    this.step = step;
     this.app.dataset.step = this.step;
 
     switch (step) {
@@ -252,6 +255,61 @@ export default class BirthdayCake {
         this.candles.decimal.form.hide();
         this.candles.decimal.hide();
         this.connectors.hide();
+        this.labels.show();
+        this.candles.binary.show();
+        break;
+
+      case 13:
+        if (this.age === 1) {
+          this.age = 0;
+        } else {
+          this.age = 1;
+        }
+
+        this.update();
+
+        this.options.minCandles = 0;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.show();
+        this.candles.binary.show();
+
+        this.timeout = setTimeout(() => {
+          this.handle(this.step);
+        }, 1000);
+        break;
+
+      case 14:
+        this.age = this.userAge;
+        this.options.minCandles = 0;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.hide();
+        this.connectors.hide();
+        this.labels.hide();
+        this.candles.binary.show();
+
+        if (this.state % 2 === 0) {
+          this.candles.decimal.show();
+          this.candles.binary.hide();
+        }
+
+        this.timeout = setTimeout(() => {
+          this.handle(this.step);
+        }, 1000);
+
+        this.state++;
+        break;
+
+      case 15:
+        this.age = 0;
+        this.options.minCandles = 0;
+        this.logo.hide();
+        this.candles.decimal.form.show();
+        this.candles.decimal.show();
+        this.connectors.show();
         this.labels.show();
         this.candles.binary.show();
         break;
