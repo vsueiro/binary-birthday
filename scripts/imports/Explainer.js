@@ -6,6 +6,7 @@ export default class Explainer {
     this.container = document.querySelector(container);
     this.birthdayCake = birthdayCake;
     this.initialDelay = 2500;
+    this.isFirst = true;
 
     this.typer = new Typer(this.container, ".box p");
 
@@ -42,6 +43,14 @@ export default class Explainer {
       this.birthdayCake.handle(step);
       this.birthdayCake.update();
       this.typer.type(slide);
+
+      if (this.isFirst) {
+        sounds.background.play();
+        sounds.background.fade(0, 0.05, 1000);
+        sounds.controller.show();
+
+        this.isFirst = false;
+      }
 
       sounds.key.play();
     });

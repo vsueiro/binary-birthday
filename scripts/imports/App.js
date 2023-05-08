@@ -20,15 +20,15 @@ export default class App {
     setTimeout(() => {
       this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);
 
-      document.addEventListener(
-        "click",
-        () => {
-          sounds.background.play();
-          sounds.background.fade(0, 0.05, 1000);
-          this.birthdayCake.navigation.show();
-        },
-        { once: true }
-      );
+      // document.addEventListener(
+      //   "click",
+      //   () => {
+      //     sounds.background.play();
+      //     sounds.background.fade(0, 0.05, 1000);
+      //     sounds.controller.show();
+      //   },
+      //   { once: true }
+      // );
     }, this.delay);
   }
 }

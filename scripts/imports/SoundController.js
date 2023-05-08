@@ -20,4 +20,8 @@ export default class SoundController {
       }
     });
   }
+
+  show() {
+    this.button.dataset.visible = "true";
+  }
 }

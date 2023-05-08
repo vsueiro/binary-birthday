@@ -26,18 +26,22 @@ export default class Sounds {
       loop: true,
     });
 
-    new SoundController(selector, this);
+    this.controller = new SoundController(selector, this);
   }
 
   mute() {
     for (let sound in this) {
-      this[sound].mute(true);
+      if (this[sound] instanceof Howl) {
+        this[sound].mute(true);
+      }
     }
   }
 
   unmute() {
     for (let sound in this) {
-      this[sound].mute(false);
+      if (this[sound] instanceof Howl) {
+        this[sound].mute(false);
+      }
     }
   }
 }
