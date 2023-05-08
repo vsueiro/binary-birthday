@@ -1,0 +1,61 @@
+.about {
+  background: Indigo;
+  bottom: 0;
+  color: Lavender;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  padding: calc(100 * var(--px)) calc(25 * var(--px)) calc(25 * var(--px));
+  position: absolute;
+  right: 0;
+  text-shadow: none;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform steps(12) 0.75s;
+}
+
+.about[data-visible="true"] {
+  transform: translateX(0);
+}
+
+.about::before {
+  background: RebeccaPurple;
+  bottom: 0;
+  content: "";
+  display: flex;
+  left: 0;
+  opacity: 0.25;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.about > * {
+  position: relative;
+}
+
+.about p + p {
+  margin-top: 1em;
+}
+
+.about a {
+  color: HotPink;
+}
+
+.about a:hover {
+  color: DeepPink;
+}
+
+.about {
+  font-size: calc(18.75 * var(--px));
+}
+
+hr {
+  all: unset;
+  display: flex;
+  width: 100%;
+  height: calc(2 * var(--px));
+  background: RebeccaPurple;
+  margin: calc(18.75 * var(--px)) 0;
+}

@@ -1,6 +1,9 @@
+import About from "./About.js";
+
 export default class Navigation {
   constructor(selector) {
     this.element = document.querySelector(selector);
+    this.about = new About(".about");
   }
 
   hide() {

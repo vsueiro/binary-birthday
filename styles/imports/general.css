@@ -21,6 +21,7 @@ body {
   background: rgba(64, 224, 208, 0.25); /* Turquoise */
 }
 
-*:focus:not(:hover) {
-  outline: calc(2 * var(--px)) dashed Turquoise;
+*:focus {
+  outline: none;
+  /* outline: calc(2 * var(--px)) solid Turquoise; */
 }
