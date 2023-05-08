@@ -13,10 +13,12 @@
   top: 0;
   transform: translateX(-100%);
   transition: transform steps(12) 0.75s;
+  user-select: none;
 }
 
 .about[data-visible="true"] {
   transform: translateX(0);
+  user-select: auto;
 }
 
 .about::before {
