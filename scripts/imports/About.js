@@ -2,7 +2,7 @@ export default class About {
   constructor(container, birthdayCake) {
     this.container = document.querySelector(container);
     this.birthdayCake = birthdayCake;
-    this.button = document.querySelector(".menu");
+    this.button = document.querySelector(".info");
 
     this.setup();
   }

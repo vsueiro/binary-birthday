@@ -19,9 +19,16 @@
   pointer-events: none;
 }
 
-.menu {
+/* .menu {
   background-image: url(../../images/menu.png);
   background-size: calc(12 * var(--px)) calc(10 * var(--px));
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.info {
+  background-image: url(../../images/info.png);
+  background-size: calc(6 * var(--px)) calc(12 * var(--px));
   background-position: center;
   background-repeat: no-repeat;
 }

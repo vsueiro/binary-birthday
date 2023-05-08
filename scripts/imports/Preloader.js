@@ -25,7 +25,7 @@ export default class Preloader {
       "./images/candle-wick-0.png",
       "./images/candle-wick-1.png",
       "./images/composite/logo.png",
-      "./images/menu.png",
+      "./images/info.png",
       "./images/strawberry-0-outline.png",
       "./images/strawberry-0.png",
       "./images/strawberry-1-outline.png",
