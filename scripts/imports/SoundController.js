@@ -2,23 +2,47 @@ export default class SoundController {
   constructor(selector, sounds) {
     this.button = document.querySelector(selector);
     this.sounds = sounds;
+    this.muted = false;
 
     this.setup();
   }
 
   setup() {
     this.button.addEventListener("click", () => {
-      const string = this.button.dataset.muted;
-      const muted = JSON.parse(string);
+      if (this.muted) this.unmute();
+      else this.mute();
+    });
 
-      if (muted) {
-        this.sounds.unmute();
-        this.button.dataset.muted = false;
-      } else {
-        this.sounds.mute();
-        this.button.dataset.muted = true;
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        this.unmuteBackground();
+      } else if (document.visibilityState === "hidden") {
+        this.muteBackground();
       }
     });
+  }
+
+  mute() {
+    this.sounds.mute();
+    this.muted = true;
+    this.button.dataset.muted = this.muted;
+  }
+
+  unmute() {
+    this.sounds.unmute();
+    this.muted = false;
+    this.button.dataset.muted = this.muted;
+  }
+
+  muteBackground() {
+    this.sounds.background.fade(0.05, 0, 1000);
+  }
+
+  unmuteBackground() {
+    if (this.sounds.background.playing() === false) {
+      this.sounds.background.play();
+    }
+    this.sounds.background.fade(0, 0.05, 1000);
   }
 
   show() {

@@ -45,8 +45,7 @@ export default class Explainer {
       this.typer.type(slide);
 
       if (this.isFirst) {
-        sounds.background.play();
-        sounds.background.fade(0, 0.05, 1000);
+        sounds.controller.unmuteBackground();
         sounds.controller.show();
 
         this.isFirst = false;
