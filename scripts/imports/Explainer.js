@@ -7,6 +7,7 @@ export default class Explainer {
     this.birthdayCake = birthdayCake;
     this.initialDelay = 2500;
     this.isFirst = true;
+    this.timeout;
 
     this.typer = new Typer(this.container, ".box p");
 
@@ -28,7 +29,7 @@ export default class Explainer {
       on: {
         // TODO: Improve design
         init: () => {
-          setTimeout(() => {
+          this.timeout = setTimeout(() => {
             const slide = document.querySelector(".swiper-slide");
             this.typer.type(slide);
           }, this.initialDelay);
@@ -37,6 +38,8 @@ export default class Explainer {
     });
 
     this.swiper.on("slideChange", () => {
+      clearTimeout(this.timeout);
+
       const step = this.swiper.activeIndex;
       const slide = this.swiper.slides[step];
 
