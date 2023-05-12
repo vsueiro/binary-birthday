@@ -50,7 +50,6 @@ export default class Explainer {
       if (this.isFirst) {
         sounds.controller.unmuteBackground();
         sounds.controller.show();
-
         this.isFirst = false;
       }
 
@@ -93,17 +92,16 @@ export default class Explainer {
   }
 
   disableNext() {
-    if (this.direction === "next") {
-      this.swiper.disable();
-      this.swiper.navigation.nextEl[0].blur();
-    }
+    const next = this.swiper.navigation.nextEl[0];
+    next.classList.add("swiper-button-lock");
+    next.blur();
+    this.swiper.allowSlideNext = false;
   }
 
   enableNext() {
-    if (this.direction === "next") {
-      this.swiper.enable();
-      // this.swiper.navigation.nextEl[0].focus();
-    }
+    const next = this.swiper.navigation.nextEl[0];
+    next.classList.remove("swiper-button-lock");
+    this.swiper.allowSlideNext = true;
   }
 
   update() {
@@ -128,6 +126,7 @@ export default class Explainer {
         break;
 
       default:
+        this.enableNext();
     }
 
     this.updateDynamicText();
