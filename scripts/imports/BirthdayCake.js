@@ -305,7 +305,7 @@ export default class BirthdayCake {
 
       case 15:
         this.age = 0;
-        this.options.minCandles = 0;
+        this.options.minCandles = 7;
         this.logo.hide();
         this.candles.decimal.form.show();
         this.candles.decimal.show();
