@@ -20,6 +20,7 @@ export default class App {
     setTimeout(() => {
       this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);
 
+      this.element.classList.add("initialized");
       // document.addEventListener(
       //   "click",
       //   () => {
