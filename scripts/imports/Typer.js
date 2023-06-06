@@ -3,8 +3,8 @@ export default class Typer {
     this.container = container;
     this.selector = selector;
     this.paragraphs = this.container.querySelectorAll(selector);
-    this.delay = 20;
-    this.punctuationDelay = 600;
+    this.delay = 15;
+    this.punctuationDelay = 500;
     this.interval;
     this.timeout;
 

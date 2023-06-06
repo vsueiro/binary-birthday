@@ -95,7 +95,8 @@ code .typer-char {
   min-width: 1ch;
 }
 
-code.user-age-decimal {
+code.user-age-decimal,
+code.shuffle-age-decimal {
   color: DeepPink;
 }
 

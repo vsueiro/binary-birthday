@@ -1,5 +1,6 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js";
 import Typer from "./Typer.js";
+import Quiz from "./Quiz.js";
 
 export default class Explainer {
   constructor(container, birthdayCake) {
@@ -9,6 +10,7 @@ export default class Explainer {
     this.isFirst = true;
     this.timeout;
 
+    this.quiz = new Quiz(this.birthdayCake);
     this.typer = new Typer(this.container, ".box p");
 
     this.swiper = new Swiper(".swiper", {

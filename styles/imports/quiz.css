@@ -1,0 +1,15 @@
+@keyframes blink {
+  0% {
+    background: transparent;
+  }
+
+  100% {
+    background: powderblue;
+  }
+}
+
+.shuffle-age-decimal {
+  background: transparent;
+
+  animation: blink 1s steps(3);
+}

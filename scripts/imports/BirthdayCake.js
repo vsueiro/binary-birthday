@@ -314,6 +314,17 @@ export default class BirthdayCake {
         this.candles.binary.show();
         break;
 
+      case 16:
+        this.age = 0;
+        this.options.minCandles = 7;
+        this.logo.hide();
+        this.candles.decimal.form.hide();
+        this.candles.decimal.show();
+        this.connectors.show();
+        this.labels.hide();
+        this.candles.binary.show();
+        break;
+
       default:
     }
   }

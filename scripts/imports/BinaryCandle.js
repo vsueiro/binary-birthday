@@ -27,6 +27,8 @@ export default class BinaryCandle {
       this.birthdayCake.update();
 
       sounds.candle.play();
+
+      this.birthdayCake.explainer.quiz.checkAnswer();
     });
   }
 
