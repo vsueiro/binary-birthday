@@ -40,7 +40,7 @@ export default class Quiz {
   }
 
   displayAge() {
-    this.shuffledAgeElement.classList.add("just-shuffled");
+    this.shuffledAgeElement.parentElement.classList.add("just-shuffled");
 
     const explainerInitialized = this.birthdayCake.explainer;
 
@@ -58,7 +58,7 @@ export default class Quiz {
     clearTimeout(this.timeout);
 
     this.timeout = setTimeout(() => {
-      this.shuffledAgeElement.classList.remove("just-shuffled");
+      this.shuffledAgeElement.parentElement.classList.remove("just-shuffled");
     }, this.delay);
   }
 
