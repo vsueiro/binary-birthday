@@ -2,3 +2,4 @@
 - [ ] Fix confetti on Safari
 - [ ] Fix text display position on Safari
 - [ ] Make last step into an actual game (with score & lives)
+- [ ] Make typing times more consistent across browsers & within sessions
