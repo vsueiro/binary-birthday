@@ -1,9 +1,9 @@
 .swiper {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: calc(12 * var(--px));
+  height: 100%;
+  width: 100%;
 }
 
 .swiper-slide {
@@ -12,6 +12,35 @@
   flex-direction: column;
   height: auto;
   justify-content: end;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 20 version
+*/
+
+/* prettier-ignore */
+.swiper-slide {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .swiper-buttons {
@@ -55,9 +84,9 @@
 
 .swiper-button-prev.swiper-button-lock,
 .swiper-button-next.swiper-button-lock {
+  cursor: auto;
   display: flex;
   opacity: 0.35;
-  cursor: auto;
-  pointer-events: none;
   outline: none;
+  pointer-events: none;
 }
