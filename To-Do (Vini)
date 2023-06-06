@@ -1,4 +1,4 @@
-- [ ] Remove fancy candles step
+- [x] Remove fancy candles step
 - [ ] Fix confetti on Safari
 - [ ] Fix text display position on Safari
 - [ ] Make last step into an actual game (with score & lives)

@@ -2,7 +2,7 @@ export default class Quiz {
   constructor(birthdayCake) {
     this.birthdayCake = birthdayCake;
 
-    this.quizStep = 16;
+    this.quizStep = 15;
     this.shuffledAge = 0;
     this.shuffledAgeElement = document.querySelector(".shuffle-age-decimal");
     this.timeout = undefined;

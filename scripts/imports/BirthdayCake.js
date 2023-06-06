@@ -282,28 +282,6 @@ export default class BirthdayCake {
         break;
 
       case 14:
-        this.age = this.userAge;
-        this.options.minCandles = 0;
-        this.logo.hide();
-        this.candles.decimal.form.hide();
-        this.candles.decimal.hide();
-        this.connectors.hide();
-        this.labels.hide();
-        this.candles.binary.show();
-
-        if (this.state % 2 === 0) {
-          this.candles.decimal.show();
-          this.candles.binary.hide();
-        }
-
-        this.timeout = setTimeout(() => {
-          this.handle(this.step);
-        }, 1000);
-
-        this.state++;
-        break;
-
-      case 15:
         this.age = 0;
         this.options.minCandles = 7;
         this.logo.hide();
@@ -314,7 +292,7 @@ export default class BirthdayCake {
         this.candles.binary.show();
         break;
 
-      case 16:
+      case 15:
         this.age = 0;
         this.options.minCandles = 7;
         this.logo.hide();
