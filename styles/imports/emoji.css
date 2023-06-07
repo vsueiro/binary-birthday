@@ -1,0 +1,41 @@
+.emoji {
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-flex;
+  width: calc(25 * var(--px));
+}
+
+.emoji-wick-1 {
+  background-image: url(../../images/emoji-candle-wick-1.png);
+}
+
+.emoji-strawberry {
+  background-image: url(../../images/strawberry-0.png);
+  background-position: center bottom;
+  background-size: calc(18.75 * var(--px));
+}
+
+.emoji-balloon {
+  background-position: center bottom;
+  background-size: calc(20 * var(--px)) calc(25 * var(--px));
+  display: flex;
+}
+
+.emoji-balloon-deeppink {
+  background-image: url(../../images/balloon-deeppink.png);
+}
+.emoji-balloon-tomato {
+  background-image: url(../../images/balloon-tomato.png);
+}
+.emoji-balloon-coral {
+  background-image: url(../../images/balloon-coral.png);
+}
+.emoji-balloon-hotpink {
+  background-image: url(../../images/balloon-hotpink.png);
+}
+
+.emoji-balloon-empty {
+  background-image: url(../../images/balloon-empty.png);
+  filter: brightness(0.75);
+}

@@ -8,19 +8,95 @@
   }
 }
 
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(1.25);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
 .shuffle-age-decimal {
-  animation: blink 1s steps(4) infinite;
+  animation: heartbeat 1.5s ease-in-out infinite both;
   background: Transparent;
   padding: 0 0.2em;
-  transition: transform 0.5s;
+
+  display: inline-flex;
 }
 
 .shuffle-age-decimal-wrapper {
+  display: inline-block;
   transform: rotate(0deg) scale(1);
   transition: transform 0.5s;
-  display: inline-block;
 }
 
 .shuffle-age-decimal-wrapper.just-shuffled {
   transform: rotate(360deg) scale(1.5);
+}
+
+.scoreboard {
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+
+[data-step="15"] .scoreboard {
+  visibility: visible;
+  transform: translateY(0%);
+}
+
+.score {
+  display: flex;
+  padding: calc(4 * var(--px));
+  margin-top: calc(6 * var(--px)) !important;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.just-scored {
+  animation: jello-horizontal 1s both;
 }

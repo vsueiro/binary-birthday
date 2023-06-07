@@ -55,11 +55,11 @@
 
 hr {
   all: unset;
-  display: flex;
-  width: 100%;
-  height: calc(2 * var(--px));
   background: RebeccaPurple;
+  display: flex;
+  height: calc(2 * var(--px));
   margin: calc(18.75 * var(--px)) 0;
+  width: 100%;
 }
 
 .about .user-age.bit {

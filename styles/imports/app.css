@@ -1,12 +1,12 @@
 .app {
   align-items: center;
+  background: RebeccaPurple;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
-  background: RebeccaPurple;
 }
 
 @media (min-width: 480px) {

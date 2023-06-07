@@ -299,7 +299,7 @@ export default class BirthdayCake {
         this.candles.decimal.form.hide();
         this.candles.decimal.show();
         this.connectors.show();
-        this.labels.hide();
+        this.labels.show();
         this.candles.binary.show();
         break;
 

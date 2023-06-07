@@ -4,15 +4,25 @@ export default class Quiz {
 
     this.quizStep = 15;
     this.shuffledAge = 0;
-    this.shuffledAgeElement = document.querySelector(".shuffle-age-decimal");
+    this.elements = {};
+
+    this.elements.shuffledAge = document.querySelector(".shuffle-age-decimal");
+    this.elements.score = document.querySelector(".score");
+    this.elements.balloons =
+      this.elements.score.querySelectorAll(".emoji-balloon");
+
     this.timeout = undefined;
     this.delay = 1000;
     this.score = 0;
+    this.maxScore = 5;
+    this.lost = false;
+    this.won = false;
 
     // TODO: implement lives deduction for every mistake
     this.lives = 14;
 
     this.shuffleAge();
+    this.displayScore();
   }
 
   random(min, max) {
@@ -40,7 +50,7 @@ export default class Quiz {
   }
 
   displayAge() {
-    this.shuffledAgeElement.parentElement.classList.add("just-shuffled");
+    this.elements.shuffledAge.parentElement.classList.add("just-shuffled");
 
     const explainerInitialized = this.birthdayCake.explainer;
 
@@ -50,16 +60,38 @@ export default class Quiz {
         true
       );
 
-      this.shuffledAgeElement.innerHTML = typedAge;
+      this.elements.shuffledAge.innerHTML = typedAge;
     } else {
-      this.shuffledAgeElement.innerHTML = this.shuffledAge;
+      this.elements.shuffledAge.innerHTML = this.shuffledAge;
     }
 
     clearTimeout(this.timeout);
 
     this.timeout = setTimeout(() => {
-      this.shuffledAgeElement.parentElement.classList.remove("just-shuffled");
+      this.elements.shuffledAge.parentElement.classList.remove("just-shuffled");
     }, this.delay);
+  }
+
+  displayScore() {
+    const empty = "emoji-balloon-empty";
+
+    for (let i = 0; i < this.score; i++) {
+      const length = this.elements.balloons.length - 1;
+      const index = length - i;
+      const balloon = this.elements.balloons[index];
+
+      const isMostRecent = i === this.score - 1;
+
+      if (isMostRecent) {
+        balloon.classList.add("just-scored");
+      }
+
+      balloon.classList.remove(empty);
+    }
+
+    // const remaining = this.maxScore - this.score;
+    // const string = todo.repeat(remaining) + done.repeat(this.score);
+    // this.elements.score.textContent = string;
   }
 
   resetCakeAge() {
@@ -67,14 +99,26 @@ export default class Quiz {
     this.birthdayCake.update();
   }
 
+  updateScore(increment = 1) {
+    this.score += increment;
+
+    this.displayScore();
+  }
+
   success() {
-    this.score += 1;
+    this.updateScore();
 
     alert(
       "Yay! You got it! [Fireworks animation!] Now, try with another number…"
     );
 
     this.resetCakeAge();
-    this.shuffleAge();
+
+    if (this.score < this.maxScore) {
+      this.shuffleAge();
+    } else {
+      this.won = true;
+      alert("Congrats! You got 5 questions right!");
+    }
   }
 }
