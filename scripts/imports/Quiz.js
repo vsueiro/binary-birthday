@@ -25,6 +25,15 @@ export default class Quiz {
     this.displayScore();
   }
 
+  get binary() {
+    const string = this.shuffledAge.toString(2);
+    const paddedString = string.padStart(
+      this.birthdayCake.options.minCandles,
+      "0"
+    );
+    return paddedString;
+  }
+
   random(min, max) {
     return Math.floor(Math.random() * max) + min;
   }
@@ -38,9 +47,10 @@ export default class Quiz {
     if (this.isActive()) {
       if (this.birthdayCake.age === this.shuffledAge) {
         this.success();
+      } else {
+        // TODO: compare strings below to check if player made a mistake
+        console.log(this.birthdayCake.binary, this.binary);
       }
-
-      console.log(this.birthdayCake.age);
     }
   }
 
