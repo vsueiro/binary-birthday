@@ -10,16 +10,16 @@ export default class Quiz {
     this.elements.score = document.querySelector(".score");
     this.elements.balloons =
       this.elements.score.querySelectorAll(".emoji-balloon");
+    this.elements.strawberries = document.querySelectorAll(".strawberry");
 
     this.timeout = undefined;
     this.delay = 1000;
     this.score = 0;
     this.maxScore = 5;
+    this.lives = 7;
+    this.maxLives = 7;
     this.lost = false;
     this.won = false;
-
-    // TODO: implement lives deduction for every mistake
-    this.lives = 14;
 
     this.shuffleAge();
     this.displayScore();
@@ -49,9 +49,34 @@ export default class Quiz {
         this.success();
       } else {
         // TODO: compare strings below to check if player made a mistake
-        console.log(this.birthdayCake.binary, this.binary);
+
+        const userGuess = this.birthdayCake.binary;
+        const target = this.binary;
+
+        for (let i = 0; i < userGuess.length; i++) {
+          let userDigit = userGuess[i];
+          let targetDigit = target[i];
+
+          if (userDigit === "1") {
+            if (targetDigit !== "1") {
+              const fixedGuess = this.fixGuess(userGuess, i, "0");
+              const fixedAge = parseInt(fixedGuess, 2);
+
+              this.birthdayCake.age = fixedAge;
+              this.birthdayCake.update();
+
+              this.error(i);
+            }
+          }
+        }
       }
     }
+  }
+
+  fixGuess(guess, index, value) {
+    let chars = guess.split("");
+    chars[index] = value;
+    return chars.join("");
   }
 
   shuffleAge() {
@@ -129,6 +154,45 @@ export default class Quiz {
     } else {
       this.won = true;
       alert("Congrats! You got 5 questions right!");
+    }
+  }
+
+  updateLives(increment = -1) {
+    this.lives += increment;
+
+    this.displayLives();
+  }
+
+  displayLives() {
+    const lostLives = this.maxLives - this.lives;
+
+    for (let i = 0; i < lostLives; i++) {
+      const strawberry = this.elements.strawberries[i];
+
+      this.eat(strawberry);
+    }
+
+    console.log(`Only ${this.lives} strawberries left`);
+  }
+
+  eat(strawberry) {
+    if (strawberry.dataset.eaten === "0") {
+      strawberry.dataset.eaten = "1";
+
+      setTimeout(() => {
+        strawberry.dataset.eaten = "2";
+      }, 500);
+    }
+  }
+
+  error(candleIndex) {
+    alert(`Candle #${candleIndex + 1} should not be lit`);
+
+    this.updateLives(-1);
+
+    if (this.lives <= 0) {
+      alert("Game Over");
+      this.lost = true;
     }
   }
 }
