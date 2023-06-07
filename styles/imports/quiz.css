@@ -53,11 +53,6 @@
 .scoreboard {
   display: flex;
   visibility: hidden;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
   transform: translateY(-100%);
   transition: all 0.5s;
 }
