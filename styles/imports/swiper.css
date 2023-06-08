@@ -48,8 +48,8 @@
   display: flex;
   gap: calc(32 * var(--px));
   justify-content: center;
-  margin-bottom: calc(4 * var(--px));
-  position: relative;
+  padding-bottom: calc(8 * var(--px));
+  margin-bottom: calc(8 * var(--px));
   width: 100%;
 }
 
@@ -89,4 +89,32 @@
   opacity: 0.35;
   outline: none;
   pointer-events: none;
+}
+
+.swiper-pagination-progressbar {
+  position: absolute;
+  bottom: 0;
+  top: auto !important;
+  height: calc(4 * var(--px)) !important;
+  background: Indigo;
+}
+
+.swiper-pagination-progressbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: RebeccaPurple;
+  opacity: 0.5;
+}
+
+.swiper-pagination-progressbar-fill {
+  background: HotPink !important;
+  transition: transform 0.5s !important;
+}
+
+.app[data-quiz="true"] .swiper-pagination-progressbar-fill {
+  background: Turquoise !important;
 }

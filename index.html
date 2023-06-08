@@ -13,7 +13,7 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <div class="app">
+    <div class="app" data-quiz="false" data-step="0">
       <div class="confetti" aria-hidden="true"></div>
 
       <nav class="navigation">
@@ -136,8 +136,8 @@
                 </div>
               </div>
               <!-- 8 -->
-              <div class="swiper-slide">
-                <div class="box quiz">
+              <div class="swiper-slide quiz">
+                <div class="box">
                   <p>
                     <strong>Try for yourself!</strong> On your 9<sup>th</sup>
                     birthday, which candles need to be lit?
@@ -146,8 +146,8 @@
                 </div>
               </div>
               <!-- 9 -->
-              <div class="swiper-slide">
-                <div class="box quiz">
+              <div class="swiper-slide quiz">
+                <div class="box">
                   <p>
                     Now, back to reality. Can you light candles that add up to
                     <strong>your current age</strong>?
@@ -222,8 +222,8 @@
                 </div>
               </div>
               <!-- 15 -->
-              <div class="swiper-slide">
-                <div class="box quiz">
+              <div class="swiper-slide quiz">
+                <div class="box">
                   <p>
                     <strong>Random quiz!</strong>
                     Can you light up candles that represent
@@ -242,6 +242,8 @@
             <div class="swiper-buttons">
               <button class="swiper-button-prev"></button>
               <button class="swiper-button-next"></button>
+
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>

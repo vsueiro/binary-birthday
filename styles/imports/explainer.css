@@ -20,7 +20,6 @@ body {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding-top: calc(12 * var(--px));
   transform: translateX(-100%);
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
   width: 100%;
@@ -32,7 +31,6 @@ body {
 
 .explainer .verbal {
   height: fit-content;
-  padding-bottom: calc(8 * var(--px));
   transform: translateY(100%);
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
   width: 100%;
@@ -55,7 +53,7 @@ body {
   width: calc(100% - calc(24 * var(--px)));
 }
 
-.explainer .box.quiz {
+.explainer .quiz .box {
   border-color: Turquoise;
 }
 

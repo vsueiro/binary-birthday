@@ -21,6 +21,10 @@ export default class Explainer {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
       keyboard: {
         enabled: true,
       },
@@ -44,6 +48,12 @@ export default class Explainer {
 
       const step = this.swiper.activeIndex;
       const slide = this.swiper.slides[step];
+
+      if (slide.classList.contains("quiz")) {
+        this.birthdayCake.app.dataset.quiz = "true";
+      } else {
+        this.birthdayCake.app.dataset.quiz = "false";
+      }
 
       this.birthdayCake.handle(step);
       this.birthdayCake.update();
