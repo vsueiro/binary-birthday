@@ -10,7 +10,6 @@ export default class Quiz {
     this.elements.score = document.querySelector(".score");
     this.elements.balloons =
       this.elements.score.querySelectorAll(".emoji-balloon");
-    this.elements.strawberries = document.querySelectorAll(".strawberry");
 
     this.timeout = undefined;
     this.delay = 1000;
@@ -166,9 +165,10 @@ export default class Quiz {
   displayLives() {
     const lostLives = this.maxLives - this.lives;
 
-    for (let i = 0; i < lostLives; i++) {
-      const strawberry = this.elements.strawberries[i];
+    const strawberries = this.birthdayCake.cake.strawberries.list;
 
+    for (let i = 0; i < lostLives; i++) {
+      const strawberry = strawberries[i].element;
       this.eat(strawberry);
     }
 
@@ -177,22 +177,21 @@ export default class Quiz {
 
   eat(strawberry) {
     if (strawberry.dataset.eaten === "0") {
-      strawberry.dataset.eaten = "1";
-
       setTimeout(() => {
-        strawberry.dataset.eaten = "2";
+        strawberry.dataset.eaten = "1";
+
+        setTimeout(() => {
+          strawberry.dataset.eaten = "2";
+        }, 500);
       }, 500);
     }
   }
 
   error(candleIndex) {
     const candles = this.birthdayCake.candles.binary.list;
-
-    console.log(`Candle #${candleIndex + 1} should not be lit`);
-
     const candle = candles[candleIndex].element;
 
-    console.log(candle);
+    console.log(`Candle #${candleIndex + 1} should not be lit`);
 
     candle.classList.remove("just-lit-by-mistake");
     candle.classList.add("just-lit-by-mistake");

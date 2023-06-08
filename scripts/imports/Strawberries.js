@@ -13,6 +13,7 @@ export default class Strawberries {
 
     for (let i = 0; i < this.amount; i++) {
       const strawberry = new Strawberry();
+      this.list.push(strawberry);
       this.element.append(strawberry.element);
     }
   }
