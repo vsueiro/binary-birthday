@@ -1,7 +1,7 @@
 export default class Confetti {
   constructor(container) {
     this.container = document.querySelector(container);
-    this.amount = 256;
+    this.amount = 32;
     this.symbols = "○●□■△▲";
     this.create();
   }
