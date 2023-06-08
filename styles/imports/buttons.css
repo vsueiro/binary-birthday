@@ -17,6 +17,7 @@ button,
   min-width: calc(30 * var(--px));
   padding: 0 calc(8 * var(--px)) calc(4 * var(--px));
   position: relative;
+  transform: translate3D(0, 0, 0);
 }
 
 button:hover,
@@ -27,7 +28,7 @@ button:hover,
 button:active,
 .button:active {
   filter: drop-shadow(calc(3 * var(--px)) calc(3 * var(--px)) 0 Indigo);
-  transform: translate(calc(1 * var(--px)), calc(1 * var(--px)));
+  transform: translate3D(calc(1 * var(--px)), calc(1 * var(--px)), 0);
 }
 
 button.secondary,

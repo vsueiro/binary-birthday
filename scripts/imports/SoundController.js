@@ -46,6 +46,6 @@ export default class SoundController {
   }
 
   show() {
-    this.button.dataset.visible = "true";
+    this.button.parentElement.dataset.visible = "true";
   }
 }

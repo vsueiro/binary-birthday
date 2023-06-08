@@ -37,7 +37,10 @@
   background-size: calc(14 * var(--px)) calc(12 * var(--px));
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateY(calc(-54 * var(--px)));
+}
+
+.audio-wrapper {
+  transform: translate3D(0, calc(-54 * var(--px)), 0);
   transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
 }
 
@@ -51,6 +54,6 @@
   background-image: url(../../images/audio-muted.png);
 }
 
-.navigation .audio[data-visible="true"] {
-  transform: translateY(0);
+.navigation .audio-wrapper[data-visible="true"] {
+  transform: translate3D(0, 0, 0);
 }
