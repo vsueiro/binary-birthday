@@ -14,10 +14,13 @@
   background-size: 100%;
   height: calc(20 * var(--px));
   width: calc(24 * var(--px));
+}
+
+.strawberry[data-interactive="true"]:hover {
   cursor: pointer;
 }
 
-.strawberry:active {
+.strawberry[data-interactive="true"]:active {
   transform: translateY(calc(-2 * var(--px)));
 }
 

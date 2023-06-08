@@ -4,6 +4,7 @@ export default class Strawberry {
     this.respawn = 4000;
     this.limit = 2;
     this.timeout;
+    this.interactive = false;
 
     this.setup();
   }
@@ -28,9 +29,13 @@ export default class Strawberry {
     this.element = document.createElement("div");
     this.element.classList.add("strawberry");
 
-    this.element.addEventListener("click", () => {
-      this.eat();
-    });
+    if (this.interactive) {
+      this.element.dataset.interactive = "true";
+
+      this.element.addEventListener("click", () => {
+        this.eat();
+      });
+    }
 
     this.update();
   }
