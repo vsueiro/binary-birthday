@@ -1,0 +1,128 @@
+@keyframes blink {
+  0% {
+    background: Transparent;
+  }
+
+  100% {
+    background: Turquoise;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(1.25);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.shuffle-age-decimal {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+  background: Transparent;
+  padding: 0 0.2em;
+
+  display: inline-flex;
+}
+
+.shuffle-age-decimal-wrapper {
+  display: inline-block;
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.5s;
+}
+
+.shuffle-age-decimal-wrapper.just-shuffled {
+  transform: rotate(360deg) scale(1.5);
+}
+
+.scoreboard {
+  display: flex;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+
+[data-step="15"] .scoreboard {
+  visibility: visible;
+  transform: translateY(0%);
+}
+
+.score {
+  display: flex;
+  padding: calc(4 * var(--px));
+  margin-top: calc(6 * var(--px)) !important;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.just-scored {
+  animation: jello-horizontal 1s both;
+}
+
+@keyframes shake-bottom {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+.just-lit-by-mistake {
+  animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}

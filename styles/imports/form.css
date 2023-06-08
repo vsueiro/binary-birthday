@@ -1,84 +1,65 @@
-form {
+.candles form {
+  bottom: 0;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-top: 64px;
-  gap: 24px;
-}
-
-form label {
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 8px;
-}
-
-form label {
-  font-weight: normal;
-  text-align: center;
-  margin: 0 auto;
-}
-
-form .plus,
-form .minus {
-  margin-top: 16px;
-}
-
-.age-container {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.age-input {
-  position: relative;
-  display: flex;
+  height: calc(64 * var(--px));
   justify-content: center;
-  width: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(256 * var(--px));
 }
 
-.age-input input {
-  all: unset;
+.candles button::before,
+.candles button::after {
+  background: Indigo;
+  content: "";
+  display: flex;
+  height: calc(4 * var(--px));
+  left: 50%;
+  margin-left: calc(-6 * var(--px));
+  margin-top: calc(-2 * var(--px));
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: -0.48em;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 50px;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.28em;
-  padding-left: 0.28em;
+  top: 50%;
+  width: calc(12 * var(--px));
+}
+
+.candles button.minus {
+  bottom: calc(8 * var(--px));
+  left: calc(12 * var(--px));
+  position: absolute;
+}
+
+.candles button.minus::after {
+  display: none;
+}
+
+.candles button.plus::after {
+  transform: rotate(90deg);
+}
+
+.candles button.plus {
+  bottom: calc(8 * var(--px));
+  position: absolute;
+  right: calc(12 * var(--px));
+}
+
+.candles input {
+  border: 4px dashed transparent;
   caret-color: DeepPink;
   color: transparent;
+  font-size: calc(50 * var(--px));
+  font-variant-numeric: tabular-nums;
+  height: calc(calc(25 * var(--px)) + calc(64 * var(--px)));
+  letter-spacing: 0;
+  letter-spacing: 0.28em;
+  line-height: 0;
+  padding-left: 0.32em;
+  padding-top: calc(12.5 * var(--px));
+  position: relative;
+  text-align: center;
   text-shadow: none;
-  background-color: Transparent;
-  width: calc(32px * 3);
-  margin: 0 auto;
-  padding: 0 16px;
+  top: calc(-6.25 * var(--px));
+  width: calc(32 * 4 * var(--px));
   z-index: 1;
-  border: 4px dashed rgba(255, 20, 145, 0.2);
-}
-
-.age-input input:hover,
-.age-input input:focus {
-  animation: pulsate 0.5s steps(6) infinite alternate;
-}
-
-@keyframes pulsate {
-  0% {
-    /* border-color: Transparent; */
-    border-color: rgba(255, 20, 145, 0.2);
-  }
-  100% {
-    border-color: DeepPink;
-  }
-}
-
-.age-display {
-  display: flex;
-  pointer-events: none;
 }

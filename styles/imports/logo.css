@@ -1,0 +1,19 @@
+header {
+  overflow: hidden;
+}
+
+.logo {
+  position: relative;
+  background-image: url(../../images/composite/logo-extended-animated.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: calc(320 * var(--px));
+  top: calc(-160 * var(--px));
+  transform: translateY(calc(-160 * var(--px)));
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+  width: calc(240 * var(--px));
+}
+
+.logo[data-visible="true"] {
+  transform: translateY(0);
+}

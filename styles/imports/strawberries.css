@@ -1,0 +1,33 @@
+.strawberries {
+  bottom: calc(8 * var(--px));
+  display: flex;
+  gap: calc(8 * var(--px));
+  height: calc(20 * var(--px));
+  justify-content: center;
+  position: absolute;
+  width: calc(256 * var(--px));
+}
+
+.strawberry {
+  background-image: url(../../images/strawberry-0.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: calc(20 * var(--px));
+  width: calc(24 * var(--px));
+}
+
+.strawberry[data-interactive="true"]:hover {
+  cursor: pointer;
+}
+
+.strawberry[data-interactive="true"]:active {
+  transform: translateY(calc(-2 * var(--px)));
+}
+
+.strawberry[data-eaten="1"] {
+  background-image: url(../../images/strawberry-1.png);
+}
+
+.strawberry[data-eaten="2"] {
+  background-image: url(../../images/strawberry-2.png);
+}

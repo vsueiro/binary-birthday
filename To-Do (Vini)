@@ -1,0 +1,8 @@
+- [x] Remove fancy candles step
+- [ ] Fix confetti on Safari
+- [x] Fix text display position on Safari
+- [ ] Make last step into an actual game (with score & lives)
+- [ ] Make typing times more consistent across browsers & within sessions
+- [ ] Expect puzzle soundtrack
+- [ ] Expect success after puzzle completion
+- [ ] Add progress bar

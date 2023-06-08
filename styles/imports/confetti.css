@@ -1,9 +1,7 @@
-/* Animations */
 @keyframes fall {
   0% {
     transform: translateY(-100%);
   }
-
   100% {
     transform: translateY(0%);
   }
@@ -11,53 +9,62 @@
 
 @keyframes rotate-and-fade {
   0% {
-    transform: rotate(0deg) translateX(-100%);
-    opacity: 0;
-  }
-  50% {
     opacity: 1;
+    transform: rotate(0deg) translateX(-100%);
   }
   100% {
-    transform: rotate(calc(360deg * 2)) translateX(100%);
     opacity: 0;
+    transform: rotate(calc(360deg * 2)) translateX(100%);
   }
 }
 
 .confetti {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  height: 100lvh;
-  display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.symbol-track {
   display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 16px;
   height: 100%;
-  animation: fall 10s infinite ease-in;
+  justify-content: space-evenly;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.symbol {
-  width: 25px;
-  aspect-ratio: 1;
-  font-size: 25px;
+.confetti::before {
+  background: linear-gradient(Indigo, Transparent);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.particle-track {
+  align-items: end;
+  animation: fall 10s infinite ease-in;
   display: flex;
+  height: 100%;
   justify-content: center;
+  width: calc(16 * var(--px));
+}
+
+.particle {
   align-items: center;
+  animation: rotate-and-fade 10s infinite linear;
+  aspect-ratio: 1;
   color: Indigo;
+  display: flex;
+  flex-shrink: 1;
+  font-size: calc(25 * var(--px));
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
   text-shadow: none;
   user-select: none;
-  pointer-events: none;
-  opacity: 0;
-  flex-shrink: 1;
-  animation: rotate-and-fade 10s infinite linear;
+  width: calc(25 * var(--px));
 }

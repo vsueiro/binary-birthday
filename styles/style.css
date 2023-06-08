@@ -1,7 +1,19 @@
+@import "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css";
+
 @import "./imports/reset.css";
-@import "./imports/fonts.css";
+@import "./imports/screen-reader.css";
+@import "./imports/variables.css";
 @import "./imports/general.css";
-@import "./imports/confetti.css";
+@import "./imports/fonts.css";
+@import "./imports/app.css";
+@import "./imports/logo.css";
 @import "./imports/buttons.css";
-@import "./imports/form.css";
-@import "./imports/candles.css";
+@import "./imports/confetti.css";
+@import "./imports/birthday-cake.css";
+@import "./imports/navigation.css";
+@import "./imports/swiper.css";
+@import "./imports/explainer.css";
+@import "./imports/quiz.css";
+@import "./imports/emoji.css";
+@import "./imports/typer.css";
+@import "./imports/about.css";

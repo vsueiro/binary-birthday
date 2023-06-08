@@ -1,80 +1,113 @@
-import AgeDisplay from "./AgeDisplay.js";
-
 export default class Form {
-  constructor(selector) {
-    // Store refence to <form> element
-    this.element = document.querySelector(selector);
+  constructor(container, birthdayCake, options) {
+    this.container = container;
+    this.birthdayCake = birthdayCake;
+    this.isFirstFocus = true;
 
-    this.minus = this.element.querySelector("button.minus");
-    this.plus = this.element.querySelector("button.plus");
-    this.age = this.element.querySelector("input#age");
+    this.defaults = {};
 
-    this.ageDisplay = new AgeDisplay(".age-display", this);
+    this.options = Object.assign({}, this.defaults, options);
+
+    this.setup();
   }
 
-  get data() {
-    // Extract form data
-    const formData = new FormData(this.element);
+  createElements() {
+    this.element = document.createElement("form");
 
-    // Turn form data into object
-    let data = Object.fromEntries(formData);
+    this.input = document.createElement("input");
+    this.input.setAttribute("type", "number");
+    this.input.setAttribute("inputmode", "numeric");
+    this.input.setAttribute("min", "0");
+    this.input.setAttribute("max", "127");
+    this.input.setAttribute("autocomplete", "off");
+    this.input.setAttribute("name", "age");
+    this.input.setAttribute("value", this.birthdayCake.age);
 
-    /* TEMP: Disable to make it simpler
+    this.button = {};
 
-    // Parse specific properties as numbers or booleans
-    const Numbers = ["age"];
-    const Booleans = [];
+    this.button.plus = document.createElement("button");
+    this.button.plus.setAttribute("type", "button");
+    this.button.plus.classList.add("plus");
 
-    // For each value in the form
-    for (let key in data) {
-      // If it’s supposed to be a number
-      if (Numbers.includes(key)) {
-        // Convert it to a number
-        data[key] = Number(data[key]);
-      }
-      // If it’s supposed to be a boolean
-      else if (Booleans.includes(key)) {
-        // Convert it to a boolean
-        if (data[key] === "on") {
-          data[key] = true;
-        }
-      }
-    }
+    this.button.minus = document.createElement("button");
+    this.button.minus.setAttribute("type", "button");
+    this.button.minus.classList.add("minus");
 
-    */
-
-    // Return converted object
-    return data;
+    this.element.append(this.input, this.button.minus, this.button.plus);
   }
 
-  constrain(field, value, increment = 0) {
-    const min = Number(this[field].min);
-    const max = Number(this[field].max);
+  constrainInput() {
+    const min = Number(this.input.min);
+    const max = Number(this.input.max);
 
-    if (typeof value !== "number") {
-      value = Number(this[field].value) + increment;
-    }
-
-    this[field].value = value;
+    let value = Number(this.input.value);
 
     if (value < min) {
-      this[field].value = min;
+      value = min;
     }
 
     if (value > max) {
-      this[field].value = max;
+      value = max;
     }
 
-    this.ageDisplay.update();
+    this.input.value = value;
   }
 
-  callback(customFunction) {
+  addEventListeners() {
     this.element.addEventListener("submit", (event) => {
-      // Handle form submission using custom callback function
-      if (customFunction) {
-        customFunction(this);
-      }
       event.preventDefault();
     });
+
+    this.input.addEventListener(
+      "focus",
+      () => {
+        this.input.value = 0;
+
+        this.constrainInput();
+        this.birthdayCake.setAgeFromInput();
+        this.birthdayCake.update();
+      },
+      { once: true }
+    );
+
+    this.input.addEventListener("input", () => {
+      this.constrainInput();
+      this.birthdayCake.setAgeFromInput();
+      this.birthdayCake.update();
+    });
+
+    this.button.minus.addEventListener("click", () => {
+      const value = Number(this.input.value);
+      this.input.value = value - 1;
+
+      this.constrainInput();
+      this.birthdayCake.setAgeFromInput();
+      this.birthdayCake.update();
+    });
+
+    this.button.plus.addEventListener("click", () => {
+      const value = Number(this.input.value);
+      this.input.value = value + 1;
+
+      this.constrainInput();
+      this.birthdayCake.setAgeFromInput();
+      this.birthdayCake.update();
+    });
+  }
+
+  setup() {
+    this.createElements();
+    this.addEventListeners();
+
+    this.container.append(this.element);
+  }
+  update() {}
+
+  hide() {
+    this.element.style.display = "none";
+  }
+
+  show() {
+    this.element.style.display = "flex";
   }
 }

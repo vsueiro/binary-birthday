@@ -1,65 +1,305 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary Birthday 🎂</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+      defer
+    ></script>
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <section class="intro">
-      <h1>Binary Birthday</h1>
+    <div class="app">
+      <div class="confetti" aria-hidden="true"></div>
 
-      <p class="tagline">Light up your candles the smart way</p>
+      <nav class="navigation">
+        <button class="info secondary">
+          <span class="screen-reader">Menu</span>
+        </button>
 
-      <p>
-        Why spend money on fancy numbered candles if you can use simple ones to
-        represent your age?
-      </p>
-      <p>
-        Calculate how many candles you’ll need – and which ones you actually
-        need to light up!
-      </p>
-    </section>
-
-    <form>
-      <label for="age">
-        <span>What age will you celebrate?</span>
-      </label>
-
-      <div class="age-container">
-        <button type="button" class="minus" data-step="-1">&minus;</button>
-        <div class="birthday-cake">
-          <div class="age-input">
-            <input
-              type="number"
-              inputmode="numeric"
-              min="0"
-              max="127"
-              placeholder="21"
-              autocomplete="off"
-              value="21"
-              id="age"
-              name="age"
-            />
-            <div class="age-display"></div>
-          </div>
-          <div class="cake"></div>
+        <div class="scoreboard">
+          <button class="score secondary">
+            <span
+              class="emoji emoji-balloon emoji-balloon-deeppink emoji-balloon-empty"
+            ></span>
+            <span
+              class="emoji emoji-balloon emoji-balloon-tomato emoji-balloon-empty"
+            ></span>
+            <span
+              class="emoji emoji-balloon emoji-balloon-coral emoji-balloon-empty"
+            ></span>
+            <span
+              class="emoji emoji-balloon emoji-balloon-hotpink emoji-balloon-empty"
+            ></span>
+            <span
+              class="emoji emoji-balloon emoji-balloon-deeppink emoji-balloon-empty"
+            ></span>
+          </button>
         </div>
-        <button type="button" class="plus" data-step="+1">&plus;</button>
+
+        <div class="audio-wrapper">
+          <button
+            class="audio secondary"
+            data-muted="false"
+            data-visible="false"
+          >
+            <span class="screen-reader">Audio</span>
+          </button>
+        </div>
+      </nav>
+
+      <header>
+        <h1 class="logo">
+          <span class="screen-reader">Binary Birthday</span>
+        </h1>
+      </header>
+
+      <div class="explainer">
+        <div class="visual">
+          <div class="birthday-cake"></div>
+        </div>
+        <div class="verbal">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- 0 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Imagine you turned 7 and your family got you a birthday
+                    cake.
+                    <strong>What else could be on top of it?</strong>
+                  </p>
+                </div>
+              </div>
+              <!-- 1 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>The word “Seven”?</p>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Or maybe 1 candle per year? Those are all ways of
+                    representing the same number…
+                  </p>
+                </div>
+              </div>
+              <!-- 3 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    But what if I told you we can represent the number 7 using
+                    only 3 candles? Enter <strong>Binary Numbers</strong>!
+                  </p>
+                </div>
+              </div>
+              <!-- 4 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>This means we need to agree on some rules:</p>
+                  <p>
+                    • Each candle is worth a <em>unique value</em>, based on its
+                    position
+                  </p>
+                </div>
+              </div>
+              <!-- 5 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>• We <em>add those values</em> to reveal our age</p>
+                </div>
+              </div>
+              <!-- 6 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    <strong>“But… What happens when I turn 8?”</strong>
+                    <!--Glad you asked! -->To represent that number, we need one
+                    more candle on the left
+                  </p>
+                </div>
+              </div>
+              <!-- 7 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>Which brings us to our final rule:</p>
+                  <p>
+                    • We <em>only add lit candles</em>
+                    <span class="typer-char emoji emoji-wick-1"></span>
+                  </p>
+                </div>
+              </div>
+              <!-- 8 -->
+              <div class="swiper-slide">
+                <div class="box quiz">
+                  <p>
+                    <strong>Try for yourself!</strong> On your 9<sup>th</sup>
+                    birthday, which candles need to be lit?
+                  </p>
+                  <p><small>Click on any candle to light it up</small></p>
+                </div>
+              </div>
+              <!-- 9 -->
+              <div class="swiper-slide">
+                <div class="box quiz">
+                  <p>
+                    Now, back to reality. Can you light candles that add up to
+                    <strong>your current age</strong>?
+                  </p>
+                </div>
+              </div>
+              <!-- 10 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Cool! The age of
+                    <code class="user-age user-age-decimal">…</code>
+                    is
+                    <code class="user-age user-age-binary">…</code>
+                    in binary. See how every lit candle can also be written as a
+                    <code class="user-age bit">1</code>?
+                  </p>
+                </div>
+              </div>
+              <!-- 11 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    People often use <code class="user-age bit">1</code>s and
+                    <code class="user-age bit">0</code>s to represent binary
+                    numbers. But we’ll keep using candles
+                    <span class="typer-char emoji emoji-wick-1"></span>
+                  </p>
+                </div>
+              </div>
+              <!-- 12 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    Did you notice a pattern here? In binary, every candle is
+                    <em>worth&nbsp;2&times;</em>
+                    the one on its right.
+                  </p>
+                </div>
+              </div>
+              <!-- 13 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    That’s because we only have 2 possible digits (<code
+                      class="user-age bit"
+                      >0</code
+                    >
+                    and <code class="user-age bit">1</code>)
+                  </p>
+                  <!--
+                  <p>
+                    It’s the with decimals, our everyday numbers. With 10
+                    symbols (<code class="user-age bit">0</code>-<code
+                      class="user-age bit"
+                      >9</code
+                    >), every slot is worth <em>worth&nbsp;10&times;</em> the
+                    previous: 1, 10, 100, 1000…
+                  </p>
+                  -->
+                </div>
+              </div>
+              <!-- 14 -->
+              <div class="swiper-slide">
+                <div class="box">
+                  <p>
+                    <strong>Finally, plan your next birthday:</strong>
+                    type in the age you’ll celebrate and discover which candles
+                    you need to light up!
+                    <span class="typer-char emoji emoji-wick-1"></span>
+                  </p>
+                </div>
+              </div>
+              <!-- 15 -->
+              <div class="swiper-slide">
+                <div class="box quiz">
+                  <p>
+                    <strong>Random quiz!</strong>
+                    Can you light up candles that represent
+                    <span class="shuffle-age-decimal-wrapper">
+                      <code class="user-age shuffle-age-decimal">…</code> </span
+                    >? But be careful, every mistake will cost you a strawberry
+                    <span class="typer-char emoji emoji-strawberry"></span>
+                  </p>
+                </div>
+              </div>
+              <!--
+                Why spend money on fancy numbered candles if you can use simple ones
+                to represent your age?          
+              -->
+            </div>
+            <div class="swiper-buttons">
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="about" data-visible="false">
+        <aside>
+          <p>
+            This project explains
+            <a
+              href="https://en.wikipedia.org/wiki/Binary_number"
+              target="_blank"
+              >binary numbers</a
+            >
+            using your age as a starting point.
+          </p>
+          <p>
+            Here, instead of <code class="user-age bit">1</code>s and
+            <code class="user-age bit">0</code>s, we use birthday candles as an
+            analogy. They can be either lit (<code class="user-age bit">1</code
+            >) or not (<code class="user-age bit">0</code>).
+          </p>
+          <p>
+            If you are curious about computer science, this can be a good
+            (over-simplified) introduction to such an fundamental concept.
+          </p>
+          <p>
+            Hope this sparks your curiosity!&nbsp;<span
+              class="emoji emoji-wick-1"
+            ></span>
+          </p>
+        </aside>
+        <footer>
+          <p>
+            Design and Code by
+            <a href="https://vsueiro.com" target="_blank">Vinicius Sueiro</a>
+            <br />
+            Music and Sound by
+            <a href="https://www.youtube.com/@jayphonic9244" target="_blank"
+              >Jay Wilkins</a
+            >
+            (not yet)
+          </p>
+          <hr />
 
-      <button type="submit">Convert to binary candles</button>
-    </form>
+          <p>
+            Font by
+            <a href="https://sayshu.com/sh-pinscher-free-font" target="_blank"
+              >Tinghao Hu</a
+            >
+            <br />
 
-    <section class="results">
-      <div class="description"></div>
-      <button onclick="alert('This would begin explanation…')">
-        Wait… What?
-      </button>
-    </section>
-
-    <div class="confetti" aria-hidden="true"></div>
+            Inspired by
+            <a href="https://explorabl.es/" target="_blank"
+              >Explorable Explanations</a
+            >&nbsp;<span style="color: DeepPink">♥</span>
+          </p>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

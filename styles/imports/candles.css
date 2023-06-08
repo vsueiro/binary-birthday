@@ -1,148 +1,130 @@
 .candles {
   display: flex;
+  height: calc(64 * var(--px));
   justify-content: center;
+  position: relative;
+  width: calc(256 * var(--px));
+  /* width: fit-content; */
 }
 
-/* Stick */
 .candle {
-  position: relative;
-  width: 32px;
-  aspect-ratio: 1/2;
-  background-image: url(../../media/stick-1.png);
+  background-image: url(../../images/candle-stick.png);
   background-repeat: no-repeat;
   background-size: 100%;
-  -webkit-filter: drop-shadow(4px 4px 0 Indigo);
-  filter: drop-shadow(4px 4px 0 Indigo);
+  filter: drop-shadow(calc(4 * var(--px)) calc(4 * var(--px)) 0 Indigo);
+  height: calc(64 * var(--px));
+  position: relative;
+  width: calc(32 * var(--px));
+  cursor: pointer;
 }
 
-.candle[data-bit="1"] {
-  background-image: url(../../media/stick-1.png);
+.candle:active {
+  transform: translateY(calc(2 * var(--px)));
 }
 
-/* Wick */
+.candle[data-number="0"] {
+  background-image: url(../../images/candle-number-0.png);
+}
+
+.candle[data-number="1"] {
+  background-image: url(../../images/candle-number-1.png);
+}
+
+.candle[data-number="2"] {
+  background-image: url(../../images/candle-number-2.png);
+}
+
+.candle[data-number="3"] {
+  background-image: url(../../images/candle-number-3.png);
+}
+
+.candle[data-number="4"] {
+  background-image: url(../../images/candle-number-4.png);
+}
+
+.candle[data-number="5"] {
+  background-image: url(../../images/candle-number-5.png);
+}
+
+.candle[data-number="6"] {
+  background-image: url(../../images/candle-number-6.png);
+}
+
+.candle[data-number="7"] {
+  background-image: url(../../images/candle-number-7.png);
+}
+
+.candle[data-number="8"] {
+  background-image: url(../../images/candle-number-8.png);
+}
+
+.candle[data-number="9"] {
+  background-image: url(../../images/candle-number-9.png);
+}
+
+.candle[data-letter="e"] {
+  background-image: url(../../images/candle-letter-e.png);
+}
+
+.candle[data-letter="n"] {
+  background-image: url(../../images/candle-letter-n.png);
+}
+
+.candle[data-letter="s"] {
+  background-image: url(../../images/candle-letter-s.png);
+}
+
+.candle[data-letter="v"] {
+  background-image: url(../../images/candle-letter-v.png);
+}
+
 .candle::before {
+  background-image: url(../../images/candle-wick-0.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  bottom: 0;
   content: "";
   display: flex;
+  height: calc(64 * var(--px));
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(32 * var(--px));
+}
+
+.candle[data-status="on"]::before {
+  background-image: url(../../images/candle-wick-1.png);
+}
+
+/* Step 10 */
+
+.app[data-step="10"] .candle {
+  position: relative;
+}
+
+.app[data-step="10"] .candle:not([data-number]),
+.app[data-step="10"] .candle:not([data-number])::before {
+  background: none;
+  filter: none;
+}
+
+.app[data-step="10"] .candle:not([data-number])::after {
+  content: "0";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url(../../media/wick-0.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.candle[data-bit="1"]::before {
-  background-image: url(../../media/wick-1.png);
-}
-
-/* Numbers */
-
-.candle[data-number="0"] {
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.candle[data-number="0"] {
-  background-image: url(../../media/candle-number-0.png);
-}
-
-.candle[data-number="1"] {
-  background-image: url(../../media/candle-number-1.png);
-}
-
-.candle[data-number="2"] {
-  background-image: url(../../media/candle-number-2.png);
-}
-
-.candle[data-number="3"] {
-  background-image: url(../../media/candle-number-3.png);
-}
-
-.candle[data-number="4"] {
-  background-image: url(../../media/candle-number-4.png);
-}
-
-.candle[data-number="5"] {
-  background-image: url(../../media/candle-number-5.png);
-}
-
-.candle[data-number="6"] {
-  background-image: url(../../media/candle-number-6.png);
-}
-
-.candle[data-number="7"] {
-  background-image: url(../../media/candle-number-7.png);
-}
-
-.candle[data-number="8"] {
-  background-image: url(../../media/candle-number-8.png);
-}
-
-.candle[data-number="9"] {
-  background-image: url(../../media/candle-number-9.png);
-}
-
-/* Cake */
-
-.birthday-cake {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-shadow: none;
+  color: Indigo;
+  font-size: calc(50 * var(--px));
 }
 
-.cake {
-  width: 256px;
-  aspect-ratio: 256/96;
-  background-image: url(../../media/cake.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  -webkit-filter: drop-shadow(4px 4px 0 Indigo);
-  filter: drop-shadow(4px 4px 0 Indigo);
-}
-
-.cake.outline {
-  background-image: url(../../media/cake-outline.png);
-}
-
-/* Form results */
-
-.candles:empty {
-  padding: 0;
-}
-
-.candles:empty ~ button {
-  display: none;
-}
-
-.candles:empty ~ .cake {
-  display: none;
-}
-
-.description:empty ~ button {
-  display: none;
-}
-
-.results {
-  display: flex;
-  flex-direction: column;
-  margin-top: 32px;
-}
-
-.results button {
-  align-self: center;
-  margin-top: 32px;
-}
-
-.description {
-  padding: 0 16px;
-  text-align: center;
-}
-
-.description em {
-  display: block;
-  font-size: 20px;
-  margin-top: 1em;
-  font-style: normal;
+.app[data-step="10"] .candle:not([data-number])[data-status="on"]::after {
+  content: "1";
+  color: Coral;
 }

@@ -1,0 +1,42 @@
+.labels {
+  display: flex;
+  height: calc(48 * var(--px));
+  justify-content: center;
+  width: calc(256 * var(--px));
+  width: fit-content;
+  user-select: none;
+}
+
+.labels .label {
+  align-items: center;
+  color: Indigo;
+  display: flex;
+  font-variant: small-caps;
+  height: calc(48 * var(--px));
+  justify-content: center;
+  padding-bottom: 0.25em;
+  text-shadow: none;
+  width: calc(32 * var(--px));
+}
+
+.labels .label[data-status="on"] {
+  color: Coral;
+}
+
+.app[data-step="13"] .label {
+  visibility: hidden;
+  position: relative;
+}
+
+.app[data-step="13"] .label::before {
+  position: absolute;
+  visibility: visible;
+}
+
+.app[data-step="13"] .label[data-status="off"]::before {
+  content: "0";
+}
+
+.app[data-step="13"] .label[data-status="on"]::before {
+  content: "1";
+}

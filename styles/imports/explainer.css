@@ -1,0 +1,141 @@
+body {
+  overflow: hidden;
+}
+
+.explainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: end;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.explainer .visual {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding-top: calc(12 * var(--px));
+  transform: translateX(-100%);
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+  width: 100%;
+}
+
+.app.initialized .explainer .visual {
+  transform: translateX(0);
+}
+
+.explainer .verbal {
+  height: fit-content;
+  padding-bottom: calc(8 * var(--px));
+  transform: translateY(100%);
+  transition: transform 1.5s cubic-bezier(0.25, -0.25, 0.25, 1.25);
+  width: 100%;
+}
+
+.explainer[data-visible="true"] .verbal {
+  transform: translateY(0%);
+}
+
+.explainer .box {
+  background: Lavender;
+  border: calc(4 * var(--px)) solid HotPink;
+  box-shadow: calc(4 * var(--px)) calc(4 * var(--px)) 0 0 Indigo;
+  color: Indigo;
+  /* height: 100%; */
+  /* margin-bottom: calc(80 * var(--px)); */
+  max-width: calc(480 * var(--px));
+  padding: calc(8 * var(--px)) calc(16 * var(--px));
+  text-shadow: none;
+  width: calc(100% - calc(24 * var(--px)));
+}
+
+.explainer .box.quiz {
+  border-color: Turquoise;
+}
+
+.explainer .box strong {
+  color: DeepPink;
+}
+
+.explainer .box em {
+  color: Tomato;
+  font-style: normal;
+}
+
+code.user-age {
+  font-family: inherit;
+  font-variant: small-caps;
+  white-space: nowrap;
+}
+
+code.user-age.bit {
+  color: Tomato;
+}
+
+code .typer-char {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 1ch;
+}
+
+code.user-age-decimal,
+code.shuffle-age-decimal {
+  color: DeepPink;
+}
+
+code.user-age-binary .typer-char {
+  background: RebeccaPurple;
+  box-shadow: 0 calc(2 * var(--px)) 0 RebeccaPurple;
+  color: Coral;
+  position: relative;
+}
+
+code.user-age-binary .typer-char[data-char="0"] {
+  color: Indigo;
+}
+
+code.user-age-binary .typer-char:first-child {
+  padding-left: calc(6 * var(--px));
+}
+
+code.user-age-binary .typer-char:last-child {
+  padding-right: calc(6 * var(--px));
+}
+
+code.user-age-binary .typer-char:first-child::before,
+code.user-age-binary .typer-char:first-child::after,
+code.user-age-binary .typer-char:last-child::before,
+code.user-age-binary .typer-char:last-child::after {
+  aspect-ratio: 1;
+  background: Lavender;
+  content: "";
+  display: flex;
+  position: absolute;
+  width: calc(2 * var(--px));
+}
+
+code.user-age-binary .typer-char:first-child::before {
+  left: 0;
+  top: 0;
+}
+
+code.user-age-binary .typer-char:first-child::after {
+  bottom: calc(-2 * var(--px));
+  left: 0;
+}
+
+code.user-age-binary .typer-char:last-child::before {
+  right: 0;
+  top: 0;
+}
+
+code.user-age-binary .typer-char:last-child::after {
+  bottom: calc(-2 * var(--px));
+  right: 0;
+}

@@ -1,5 +1,30 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  all: unset;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -14,12 +39,17 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-button {
-  all: unset;
-  touch-action: none;
-  -webkit-touch-callout: none; /* Safari */
-  -webkit-user-select: none; /* Chrome */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
+/* Prevent <sup> or <sub> from changing line height */
+sup,
+sub {
+  position: relative;
+  top: -0.4em;
+  vertical-align: baseline;
+}
+sub {
+  top: 0.4em;
+}
+
+abbr {
+  text-decoration: none;
 }
