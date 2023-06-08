@@ -25,3 +25,14 @@ body {
   outline: none;
   /* outline: calc(2 * var(--px)) solid Turquoise; */
 }
+
+.emoji,
+.secondary,
+.logo,
+.candle,
+.cake,
+.strawberry,
+.button,
+button {
+  image-rendering: pixelated;
+}
