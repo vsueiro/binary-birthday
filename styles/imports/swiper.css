@@ -60,7 +60,7 @@
   height: calc(34 * var(--px));
   margin: 0;
   max-width: calc(234 * var(--px));
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   top: initial;
   user-select: none;
