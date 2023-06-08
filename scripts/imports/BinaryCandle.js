@@ -4,7 +4,7 @@ export default class BinaryCandle {
     this.birthdayCake = birthdayCake;
 
     this.element = document.createElement("div");
-    this.element.classList.add("candle");
+    this.element.classList.add("candle", "binary");
 
     this.setup();
   }

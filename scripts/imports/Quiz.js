@@ -186,7 +186,20 @@ export default class Quiz {
   }
 
   error(candleIndex) {
-    alert(`Candle #${candleIndex + 1} should not be lit`);
+    const candles = this.birthdayCake.candles.binary.list;
+
+    console.log(`Candle #${candleIndex + 1} should not be lit`);
+
+    const candle = candles[candleIndex].element;
+
+    console.log(candle);
+
+    candle.classList.remove("just-lit-by-mistake");
+    candle.classList.add("just-lit-by-mistake");
+
+    setTimeout(() => {
+      candle.classList.remove("just-lit-by-mistake");
+    }, 1000);
 
     this.updateLives(-1);
 
