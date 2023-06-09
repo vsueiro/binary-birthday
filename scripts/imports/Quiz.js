@@ -1,3 +1,5 @@
+import Balloons from "./Balloons.js";
+
 export default class Quiz {
   constructor(birthdayCake) {
     this.birthdayCake = birthdayCake;
@@ -20,6 +22,8 @@ export default class Quiz {
     this.maxLives = 7;
     this.lost = false;
     this.won = false;
+
+    this.balloons = new Balloons(".balloons");
 
     this.shuffleAge();
     this.displayScore();
@@ -107,26 +111,30 @@ export default class Quiz {
   }
 
   displayAge() {
-    this.elements.shuffledAge.parentElement.classList.add("just-shuffled");
+    setTimeout(() => {
+      this.elements.shuffledAge.parentElement.classList.add("just-shuffled");
 
-    const explainerInitialized = this.birthdayCake.explainer;
+      const explainerInitialized = this.birthdayCake.explainer;
 
-    if (explainerInitialized) {
-      const typedAge = this.birthdayCake.explainer.typer.getSpans(
-        String(this.shuffledAge),
-        true
-      );
+      if (explainerInitialized) {
+        const typedAge = this.birthdayCake.explainer.typer.getSpans(
+          String(this.shuffledAge),
+          true
+        );
 
-      this.elements.shuffledAge.innerHTML = typedAge;
-    } else {
-      this.elements.shuffledAge.innerHTML = this.shuffledAge;
-    }
+        this.elements.shuffledAge.innerHTML = typedAge;
+      } else {
+        this.elements.shuffledAge.innerHTML = this.shuffledAge;
+      }
 
-    clearTimeout(this.timeout);
+      clearTimeout(this.timeout);
 
-    this.timeout = setTimeout(() => {
-      this.elements.shuffledAge.parentElement.classList.remove("just-shuffled");
-    }, this.delay);
+      this.timeout = setTimeout(() => {
+        this.elements.shuffledAge.parentElement.classList.remove(
+          "just-shuffled"
+        );
+      }, this.delay);
+    }, 1000);
   }
 
   resetScore() {
@@ -168,24 +176,24 @@ export default class Quiz {
 
   updateScore(increment = 1) {
     this.score += increment;
-
-    this.displayScore();
   }
 
   success() {
-    this.updateScore();
+    this.setGame("cooldown");
+    this.balloons.release();
 
-    console.log(
-      "[Fireworks or balloons animation!] Now, try with another number…"
-    );
+    setTimeout(() => {
+      this.updateScore();
+      this.displayScore();
+      this.resetCakeAge();
 
-    this.resetCakeAge();
-
-    if (this.score < this.maxScore) {
-      this.shuffleAge();
-    } else {
-      this.setGame("won");
-    }
+      if (this.score < this.maxScore) {
+        this.shuffleAge();
+        this.setGame("playing");
+      } else {
+        this.setGame("won");
+      }
+    }, 2500);
   }
 
   updateLives(increment = -1) {
@@ -254,6 +262,9 @@ export default class Quiz {
       case "playing":
         this.lost = false;
         this.won = false;
+        break;
+
+      case "cooldown":
         break;
 
       default:

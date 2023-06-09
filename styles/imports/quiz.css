@@ -123,7 +123,8 @@
 }
 
 [data-quiz="true"][data-game="over"] .birthday-cake,
-[data-quiz="true"][data-game="won"] .birthday-cake {
+[data-quiz="true"][data-game="won"] .birthday-cake,
+[data-quiz="true"][data-game="cooldown"] {
   pointer-events: none;
 }
 
