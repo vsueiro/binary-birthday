@@ -31,3 +31,7 @@
 .strawberry[data-eaten="2"] {
   background-image: url(../../images/strawberry-2.png);
 }
+
+.strawberry[data-eaten="3"] {
+  opacity: 0;
+}

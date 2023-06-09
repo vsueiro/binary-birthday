@@ -3,8 +3,10 @@ export default class Strawberry {
     this.eaten = 0;
     this.respawn = 4000;
     this.limit = 2;
+    this.eatOutLimit = 3;
     this.timeout;
     this.interactive = false;
+    this.delay = 500;
 
     this.setup();
   }
@@ -22,6 +24,18 @@ export default class Strawberry {
         this.eaten = 0;
         this.update();
       }, this.respawn);
+    }
+  }
+
+  eatOut() {
+    if (this.eaten < this.eatOutLimit) {
+      this.timeout = setTimeout(() => {
+        this.eaten++;
+        this.update();
+        this.eatOut();
+      }, this.delay);
+    } else {
+      clearTimeout(this.timeout);
     }
   }
 

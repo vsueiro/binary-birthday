@@ -168,23 +168,11 @@ export default class Quiz {
     const strawberries = this.birthdayCake.cake.strawberries.list;
 
     for (let i = 0; i < lostLives; i++) {
-      const strawberry = strawberries[i].element;
-      this.eat(strawberry);
+      const strawberry = strawberries[i];
+      strawberry.eatOut();
     }
 
     console.log(`Only ${this.lives} strawberries left`);
-  }
-
-  eat(strawberry) {
-    if (strawberry.dataset.eaten === "0") {
-      setTimeout(() => {
-        strawberry.dataset.eaten = "1";
-
-        setTimeout(() => {
-          strawberry.dataset.eaten = "2";
-        }, 500);
-      }, 500);
-    }
   }
 
   error(candleIndex) {
