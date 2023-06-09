@@ -21,8 +21,7 @@ export default class Strawberry {
       clearTimeout(this.timeout);
 
       this.timeout = setTimeout(() => {
-        this.eaten = 0;
-        this.update();
+        this.reset();
       }, this.respawn);
     }
   }
@@ -37,6 +36,11 @@ export default class Strawberry {
         this.eatOut();
       }, delay);
     }
+  }
+
+  reset() {
+    this.eaten = 0;
+    this.update();
   }
 
   setup() {

@@ -146,6 +146,11 @@
   top: 0;
 }
 
+.dialog .over,
+.dialog .won {
+  display: none;
+}
+
 .dialog button {
   align-self: center;
 }
@@ -157,5 +162,10 @@
 
 [data-quiz="true"][data-game="over"] .dialog,
 [data-quiz="true"][data-game="won"] .dialog {
+  display: flex;
+}
+
+[data-quiz="true"][data-game="over"] .dialog .over,
+[data-quiz="true"][data-game="won"] .dialog .won {
   display: flex;
 }

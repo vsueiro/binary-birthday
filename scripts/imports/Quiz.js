@@ -6,6 +6,7 @@ export default class Quiz {
     this.shuffledAge = 0;
     this.elements = {};
 
+    this.elements.restart = document.querySelector(".play-again");
     this.elements.shuffledAge = document.querySelector(".shuffle-age-decimal");
     this.elements.score = document.querySelector(".score");
     this.elements.balloons =
@@ -22,6 +23,14 @@ export default class Quiz {
 
     this.shuffleAge();
     this.displayScore();
+    this.addEventListeners();
+  }
+
+  addEventListeners() {
+    this.elements.restart.addEventListener("click", () => {
+      this.reset();
+      this.setGame("playing");
+    });
   }
 
   get binary() {
@@ -79,11 +88,11 @@ export default class Quiz {
   }
 
   reset() {
-    this.shuffledAge = 0;
-    this.score = 0;
-    this.lives = 7;
-    this.setGame("playing");
+    this.shuffleAge();
+    this.resetScore();
+    this.resetLives();
     this.resetCakeAge();
+    this.setGame("playing");
   }
 
   fixGuess(guess, index, value) {
@@ -118,6 +127,16 @@ export default class Quiz {
     this.timeout = setTimeout(() => {
       this.elements.shuffledAge.parentElement.classList.remove("just-shuffled");
     }, this.delay);
+  }
+
+  resetScore() {
+    this.score = 0;
+
+    const empty = "emoji-balloon-empty";
+
+    for (let balloon of this.elements.balloons) {
+      balloon.classList.add(empty);
+    }
   }
 
   displayScore() {
@@ -156,8 +175,8 @@ export default class Quiz {
   success() {
     this.updateScore();
 
-    alert(
-      "Yay! You got it! [Fireworks animation!] Now, try with another number…"
+    console.log(
+      "[Fireworks or balloons animation!] Now, try with another number…"
     );
 
     this.resetCakeAge();
@@ -166,7 +185,6 @@ export default class Quiz {
       this.shuffleAge();
     } else {
       this.setGame("won");
-      alert("Congrats! You got 5 questions right!");
     }
   }
 
@@ -187,6 +205,16 @@ export default class Quiz {
     }
 
     console.log(`Only ${this.lives} strawberries left`);
+  }
+
+  resetLives() {
+    this.lives = this.maxLives;
+
+    const strawberries = this.birthdayCake.cake.strawberries.list;
+
+    for (let strawberry of strawberries) {
+      strawberry.reset();
+    }
   }
 
   error(candleIndex) {
@@ -225,7 +253,7 @@ export default class Quiz {
 
       case "playing":
         this.lost = false;
-        this.won = true;
+        this.won = false;
         break;
 
       default:
