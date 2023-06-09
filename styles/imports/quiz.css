@@ -10,34 +10,34 @@
 
 @keyframes heartbeat {
   0% {
+    animation-timing-function: ease-out;
     transform: scale(1);
     transform-origin: center center;
-    animation-timing-function: ease-out;
   }
   10% {
-    transform: scale(0.9);
     animation-timing-function: ease-in;
+    transform: scale(0.9);
   }
   17% {
-    transform: scale(1.25);
     animation-timing-function: ease-out;
+    transform: scale(1.25);
   }
   33% {
-    transform: scale(0.9);
     animation-timing-function: ease-in;
+    transform: scale(0.9);
   }
   45% {
-    transform: scale(1);
     animation-timing-function: ease-out;
+    transform: scale(1);
   }
 }
 
 .shuffle-age-decimal {
   animation: heartbeat 1.5s ease-in-out infinite both;
   background: Transparent;
-  padding: 0 0.2em;
 
   display: inline-flex;
+  padding: 0 0.2em;
 }
 
 .shuffle-age-decimal-wrapper {
@@ -52,20 +52,20 @@
 
 .scoreboard {
   display: flex;
-  visibility: hidden;
   transform: translateY(-100%);
   transition: all 0.5s;
+  visibility: hidden;
 }
 
 [data-step="15"] .scoreboard {
-  visibility: visible;
   transform: translateY(0%);
+  visibility: visible;
 }
 
 .score {
   display: flex;
-  padding: calc(4 * var(--px));
   margin-top: calc(6 * var(--px)) !important;
+  padding: calc(4 * var(--px));
 }
 
 @keyframes jello-horizontal {
@@ -132,14 +132,30 @@
   pointer-events: none;
 }
 
-.quiz .dialog {
-  display: none;
-}
-
-[data-quiz="true"][data-game="over"] .quiz .dialog.over {
+.dialog {
+  align-items: center;
+  bottom: 0;
   display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  gap: calc(12 * var(--px));
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-[data-quiz="true"][data-game="won"] .quiz .dialog.won {
+.dialog button {
+  align-self: center;
+}
+
+[data-quiz="true"][data-game="over"] .birthday-cake,
+[data-quiz="true"][data-game="won"] .birthday-cake {
+  opacity: 0.5;
+}
+
+[data-quiz="true"][data-game="over"] .dialog,
+[data-quiz="true"][data-game="won"] .dialog {
   display: flex;
 }
