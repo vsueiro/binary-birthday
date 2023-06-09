@@ -28,6 +28,8 @@ export default class Strawberry {
 
   eatOut() {
     if (this.eaten < this.eatOutLimit) {
+      this.element.classList.add("just-eaten");
+
       const delay = this.eaten === 0 ? 0 : this.delay;
       this.eaten++;
 
@@ -39,6 +41,7 @@ export default class Strawberry {
   }
 
   reset() {
+    this.element.classList.remove("just-eaten");
     this.eaten = 0;
     this.update();
   }

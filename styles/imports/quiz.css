@@ -1,13 +1,3 @@
-@keyframes blink {
-  0% {
-    background: Transparent;
-  }
-
-  100% {
-    background: Turquoise;
-  }
-}
-
 @keyframes heartbeat {
   0% {
     animation-timing-function: ease-out;
@@ -123,8 +113,13 @@
   }
 }
 
-.just-lit-by-mistake {
+.just-lit-by-mistake,
+.just-eaten {
   animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+.just-eaten {
+  animation-delay: 0.25s;
 }
 
 [data-quiz="true"][data-game="over"] .birthday-cake,
