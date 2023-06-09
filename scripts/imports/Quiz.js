@@ -37,18 +37,24 @@ export default class Quiz {
     return Math.floor(Math.random() * max) + min;
   }
 
-  isActive() {
+  get isActive() {
     const currentStep = this.birthdayCake.explainer.swiper.activeIndex;
     return currentStep === this.quizStep;
   }
 
+  get isPlayable() {
+    if (this.lost || this.won) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   checkAnswer() {
-    if (this.isActive()) {
+    if (this.isActive && this.isPlayable) {
       if (this.birthdayCake.age === this.shuffledAge) {
         this.success();
       } else {
-        // TODO: compare strings below to check if player made a mistake
-
         const userGuess = this.birthdayCake.binary;
         const target = this.binary;
 

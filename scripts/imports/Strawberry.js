@@ -29,13 +29,13 @@ export default class Strawberry {
 
   eatOut() {
     if (this.eaten < this.eatOutLimit) {
-      this.timeout = setTimeout(() => {
-        this.eaten++;
+      const delay = this.eaten === 0 ? 0 : this.delay;
+      this.eaten++;
+
+      setTimeout(() => {
         this.update();
         this.eatOut();
-      }, this.delay);
-    } else {
-      clearTimeout(this.timeout);
+      }, delay);
     }
   }
 
