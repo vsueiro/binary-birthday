@@ -226,6 +226,8 @@ export default class Quiz {
   }
 
   error(candleIndex) {
+    this.setGame("cooldown");
+
     const candles = this.birthdayCake.candles.binary.list;
     const candle = candles[candleIndex].element;
 
@@ -238,11 +240,15 @@ export default class Quiz {
       candle.classList.remove("just-lit-by-mistake");
     }, 1000);
 
-    this.updateLives(-1);
+    setTimeout(() => {
+      this.updateLives(-1);
 
-    if (this.lives <= 0) {
-      this.setGame("over");
-    }
+      if (this.lives <= 0) {
+        this.setGame("over");
+      } else {
+        this.setGame("playing");
+      }
+    }, 1000);
   }
 
   setGame(status) {

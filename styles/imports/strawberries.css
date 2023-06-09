@@ -34,4 +34,5 @@
 
 .strawberry[data-eaten="3"] {
   opacity: 0;
+  animation: none;
 }

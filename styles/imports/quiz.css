@@ -113,13 +113,21 @@
   }
 }
 
-.just-lit-by-mistake,
-.just-eaten {
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.just-lit-by-mistake {
   animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 .just-eaten {
-  animation-delay: 0.25s;
+  animation: blink 0.25s infinite steps(2);
 }
 
 [data-quiz="true"][data-game="over"] .birthday-cake,

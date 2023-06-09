@@ -33,7 +33,7 @@ export default class Strawberry {
       const delay = this.eaten === 0 ? 0 : this.delay;
       this.eaten++;
 
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.update();
         this.eatOut();
       }, delay);
@@ -41,6 +41,10 @@ export default class Strawberry {
   }
 
   reset() {
+    console.log(this.element, this.timeout);
+
+    clearTimeout(this.timeout);
+
     this.element.classList.remove("just-eaten");
     this.eaten = 0;
     this.update();
