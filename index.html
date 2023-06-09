@@ -13,7 +13,7 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <div class="app" data-quiz="false" data-step="0">
+    <div class="app" data-step="0" data-quiz="false" data-game="playing">
       <div class="confetti" aria-hidden="true"></div>
 
       <nav class="navigation">
@@ -232,6 +232,14 @@
                     >? But be careful, every mistake will cost you a strawberry
                     <span class="typer-char emoji emoji-strawberry"></span>
                   </p>
+                </div>
+                <div class="dialog won">
+                  Yay! You won :)
+                  <button class="try-again">Play again</button>
+                </div>
+                <div class="dialog over">
+                  Game over :(
+                  <button class="try-again">Try again</button>
                 </div>
               </div>
               <!--

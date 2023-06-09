@@ -126,3 +126,20 @@
 .just-lit-by-mistake {
   animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
+
+[data-quiz="true"][data-game="over"] .birthday-cake,
+[data-quiz="true"][data-game="won"] .birthday-cake {
+  pointer-events: none;
+}
+
+.quiz .dialog {
+  display: none;
+}
+
+[data-quiz="true"][data-game="over"] .quiz .dialog.over {
+  display: flex;
+}
+
+[data-quiz="true"][data-game="won"] .quiz .dialog.won {
+  display: flex;
+}

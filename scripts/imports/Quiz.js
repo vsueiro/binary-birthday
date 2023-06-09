@@ -78,6 +78,14 @@ export default class Quiz {
     }
   }
 
+  reset() {
+    this.shuffledAge = 0;
+    this.score = 0;
+    this.lives = 7;
+    this.setGame("playing");
+    this.resetCakeAge();
+  }
+
   fixGuess(guess, index, value) {
     let chars = guess.split("");
     chars[index] = value;
@@ -157,7 +165,7 @@ export default class Quiz {
     if (this.score < this.maxScore) {
       this.shuffleAge();
     } else {
-      this.won = true;
+      this.setGame("won");
       alert("Congrats! You got 5 questions right!");
     }
   }
@@ -197,8 +205,36 @@ export default class Quiz {
     this.updateLives(-1);
 
     if (this.lives <= 0) {
-      alert("Game Over");
-      this.lost = true;
+      this.setGame("over");
+    }
+  }
+
+  setGame(status) {
+    let valid = true;
+
+    switch (status) {
+      case "over":
+        this.lost = true;
+        this.won = false;
+        break;
+
+      case "won":
+        this.lost = false;
+        this.won = true;
+        break;
+
+      case "playing":
+        this.lost = false;
+        this.won = true;
+        break;
+
+      default:
+        valid = false;
+        break;
+    }
+
+    if (valid) {
+      this.birthdayCake.app.dataset.game = status;
     }
   }
 }
