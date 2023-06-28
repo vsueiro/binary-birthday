@@ -42,7 +42,7 @@ export default class SoundController {
     if (this.sounds.background.playing() === false) {
       this.sounds.background.play();
     }
-    this.sounds.background.fade(0, 0.05, 1000);
+    this.sounds.background.fade(.8, .8, 1000);
   }
 
   show() {

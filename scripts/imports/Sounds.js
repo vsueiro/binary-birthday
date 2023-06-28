@@ -21,7 +21,7 @@ export default class Sounds {
 
     // By https://freesound.org/people/gis_sweden/sounds/651801/
     this.background = new Howl({
-      src: ["audio/music.mp3"],
+      src: ["audio/Binary_Bday_Track_1.mp3"],
       volume: 0.05,
       loop: true,
     });
