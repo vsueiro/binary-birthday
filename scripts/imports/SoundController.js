@@ -57,8 +57,4 @@ export default class SoundController {
     }
     this.sounds.background.fade(0, 0.8, 1000);
   }
-
-  // show() {
-  //   this.button.parentElement.dataset.visible = "true";
-  // }
 }

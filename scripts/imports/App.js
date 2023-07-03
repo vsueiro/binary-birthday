@@ -21,15 +21,6 @@ export default class App {
       this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);
 
       this.element.classList.add("initialized");
-      // document.addEventListener(
-      //   "click",
-      //   () => {
-      //     sounds.background.play();
-      //     sounds.background.fade(0, 0.05, 1000);
-      //     sounds.controller.show();
-      //   },
-      //   { once: true }
-      // );
     }, this.delay);
   }
 }
