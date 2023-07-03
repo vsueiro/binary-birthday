@@ -19,14 +19,15 @@ export default class Sounds {
       volume: 0.025,
     });
 
-    // By https://freesound.org/people/gis_sweden/sounds/651801/
     this.background = new Howl({
       src: ["audio/Binary_Bday_Track_1.mp3"],
-      volume: 0.05,
+      volume: 0.8,
       loop: true,
     });
 
     this.controller = new SoundController(selector, this);
+
+    this.mute();
   }
 
   mute() {

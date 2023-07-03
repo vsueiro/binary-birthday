@@ -1,0 +1,28 @@
+dialog {
+  background: transparent;
+  border: none;
+  text-shadow: none;
+  color: Lavender;
+  margin: auto;
+}
+
+dialog form {
+  padding: calc(24 * var(--px));
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(12 * var(--px));
+}
+
+dialog button {
+  color: Indigo;
+  align-self: unset;
+  filter: none;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+dialog::backdrop {
+  background: Indigo;
+  opacity: 0.75;
+}

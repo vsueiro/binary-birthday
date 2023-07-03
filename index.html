@@ -41,12 +41,8 @@
           </button>
         </div>
 
-        <div class="audio-wrapper">
-          <button
-            class="audio secondary"
-            data-muted="false"
-            data-visible="false"
-          >
+        <div class="audio-wrapper" data-visible="true">
+          <button class="audio secondary" data-muted="true">
             <span class="screen-reader">Audio</span>
           </button>
         </div>
@@ -309,6 +305,30 @@
           </p>
         </footer>
       </div>
+
+      <dialog id="audio-dialog">
+        <form>
+          <!--
+          <p>This explainer plays custom-made music & sound</p>
+          -->
+          <button
+            value="confirm"
+            class="primary"
+            formmethod="dialog"
+            id="audio-enable"
+          >
+            Start
+            <!-- Let’s hear it ♥ -->
+          </button>
+          <!--
+          <button value="cancel" class="tertiary" formmethod="dialog">
+            Start without sound
+          </button>
+          -->
+        </form>
+      </dialog>
+
+      <output></output>
     </div>
   </body>
 </html>

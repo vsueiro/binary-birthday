@@ -6,5 +6,5 @@
 - [ ] Expect puzzle soundtrack
 - [ ] Expect success after puzzle completion
 - [x] Add progress bar
-- [ ] Consider adding a “Play with sound” button at the beggining
+- [x] Add a “Start” button at the beggining
 - [ ] Add visual highlight on specific steps (pointing finger? pulsating animation?)

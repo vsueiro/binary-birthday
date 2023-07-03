@@ -36,3 +36,11 @@ button.secondary,
   background-color: Indigo;
   border-image-source: url(../../images/button-secondary.png);
 }
+
+button.tertiary,
+.button.tertiary {
+  border: none;
+  filter: none;
+  background: transparent;
+  color: hotpink;
+}

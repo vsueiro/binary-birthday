@@ -1,13 +1,26 @@
 export default class SoundController {
   constructor(selector, sounds) {
     this.button = document.querySelector(selector);
+
     this.sounds = sounds;
-    this.muted = false;
+    this.muted = true;
+
+    this.dialog = document.querySelector("#audio-dialog");
+    this.dialogConfirm = document.querySelector("#audio-enable");
 
     this.setup();
   }
 
   setup() {
+    this.dialog.showModal();
+
+    this.dialog.addEventListener("close", () => {
+      if (this.dialog.returnValue === "confirm") {
+        this.unmute();
+        this.unmuteBackground();
+      }
+    });
+
     this.button.addEventListener("click", () => {
       if (this.muted) this.unmute();
       else this.mute();
@@ -35,17 +48,17 @@ export default class SoundController {
   }
 
   muteBackground() {
-    this.sounds.background.fade(0.05, 0, 1000);
+    this.sounds.background.fade(0.8, 0, 1000);
   }
 
   unmuteBackground() {
     if (this.sounds.background.playing() === false) {
       this.sounds.background.play();
     }
-    this.sounds.background.fade(.8, .8, 1000);
+    this.sounds.background.fade(0, 0.8, 1000);
   }
 
-  show() {
-    this.button.parentElement.dataset.visible = "true";
-  }
+  // show() {
+  //   this.button.parentElement.dataset.visible = "true";
+  // }
 }

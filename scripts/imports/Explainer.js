@@ -7,7 +7,6 @@ export default class Explainer {
     this.container = document.querySelector(container);
     this.birthdayCake = birthdayCake;
     this.initialDelay = 2500;
-    this.isFirst = true;
     this.timeout;
 
     this.quiz = new Quiz(this.birthdayCake);
@@ -58,12 +57,6 @@ export default class Explainer {
       this.birthdayCake.handle(step);
       this.birthdayCake.update();
       this.typer.type(slide);
-
-      if (this.isFirst) {
-        sounds.controller.unmuteBackground();
-        sounds.controller.show();
-        this.isFirst = false;
-      }
 
       sounds.key.play();
     });
