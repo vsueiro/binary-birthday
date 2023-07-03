@@ -9,7 +9,7 @@ body {
   color: Lavender;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   text-shadow: calc(2 * var(--px)) calc(2 * var(--px)) Indigo;
 }
 
