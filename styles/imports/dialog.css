@@ -1,25 +1,37 @@
 dialog {
   background: transparent;
   border: none;
-  text-shadow: none;
   color: Lavender;
   margin: auto;
+  text-shadow: none;
 }
 
 dialog form {
-  padding: calc(24 * var(--px));
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: calc(12 * var(--px));
+  justify-content: center;
+  padding: calc(24 * var(--px));
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 dialog button {
-  color: Indigo;
   align-self: unset;
+  animation: pulsate 1s steps(3) infinite;
+  color: Indigo;
   filter: none;
-  animation: heartbeat 1.5s ease-in-out infinite both;
 }
 
 dialog::backdrop {
