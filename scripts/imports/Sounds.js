@@ -2,6 +2,9 @@ import SoundController from "./SoundController.js";
 
 export default class Sounds {
   constructor(selector) {
+    this.volume = {};
+    this.volume.background = 0.8;
+
     // By https://freesound.org/people/UberBosser/sounds/421581/
     this.key = new Howl({
       src: ["audio/key.mp3"],
@@ -21,7 +24,13 @@ export default class Sounds {
 
     this.background = new Howl({
       src: ["audio/Binary_Bday_Track_1.mp3"],
-      volume: 0.8,
+      volume: 0,
+      loop: true,
+    });
+
+    this.backgroundPuzzle = new Howl({
+      src: ["audio/Binary_Bday_Solo_Drums.mp3"],
+      volume: 0,
       loop: true,
     });
 

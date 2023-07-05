@@ -102,11 +102,28 @@ export default class BirthdayCake {
     this.age = age;
   }
 
+  switchBackgroundMusic(step) {
+    const slide = this.explainer.swiper.slides[step];
+    const isPuzzle = slide.classList.contains("quiz");
+
+    let from = "backgroundPuzzle";
+    let to = "background";
+
+    if (isPuzzle) {
+      from = "background";
+      to = "backgroundPuzzle";
+    }
+
+    window.sounds.controller.crossFade(from, to, 1000);
+  }
+
   handle(step) {
     clearTimeout(this.timeout);
 
     this.step = step;
     this.app.dataset.step = this.step;
+
+    this.switchBackgroundMusic(step);
 
     switch (step) {
       case 0:

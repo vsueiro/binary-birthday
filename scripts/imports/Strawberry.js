@@ -41,8 +41,6 @@ export default class Strawberry {
   }
 
   reset() {
-    console.log(this.element, this.timeout);
-
     clearTimeout(this.timeout);
 
     this.element.classList.remove("just-eaten");

@@ -8,6 +8,10 @@ export default class SoundController {
     this.dialog = document.querySelector("#audio-dialog");
     this.dialogConfirm = document.querySelector("#audio-enable");
 
+    this.crossFaded = {};
+    this.crossFaded.from = undefined;
+    this.crossFaded.to = undefined;
+
     this.setup();
   }
 
@@ -18,6 +22,7 @@ export default class SoundController {
       if (this.dialog.returnValue === "confirm") {
         this.unmute();
         this.unmuteBackground();
+        this.fadeIn("background");
       }
     });
 
@@ -27,10 +32,13 @@ export default class SoundController {
     });
 
     document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") {
-        this.unmuteBackground();
-      } else if (document.visibilityState === "hidden") {
+      if (document.visibilityState === "hidden") {
         this.muteBackground();
+      } else if (document.visibilityState === "visible") {
+        this.unmuteBackground();
+
+        const { from, to } = this.crossFaded;
+        this.crossFade(from, to);
       }
     });
   }
@@ -48,13 +56,38 @@ export default class SoundController {
   }
 
   muteBackground() {
-    this.sounds.background.fade(0.8, 0, 1000);
+    this.fadeOut("background");
+    this.fadeOut("backgroundPuzzle");
   }
 
   unmuteBackground() {
     if (this.sounds.background.playing() === false) {
       this.sounds.background.play();
+      this.sounds.backgroundPuzzle.play();
     }
-    this.sounds.background.fade(0, 0.8, 1000);
+  }
+
+  fadeIn(sound, volume, duration = 1000) {
+    volume = volume || this.sounds.volume.background;
+
+    this.sounds[sound].fade(0, volume, duration);
+  }
+
+  fadeOut(sound, duration = 1000) {
+    const currentVolume = this.sounds[sound].volume();
+    this.sounds[sound].fade(currentVolume, 0, duration);
+  }
+
+  crossFade(from, to, duration = 1000) {
+    const volume = this.sounds.volume.background;
+
+    const fromCurrentVolume = this.sounds[from].volume();
+    const toCurrentVolume = this.sounds[to].volume();
+
+    this.sounds[from].fade(fromCurrentVolume, 0, duration);
+    this.sounds[to].fade(toCurrentVolume, volume, duration);
+
+    this.crossFaded.from = from;
+    this.crossFaded.to = to;
   }
 }
