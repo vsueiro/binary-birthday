@@ -25,12 +25,14 @@ export default class Sounds {
     this.background = new Howl({
       src: ["audio/Binary_Bday_Track_1.mp3"],
       volume: 0,
+      html5: true,
       loop: true,
     });
 
     this.backgroundPuzzle = new Howl({
       src: ["audio/Binary_Bday_Solo_Drums.mp3"],
       volume: 0,
+      html5: true,
       loop: true,
     });
 
