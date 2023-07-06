@@ -7,7 +7,6 @@ export default class Preloader {
       "./images/audio-muted.png",
       "./images/button-minus.png",
       "./images/button-plus.png",
-      // "./images/cake-outline.png",
       "./images/cake.png",
       "./images/candle-letter-e.png",
       "./images/candle-letter-n.png",
@@ -28,19 +27,13 @@ export default class Preloader {
       "./images/candle-wick-1.png",
       "./images/composite/logo.png",
       "./images/info.png",
-      // "./images/strawberry-0-outline.png",
       "./images/strawberry-0.png",
-      // "./images/strawberry-1-outline.png",
       "./images/strawberry-1.png",
-      // "./images/strawberry-2-outline.png",
       "./images/strawberry-2.png",
     ];
 
-    // Background music tracks
-    this.extraDependencies = 2;
-
     this.dependencies = {};
-    this.dependencies.total = this.images.length + this.extraDependencies;
+    this.dependencies.total = 2; // Background music tracks
     this.dependencies.loaded = 0;
 
     this.load();
@@ -50,7 +43,6 @@ export default class Preloader {
     for (let image of this.images) {
       const img = new Image();
       img.src = image;
-      img.onload = () => this.addDependency();
     }
   }
 
