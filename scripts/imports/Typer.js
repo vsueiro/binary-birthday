@@ -1,7 +1,8 @@
 export default class Typer {
-  constructor(container, selector) {
+  constructor(container, selector, birthdayCake) {
     this.container = container;
     this.selector = selector;
+    this.birthdayCake = birthdayCake;
     this.paragraphs = this.container.querySelectorAll(selector);
     this.delay = 15;
     this.punctuationDelay = 500;
@@ -51,7 +52,7 @@ export default class Typer {
     char.classList.add("typed");
 
     if (index % 4 == 0) {
-      sounds.type.play();
+      this.birthdayCake.app.sounds.type.play();
     }
 
     index++;

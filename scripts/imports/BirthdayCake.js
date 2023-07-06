@@ -114,7 +114,7 @@ export default class BirthdayCake {
       to = "backgroundPuzzle";
     }
 
-    window.sounds.controller.crossFade(from, to);
+    this.app.sounds.controller.crossFade(from, to);
   }
 
   handle(step) {

@@ -10,7 +10,7 @@ export default class Explainer {
     this.timeout;
 
     this.quiz = new Quiz(this.birthdayCake);
-    this.typer = new Typer(this.container, ".box p");
+    this.typer = new Typer(this.container, ".box p", this.birthdayCake);
 
     this.swiper = new Swiper(".swiper", {
       centeredSlides: true,
@@ -52,7 +52,7 @@ export default class Explainer {
       this.birthdayCake.update();
       this.typer.type(slide);
 
-      sounds.key.play();
+      this.birthdayCake.app.sounds.key.play();
     });
 
     this.setup();

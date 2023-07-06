@@ -20,9 +20,9 @@ export default class StartScreen {
   }
 
   startWithAudio() {
-    window.sounds.controller.unmute();
-    window.sounds.controller.unmuteBackground();
-    window.sounds.controller.fadeIn("background");
+    this.app.sounds.controller.unmute();
+    this.app.sounds.controller.unmuteBackground();
+    this.app.sounds.controller.fadeIn("background");
 
     setTimeout(() => {
       const first = this.app.birthdayCake.explainer.swiper.slides[0];

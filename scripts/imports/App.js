@@ -15,10 +15,8 @@ export default class App {
   setup() {
     this.preloader = new Preloader(this);
     this.startScreen = new StartScreen("#audio-dialog", this);
-
-    window.sounds = new Sounds(".audio", this);
-
-    this.confetti = new Confetti(".confetti");
+    this.sounds = new Sounds(".audio", this);
     this.birthdayCake = new BirthdayCake(".birthday-cake", this);
+    this.confetti = new Confetti(".confetti");
   }
 }
