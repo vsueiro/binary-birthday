@@ -279,7 +279,7 @@ export default class Quiz {
     }
 
     if (valid) {
-      this.birthdayCake.app.dataset.game = status;
+      this.birthdayCake.app.element.dataset.game = status;
     }
   }
 }

@@ -1,4 +1,5 @@
 import Preloader from "./Preloader.js";
+import StartScreen from "./StartScreen.js";
 import Confetti from "./Confetti.js";
 import BirthdayCake from "./BirthdayCake.js";
 import Sounds from "./Sounds.js";
@@ -13,15 +14,11 @@ export default class App {
 
   setup() {
     this.preloader = new Preloader(this);
+    this.startScreen = new StartScreen("#audio-dialog", this);
 
     window.sounds = new Sounds(".audio", this);
 
     this.confetti = new Confetti(".confetti");
-
-    setTimeout(() => {
-      this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);
-
-      this.element.classList.add("initialized");
-    }, this.delay);
+    this.birthdayCake = new BirthdayCake(".birthday-cake", this);
   }
 }

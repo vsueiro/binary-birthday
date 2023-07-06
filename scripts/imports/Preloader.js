@@ -33,7 +33,7 @@ export default class Preloader {
     ];
 
     this.dependencies = {};
-    this.dependencies.total = 2; // Background music tracks
+    this.dependencies.total = 3; // 2 background music tracks + 1 swiper
     this.dependencies.loaded = 0;
 
     this.load();
@@ -55,6 +55,7 @@ export default class Preloader {
   }
 
   enableStartButton() {
+    this.app.element.classList.add("initialized");
     this.app.element.dataset.loaded = true;
   }
 }

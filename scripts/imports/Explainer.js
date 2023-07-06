@@ -32,13 +32,7 @@ export default class Explainer {
         crossFade: true,
       },
       on: {
-        // TODO: Improve design
-        init: () => {
-          this.timeout = setTimeout(() => {
-            const slide = document.querySelector(".swiper-slide");
-            this.typer.type(slide);
-          }, this.initialDelay);
-        },
+        init: () => this.birthdayCake.app.preloader.addDependency(),
       },
     });
 
@@ -49,9 +43,9 @@ export default class Explainer {
       const slide = this.swiper.slides[step];
 
       if (slide.classList.contains("quiz")) {
-        this.birthdayCake.app.dataset.quiz = "true";
+        this.birthdayCake.app.element.dataset.quiz = "true";
       } else {
-        this.birthdayCake.app.dataset.quiz = "false";
+        this.birthdayCake.app.element.dataset.quiz = "false";
       }
 
       this.birthdayCake.handle(step);

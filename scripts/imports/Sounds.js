@@ -37,7 +37,7 @@ export default class Sounds {
       onload: () => this.app.preloader.addDependency(),
     });
 
-    this.controller = new SoundController(selector, this);
+    this.controller = new SoundController(selector, this, app);
 
     this.mute();
   }

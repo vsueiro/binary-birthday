@@ -121,7 +121,7 @@ export default class BirthdayCake {
     clearTimeout(this.timeout);
 
     this.step = step;
-    this.app.dataset.step = this.step;
+    this.app.element.dataset.step = this.step;
 
     this.switchBackgroundMusic(step);
 

@@ -1,12 +1,10 @@
 export default class SoundController {
-  constructor(selector, sounds) {
+  constructor(selector, sounds, app) {
     this.button = document.querySelector(selector);
 
     this.sounds = sounds;
+    this.app = app;
     this.muted = true;
-
-    this.dialog = document.querySelector("#audio-dialog");
-    this.dialogConfirm = document.querySelector("#audio-enable");
 
     this.crossFaded = {};
     this.crossFaded.from = undefined;
@@ -16,16 +14,6 @@ export default class SoundController {
   }
 
   setup() {
-    this.dialog.showModal();
-
-    this.dialog.addEventListener("close", () => {
-      if (this.dialog.returnValue === "confirm") {
-        this.unmute();
-        this.unmuteBackground();
-        this.fadeIn("background");
-      }
-    });
-
     this.button.addEventListener("click", () => {
       if (this.muted) this.unmute();
       else this.mute();
