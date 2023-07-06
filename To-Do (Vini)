@@ -8,3 +8,4 @@
 - [x] Add progress bar
 - [x] Add a “Start” button at the beggining
 - [ ] Add visual highlight on specific steps (pointing finger? pulsating animation?)
+- [ ] Consider using .webm files as default (better compression), and .mp3 as fallback
