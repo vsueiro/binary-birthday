@@ -13,7 +13,13 @@
     <script src="scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <div class="app" data-step="0" data-quiz="false" data-game="playing">
+    <div
+      class="app"
+      data-step="0"
+      data-quiz="false"
+      data-loaded="false"
+      data-game="playing"
+    >
       <div class="confetti" aria-hidden="true"></div>
 
       <nav class="navigation">
@@ -317,9 +323,22 @@
             formmethod="dialog"
             id="audio-enable"
           >
-            Start
+            <span class="loading">
+              <span>L</span>
+              <span>o</span>
+              <span>a</span>
+              <span>d</span>
+              <span>i</span>
+              <span>n</span>
+              <span>g</span>
+            </span>
+            <span class="loaded">
+              Start
+              <span class="emoji emoji-audio"></span>
+            </span>
             <!-- Let’s hear it ♥ -->
           </button>
+
           <!--
           <button value="cancel" class="tertiary" formmethod="dialog">
             Start without sound

@@ -12,10 +12,11 @@ export default class App {
   }
 
   setup() {
-    window.sounds = new Sounds(".audio");
+    this.preloader = new Preloader(this);
+
+    window.sounds = new Sounds(".audio", this);
 
     this.confetti = new Confetti(".confetti");
-    this.preloader = new Preloader();
 
     setTimeout(() => {
       this.birthdayCake = new BirthdayCake(".birthday-cake", this.element);

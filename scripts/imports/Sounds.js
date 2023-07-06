@@ -1,7 +1,8 @@
 import SoundController from "./SoundController.js";
 
 export default class Sounds {
-  constructor(selector) {
+  constructor(selector, app) {
+    this.app = app;
     this.volume = {};
     this.volume.background = 0.8;
 
@@ -26,12 +27,14 @@ export default class Sounds {
       src: ["audio/Binary_Bday_Track_1.mp3"],
       volume: 0,
       loop: true,
+      onload: () => this.app.preloader.addDependency(),
     });
 
     this.backgroundPuzzle = new Howl({
       src: ["audio/Binary_Bday_Solo_Drums.mp3"],
       volume: 0,
       loop: true,
+      onload: () => this.app.preloader.addDependency(),
     });
 
     this.controller = new SoundController(selector, this);

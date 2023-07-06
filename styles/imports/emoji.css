@@ -22,6 +22,14 @@
   display: flex;
 }
 
+.emoji-audio {
+  background-image: url(../../images/audio-animated.png);
+  background-position: right 11px;
+  background-size: calc(14 * var(--px)) calc(12 * var(--px));
+  filter: brightness(0) saturate(100%) invert(9%) sepia(44%) saturate(6954%)
+    hue-rotate(269deg) brightness(98%) contrast(102%);
+}
+
 .emoji-balloon-deeppink {
   background-image: url(../../images/balloon-deeppink.png);
 }
