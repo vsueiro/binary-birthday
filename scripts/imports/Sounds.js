@@ -4,7 +4,7 @@ export default class Sounds {
   constructor(selector, app) {
     this.app = app;
     this.volume = {};
-    this.volume.background = 0.8;
+    this.volume.background = 0.4;
 
     // By https://freesound.org/people/UberBosser/sounds/421581/
     this.key = new Howl({
